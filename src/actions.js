@@ -1,8 +1,8 @@
 // Action Creator
 
-export function name (param) {
+export function getRestaurants (restaurants) {
     return {
-        type: name,
-        payload: details,
+        type: 'GET_RESTAURANTS',
+        payload: restaurants,
     };
 }

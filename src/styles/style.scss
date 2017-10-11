@@ -1,8 +1,45 @@
+$main-color: blue;
+$shadow: 2px 2px 10px #222;
+$offWhite: #F7FFF7;
+
 // App
 
+// body {
+//     background-image: url('https://www.gbfans.com/images/fans/art/13427_2716058608.jpg');
+//     color: white;
+// }
+
 // Sign In
+
+// Search
+
+.toggle-search-and-map-view {
+    text-align: center;
+
+    button {
+        background-color: $offWhite;
+        width: 40%;
+        height: 30px;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: $shadow;
+    }
+ 
+    a {
+        text-decoration: none;
+    }
+
+    button:active {
+        background-color: purple;
+    }
+    // FIGURE OUT HOW TO KEEP IT ACTIVE 
+}
+
+
 
 // Map View
 
 // List View
 
+// 
