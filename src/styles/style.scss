@@ -1,7 +1,11 @@
 $main-color: blue;
-$shadow: 2px 2px 10px #222;
+$shadow: 2px 2px 10px #888888;
 $offWhite: #F8F8F8;
 $mintyWhite: #F7FFF7;
+$lightBlue:   #3693C1;
+$grey: #6B6D6D;
+$gunmetal: #272838;
+$button: #48A9A6;
 
 // App
 
@@ -9,6 +13,24 @@ $mintyWhite: #F7FFF7;
 //     background-image: url('https://www.gbfans.com/images/fans/art/13427_2716058608.jpg');
 //     color: white;
 // }
+
+body {
+    background-color: $offWhite;
+}
+
+header {
+    background-color: $gunmetal;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    height: 50px;
+    
+    h1 {
+        margin: 0;
+        padding: 1%;
+        font-weight: lighter;
+    }
+}
 
 // Sign In
 
@@ -19,6 +41,7 @@ $mintyWhite: #F7FFF7;
 
     button {
         background-color: $offWhite;
+        background-color: white;
         width: 49%;
         height: 30px;
         border: none;
@@ -45,28 +68,31 @@ $mintyWhite: #F7FFF7;
 
 // List View
 .list-view-results {
-    display: flex;
-    width: 97%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
+    // display: flex;
+    // width: 97%;
+    // flex-wrap: wrap;
+    // justify-content: space-around;
+    // text-align: center;
 
     img {
-        width: 200px;
+        // width: 200px;
     }
 
-    div {
+    .list-view-divs {
         background-color: $offWhite;
+        background-color: white;
         box-shadow: $shadow;
         border-radius: 5px;
         padding: 1% 5%;
         margin: 2%;
+        display: flex;
+
     }
 
     button {
         width: 70px;
         height: 25px;
-        background-color: #48A9A6;
+        background-color: $button;
         color: white;
         border: none;
         border-radius: 5px;
@@ -74,15 +100,16 @@ $mintyWhite: #F7FFF7;
     }
 
     h3 {
-        background-color: #4357AD;
+        // background-color: #4357AD;
         margin-bottom:0;
         padding: 10px;
+        margin-top: 0;
     }
 }
 
-@media (min-width: 600px) { 
+@media (min-width: 500px) { 
     body {
-        background-color: red;
+        // background-color: red;
     }
 }
 

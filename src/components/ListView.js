@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
 
+// Import routing
+import { Link } from 'react-router-dom';
+
 
 class ListView extends Component {
 
     render() {
         const restaurants = this.props.restaurants.map((restaurant, index) => {
-            return <div key={ index }> 
-                <h3>{restaurant.artistName}</h3>
-                <img src={restaurant.artworkUrl100} />
-                <p>{restaurant.trackCensoredName}</p>
-                <button>Details</button>
+            return <div key={ index } className="list-view-divs"> 
+                        <div>
+                            <img src={restaurant.artworkUrl100} alt="" /> 
+                        </div>
+                        <div>
+                            <h3>{restaurant.artistName}</h3>
+                            <p>{restaurant.trackCensoredName}</p>
+                            <Link to={"/user-details/" + index} ><button>Details</button></Link>
+                        </div>
                     </div>
         });
 
 
         return (
             <div>
-                This is my super sweet restaurant list
                 <div className="list-view-results">
                     { restaurants } 
                 </div>

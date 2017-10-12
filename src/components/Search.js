@@ -34,7 +34,6 @@ class Search extends Component {
 
         return (
             <div>
-                This is Search!
                 <nav className="toggle-search-and-map-view">
                     <Link to="/search/ListView"><button>List View</button></Link>
                     <Link to="/search/MapView"><button>Map View</button></Link>
