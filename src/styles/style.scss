@@ -26,7 +26,7 @@ $mintyWhite: #F7FFF7;
         cursor: pointer;
         box-shadow: $shadow;
     }
- 
+
     a {
         text-decoration: none;
     }
@@ -34,13 +34,16 @@ $mintyWhite: #F7FFF7;
     button:active {
         background-color: lightgrey;
     }
-    // FIGURE OUT HOW TO KEEP IT ACTIVE 
+    // FIGURE OUT HOW TO KEEP IT ACTIVE
 }
 
 
 
 // Map View
-
+#map {
+  height: 460px;
+  width: 100%;
+ }
 
 
 // List View
@@ -80,10 +83,10 @@ $mintyWhite: #F7FFF7;
     }
 }
 
-@media (min-width: 600px) { 
+@media (min-width: 600px) {
     body {
         background-color: red;
     }
 }
 
-// 
+//
