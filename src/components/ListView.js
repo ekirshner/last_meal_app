@@ -15,7 +15,7 @@ class ListView extends Component {
                         <div>
                             <h3>{restaurant.artistName}</h3>
                             <p>{restaurant.trackCensoredName}</p>
-                            <Link to={"/user-details/" + index} ><button>Details</button></Link>
+                            <Link to={"/userDetails/" + index} ><button>Details</button></Link>
                         </div>
                     </div>
         });
