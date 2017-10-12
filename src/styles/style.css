@@ -28,6 +28,10 @@ header {
   .toggle-search-and-map-view button:active {
     background-color: lightgrey; }
 
+#map {
+  height: 460px;
+  width: 100%; }
+
 .list-view-results .list-view-divs {
   background-color: #F8F8F8;
   background-color: white;

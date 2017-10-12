@@ -24,7 +24,7 @@ header {
     text-align: center;
     color: white;
     height: 50px;
-    
+
     h1 {
         margin: 0;
         padding: 1%;
@@ -49,7 +49,7 @@ header {
         cursor: pointer;
         box-shadow: $shadow;
     }
- 
+
     a {
         text-decoration: none;
     }
@@ -57,13 +57,16 @@ header {
     button:active {
         background-color: lightgrey;
     }
-    // FIGURE OUT HOW TO KEEP IT ACTIVE 
+    // FIGURE OUT HOW TO KEEP IT ACTIVE
 }
 
 
 
 // Map View
-
+#map {
+  height: 460px;
+  width: 100%;
+ }
 
 
 // List View
@@ -107,10 +110,10 @@ header {
     }
 }
 
-@media (min-width: 500px) { 
+@media (min-width: 500px) {
     body {
         // background-color: red;
     }
 }
 
-// 
+//
