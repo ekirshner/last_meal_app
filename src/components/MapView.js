@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CurrentLocation from './current-location'
 import { connect } from 'react-redux';
 
 class Mapview extends Component {
@@ -7,11 +7,10 @@ class Mapview extends Component {
     super(props);
 
     this.state = {
-      text: '',
       map: null,
     };
   }
-
+// For search purposes... might not end up using it.
 componentWillMount() {
     const url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyCiWzr6o70whXVGfAS2Ryb3jgI-EQcJVy4&address=Houston" ;
     fetch(url)
@@ -29,19 +28,27 @@ componentWillMount() {
 
     this.setState({ map: map });
   }
-
-
+//wait until after mount so the #map will exist in DOM
   componentDidMount() {
     this.initMap();
   }
 
   render() {
-
+      //this will need to loop over data from yelp and create maarker for each restaurant.
+      new window.google.maps.Marker({
+             position: {
+               lat: 35.194,
+               lng: -80.849,
+             },
+             map: this.state.map,
+           });
     return (
-
-          <div id="map"></div>
-
+        <div>
+            <div id="map"></div>
+            <CurrentLocation />
+        </div>
     );
   }
 }
+
 export default connect()(Mapview)
