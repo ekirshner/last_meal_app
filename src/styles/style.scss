@@ -1,6 +1,7 @@
 $main-color: blue;
 $shadow: 2px 2px 10px #222;
-$offWhite: #F7FFF7;
+$offWhite: #F8F8F8;
+$mintyWhite: #F7FFF7;
 
 // App
 
@@ -18,7 +19,7 @@ $offWhite: #F7FFF7;
 
     button {
         background-color: $offWhite;
-        width: 40%;
+        width: 49%;
         height: 30px;
         border: none;
         text-decoration: none;
@@ -31,7 +32,7 @@ $offWhite: #F7FFF7;
     }
 
     button:active {
-        background-color: purple;
+        background-color: lightgrey;
     }
     // FIGURE OUT HOW TO KEEP IT ACTIVE 
 }
@@ -40,6 +41,49 @@ $offWhite: #F7FFF7;
 
 // Map View
 
+
+
 // List View
+.list-view-results {
+    display: flex;
+    width: 97%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+
+    img {
+        width: 200px;
+    }
+
+    div {
+        background-color: $offWhite;
+        box-shadow: $shadow;
+        border-radius: 5px;
+        padding: 1% 5%;
+        margin: 2%;
+    }
+
+    button {
+        width: 70px;
+        height: 25px;
+        background-color: #48A9A6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    h3 {
+        background-color: #4357AD;
+        margin-bottom:0;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 600px) { 
+    body {
+        background-color: red;
+    }
+}
 
 // 

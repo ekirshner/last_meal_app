@@ -19,12 +19,12 @@ class Search extends Component {
     constructor(props) {
         super(props);
 
-        //default to list view
         this.state = {
             restaurants: [],
         };
     }
 
+// On page load, fetch all restaurants. Pass 'restaurants' down as props to ListView & MapView
     componentDidMount() {
         console.log('componentDidMount works')
         this.props.getRestaurants()
@@ -42,8 +42,8 @@ class Search extends Component {
                 <Filter />
 
                 <Switch>
-                    <Route path="/search/listView" component={ ListView }/>
-                    <Route path="/search/mapView" component={ MapView }/>
+                    <Route path="/search/listView" render={() => <ListView restaurants={this.props.restaurantList} /> } />
+                    <Route path="/search/mapView" render={() => <MapView restaurants={this.props.restaurantList} /> } />
                     <Redirect from='/search' to="/search/ListView" />
                 </Switch>
             </div>
@@ -52,7 +52,7 @@ class Search extends Component {
 }
 
 
-// Create a state called lots that gets its data from state.parkingLots  
+// Create a state called lots that gets its data from state.restaurantList  
 function state2Props(state) {
     return {
         restaurantList: state.restaurantList,
@@ -60,14 +60,14 @@ function state2Props(state) {
 }
 
 
-// Dispatch the response from the API fetch request to the getLots action creator
+// Dispatch the response from the API fetch request to the getRestaurants action creator
 function dispatch2Props(dispatch) {
     return {
         getRestaurants() {
-            fetch('https://lotbot3000.herokuapp.com/lots')
+            fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
                 .then(res => res.json())
                 .then(response => {
-                    dispatch(getRestaurants(response));
+                    dispatch(getRestaurants(response.results));
                 });
         }
     };
