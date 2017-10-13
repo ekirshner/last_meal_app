@@ -35,7 +35,7 @@ class App extends Component {
               <Route path="/search" component={ Search } /> 
               <Route path="/userDetails/:id" component={ UserDetails } />
               <Route path="/paymentConfirmation" component={ PaymentConfirmation } /> 
-              <Route path="/payment" component={ Payment } /> 
+              <Route path="/payment" component={ Payment } />    
           
               <Route path="/restaurantSignIn" component={ RestaurantSignIn } /> 
               <Route path="/restaurantDetails" component={ RestaurantDetails } /> 
