@@ -14,6 +14,7 @@ class SignIn extends Component {
     render() {
         return (
             <div>
+                <p>If food waste was a country, it would be the third largest emitter of greenhouse gases behind US and China.</p>
                 <h4>Sign In</h4>
                 <input type="email" placeholder="Email"/>
                 <input type="password" placeholder="Password"/>
