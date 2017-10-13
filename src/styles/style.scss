@@ -14,6 +14,8 @@ $button: #48A9A6;
 //     color: white;
 // }
 
+
+
 body {
     background-color: $offWhite;
 }
@@ -24,6 +26,9 @@ header {
     text-align: center;
     color: white;
     height: 50px;
+    position: sticky;
+    top: 0;
+    width: 100%;
 
     h1 {
         margin: 0;
@@ -38,6 +43,9 @@ header {
 
 .toggle-search-and-map-view {
     text-align: center;
+    position: sticky;
+    top: 51px;
+    
 
     button {
         background-color: $offWhite;
@@ -83,7 +91,6 @@ header {
 
     .list-view-divs {
         background-color: $offWhite;
-        background-color: white;
         box-shadow: $shadow;
         border-radius: 5px;
         padding: 1% 5%;
@@ -114,4 +121,16 @@ header {
     }
 }
 
+
 //
+
+
+// Restaurant Details
+
+.restaurant-details {
+    background-color: $offWhite;
+    box-shadow: $shadow;
+    margin: 2%;
+    padding: 2%;;
+}
+
