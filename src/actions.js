@@ -6,3 +6,12 @@ export function getRestaurants (restaurants) {
         payload: restaurants,
     };
 }
+
+//action for User Sign In.
+
+export function authenticate(isLoggedIn) {
+    return {
+        type: 'CHANGE_AUTH',
+        payload: isLoggedIn
+    }
+}
