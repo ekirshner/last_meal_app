@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class ListView extends Component {
 
     render() {
+        // Map over fetched restaurants and populate below
         const restaurants = this.props.restaurants.map((restaurant, index) => {
             return <div key={ index }> 
                 <h3>{restaurant.artistName}</h3>

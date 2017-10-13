@@ -39,7 +39,7 @@ class Search extends Component {
                     <Link to="/search/ListView"><button>List View</button></Link>
                     <Link to="/search/MapView"><button>Map View</button></Link>
                 </nav>
-                <Filter />
+                <Filter /> 
 
                 <Switch>
                     <Route path="/search/listView" render={() => <ListView restaurants={this.props.restaurantList} /> } />
