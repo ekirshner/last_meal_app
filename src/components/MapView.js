@@ -19,6 +19,7 @@ componentWillMount() {
           console.log(resp)
         });
       }
+      // intitialize map
   initMap() {
 
     const map = new window.google.maps.Map(document.querySelector('#map'), {
@@ -34,7 +35,7 @@ componentWillMount() {
   }
 
   render() {
-      //this will need to loop over data from yelp and create maarker for each restaurant.
+      // creates markers....this will need to loop over data from yelp and create maarker for //each restaurant.
       new window.google.maps.Marker({
              position: {
                lat: 35.194,
