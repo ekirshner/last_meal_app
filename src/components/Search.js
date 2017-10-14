@@ -51,7 +51,7 @@ class Search extends Component {
 }
 
 
-// Create a state called lots that gets its data from state.restaurantList  
+// Create a state called lots that gets its data from state.restaurantList
 function state2Props(state) {
     return {
         restaurantList: state.restaurantList,
