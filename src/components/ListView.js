@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 class ListView extends Component {
 
     render() {
+        // Map over fetched restaurants and populate below
         const restaurants = this.props.restaurants.map((restaurant, index) => {
             return <div key={ index } className="list-view-divs"> 
                         <div>
