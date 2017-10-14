@@ -7,21 +7,29 @@ class SignIn extends Component {
     renderButton() {
         console.log(this.props.authenticated)
         if (this.props.authenticated === false) {
-            return <input onClick={() => this.props.authenticate(true)} type="submit" value="Sign In"/>
-        }
-        return <input onClick={() => this.props.authenticate(false)} type="submit" value="Sign Out"/>
+            return <button onClick={() => this.props.authenticate(true)} type="submit">Sign In</button>
+                }
+        return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     }
+    handleSubmit = () => {
+         this.props.history.push("/search/mapview");
+     }
     render() {
         return (
-            <div>
+            <div className="sign-in-view">
                 <p>If food waste was a country, it would be the third largest emitter of greenhouse gases behind US and China.</p>
-                <h4>Sign In</h4>
-                <input type="email" placeholder="Email"/>
-                <input type="password" placeholder="Password"/>
-                {this.renderButton()}
-                <p>Don't have an account? Register
-                    <a href=""> here!</a>
-                </p>
+                <form id="sign-in" onSubmit={()=> this.handleSubmit()}>
+                    <input type="email" placeholder="Email"/>
+                    <input type="password" placeholder="Password"/>
+                    {this.renderButton()}
+                    <h5><a href="">Forgot Password?</a></h5>
+                    </form>
+
+                <div>
+                    <h5>Don't have an account? Register
+                        <a href=""> here!</a>
+                    </h5>
+                </div>
             </div>
         );
     }
