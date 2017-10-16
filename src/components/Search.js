@@ -14,6 +14,9 @@ import Filter from './Filter';
 // Import routing
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
+// TO DO:
+    //1) turn filter into an icon
+
 
 class Search extends Component {
     constructor(props) {

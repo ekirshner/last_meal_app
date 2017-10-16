@@ -8,6 +8,7 @@ class ListView extends Component {
 
     render() {
         // Map over fetched restaurants and populate below
+        if(this.props.restaurants) {
         const restaurants = this.props.restaurants.map((restaurant, index) => {
             return <div key={ index } className="list-view-divs"> 
                         <div>
@@ -29,7 +30,12 @@ class ListView extends Component {
                 </div>
             </div>
         );
-    }
+        } else {
+                return (
+                    <div>Loading... </div>
+                );
+        }
+    } 
 }
 
 export default ListView;
