@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 class SignIn extends Component {
-
+// change 
     renderButton() {
         console.log(this.props.authenticated)
         if (this.props.authenticated === false) {
