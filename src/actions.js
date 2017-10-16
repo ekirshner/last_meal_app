@@ -1,5 +1,7 @@
-// Action Creator
+// Action Creators
 
+
+// action for fetching restaurant data
 export function getRestaurants (restaurants) {
     return {
         type: 'GET_RESTAURANTS',
@@ -7,7 +9,7 @@ export function getRestaurants (restaurants) {
     };
 }
 
-//action for User Sign In.
+// action for User Sign In.
 
 export function authenticate(isLoggedIn) {
     return {

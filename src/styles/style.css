@@ -52,7 +52,7 @@ header {
   width: 100%; }
 
 .list-view-results .list-view-divs {
-  background-color: #F8F8F8;
+  background-color: white;
   box-shadow: 2px 2px 10px #888888;
   border-radius: 5px;
   padding: 1% 5%;
@@ -63,8 +63,24 @@ header {
   padding: 10px;
   margin-top: 0; }
 
+.filter-sort-component {
+  background-color: white;
+  box-shadow: 2px 2px 10px #888888;
+  padding: 5px; }
+  .filter-sort-component .filter, .filter-sort-component .sort {
+    display: flex;
+    list-style-type: none;
+    margin: 5px;
+    font-size: 10px;
+    padding: 0;
+    margin: 0; }
+  .filter-sort-component li {
+    border: 1px solid #48A9A6;
+    border-radius: 5px;
+    height: 25px; }
+
 .restaurant-details {
-  background-color: #F8F8F8;
+  background-color: white;
   box-shadow: 2px 2px 10px #888888;
   margin: 2%;
   padding: 2%; }
