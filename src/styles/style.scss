@@ -14,7 +14,15 @@ $button: #48A9A6;
 //     color: white;
 // }
 
-
+button {
+    width: 70px;
+    height: 25px;
+    background-color: $button;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
 body {
     background-color: $offWhite;
@@ -128,6 +136,7 @@ h5{
         text-decoration: none;
         cursor: pointer;
         box-shadow: $shadow;
+        color: black;
     }
 
     a {
@@ -159,7 +168,7 @@ h5{
     }
 
     .list-view-divs {
-        background-color: $offWhite;
+        background-color: white;
         box-shadow: $shadow;
         border-radius: 5px;
         padding: 1% 5%;
@@ -167,15 +176,15 @@ h5{
         display: flex;
     }
 
-    button {
-        width: 70px;
-        height: 25px;
-        background-color: $button;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
+    // button {
+    //     width: 70px;
+    //     height: 25px;
+    //     background-color: $button;
+    //     color: white;
+    //     border: none;
+    //     border-radius: 5px;
+    //     cursor: pointer;
+    // }
 
     h3 {
         margin-bottom:0;
@@ -190,15 +199,54 @@ h5{
     }
 }
 
+// Filter/Sort
+.filter-sort-component {
+    background-color: white;
+    box-shadow: $shadow;
+    padding: 5px;
 
-//
+    .filter, .sort {
+        display: flex;
+        list-style-type: none;
+        margin: 5px;
+        font-size: 10px;
+        padding: 0;
+        margin: 0;
+    }
 
+    li {
+        border: 1px solid $button;
+        border-radius: 5px;
+        height: 25px;
+    }
+}
 
 // Restaurant Details
 
 .restaurant-details {
-    background-color: $offWhite;
+    // background-color: $offWhite;
+    background-color: white;
     box-shadow: $shadow;
     margin: 2%;
     padding: 2%;;
+}
+
+
+// Payment
+.payment-section {
+    background-color: white;
+    box-shadow: $shadow;
+    border-radius: 3px;
+    margin: 2%;
+    padding: 2%;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        width: 200px;
+        margin-bottom: 10px;
+    }
 }

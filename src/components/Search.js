@@ -21,6 +21,7 @@ class Search extends Component {
 
         this.state = {
             restaurants: [],
+            showFilter: true,
         };
     }
 
@@ -28,6 +29,12 @@ class Search extends Component {
     componentDidMount() {
         console.log('componentDidMount works')
         this.props.getRestaurants()
+    }
+
+    openFilter() {
+        this.setState ({
+            showFilter: !this.state.showFilter,
+        });
     }
 
     render() {
@@ -38,7 +45,11 @@ class Search extends Component {
                     <Link to="/search/ListView"><button>List View</button></Link>
                     <Link to="/search/MapView"><button>Map View</button></Link>
                 </nav>
-                <Filter /> 
+
+                <button onClick={ () => this.openFilter() }>Filter</button>
+                <div hidden={ this.state.showFilter }>
+                    <Filter /> 
+                </div>
 
                 <Switch>
                     <Route path="/search/listView" render={() => <ListView restaurants={this.props.restaurantList} /> } />
