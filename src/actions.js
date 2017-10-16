@@ -17,3 +17,12 @@ export function authenticate(isLoggedIn) {
         payload: isLoggedIn
     }
 }
+
+// action for restaurant markers!
+export function addRestaurant(restaurant){
+    return {
+        type: 'ADD_RESTAURANT',
+        payload: restaurant,
+
+}
+}

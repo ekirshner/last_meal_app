@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 class SignIn extends Component {
-
+// change 
     renderButton() {
         console.log(this.props.authenticated)
         if (this.props.authenticated === false) {
@@ -12,7 +12,7 @@ class SignIn extends Component {
         return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     }
     handleSubmit = () => {
-         this.props.history.push("/search/mapview");
+         this.props.history.push("/search");
      }
     render() {
         return (

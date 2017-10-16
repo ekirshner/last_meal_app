@@ -9,10 +9,15 @@ function reducer (state,  action) {
             restaurantList: action.payload,
         };
     }
-    
+
     if (action.type === 'CHANGE_AUTH' ) {
         return {
             authenticated: action.payload,
+        }
+    }
+    if(action.type === 'ADD_RESTAURANT') {
+        return {
+            restaurant: state.restaurant.concat([action.payload]),
         }
     }
     return state;
