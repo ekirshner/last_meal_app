@@ -8,7 +8,7 @@ export default class CurrentLocation extends Component {
             lastPosition: 0
         }
     }
-
+// get current location of user.
     componentWillMount() {
 
         function success(position) {

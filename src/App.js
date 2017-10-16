@@ -31,19 +31,19 @@ class App extends Component {
         </header>
 
         <main>
-            <Switch>            
-              <Route path="/search" component={ Search } /> 
+            <Switch>
+              <Route path="/search" component={ Search } />
               <Route path="/userDetails/:id" component={ UserDetails } />
-              <Route path="/paymentConfirmation" component={ PaymentConfirmation } /> 
-              <Route path="/payment" component={ Payment } />    
-          
-              <Route path="/restaurantSignIn" component={ RestaurantSignIn } /> 
-              <Route path="/restaurantDetails" component={ RestaurantDetails } /> 
-              <Route path="/transactions" component={ Transactions } /> 
-              <Route path="/" component={ SignIn } /> 
+              <Route path="/paymentConfirmation" component={ PaymentConfirmation } />
+              <Route path="/payment" component={ Payment } />
+
+              <Route path="/restaurantSignIn" component={ RestaurantSignIn } />
+              <Route path="/restaurantDetails" component={ RestaurantDetails } />
+              <Route path="/transactions" component={ Transactions } />
+              <Route path="/" component={ SignIn } />
             </Switch>
           </main>
-      </div>  
+      </div>
     )
   }
 }
