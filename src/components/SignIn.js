@@ -12,7 +12,7 @@ class SignIn extends Component {
         return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     }
     handleSubmit = () => {
-         this.props.history.push("/search/mapview");
+         this.props.history.push("/search");
      }
     render() {
         return (

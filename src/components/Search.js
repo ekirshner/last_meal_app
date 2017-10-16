@@ -10,6 +10,7 @@ import { getRestaurants } from '../actions';
 import ListView from './ListView';
 import MapView from './MapView';
 import Filter from './Filter';
+import hamburgerIcon from '../hamburgerIcon.png'
 
 // Import routing
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
@@ -49,7 +50,8 @@ class Search extends Component {
                     <Link to="/search/MapView"><button>Map View</button></Link>
                 </nav>
 
-                <button onClick={ () => this.openFilter() }>Filter</button>
+                <img src={ hamburgerIcon } className="filter-button" onClick={ () => this.openFilter() } />
+                {/* <button onClick={ () => this.openFilter() }>Filter</button> */}
                 <div hidden={ this.state.showFilter }>
                     <Filter /> 
                 </div>
