@@ -15,8 +15,6 @@ import hamburgerIcon from '../hamburgerIcon.png'
 // Import routing
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
 
-// TO DO:
-    //1) turn filter into an icon
 
 
 class Search extends Component {
@@ -67,7 +65,7 @@ class Search extends Component {
 }
 
 
-// Create a state called lots that gets its data from state.restaurantList
+// Create a state called restaurantList that gets its data from state.restaurantList
 function state2Props(state) {
     return {
         restaurantList: state.restaurantList,
@@ -79,10 +77,12 @@ function state2Props(state) {
 function dispatch2Props(dispatch) {
     return {
         getRestaurants() {
-            fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
+            fetch('https://warm-falls-44996.herokuapp.com/get-businesses')
+            // fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
                 .then(res => res.json())
                 .then(response => {
-                    dispatch(getRestaurants(response.results));
+                    // dispatch(getRestaurants(response.results));
+                    dispatch(getRestaurants(response));
                 });
         }
     };

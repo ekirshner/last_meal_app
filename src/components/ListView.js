@@ -15,8 +15,8 @@ class ListView extends Component {
                             <img src={restaurant.artworkUrl100} alt="" /> 
                         </div>
                         <div>
-                            <h3>{restaurant.artistName}</h3>
-                            <p>{restaurant.trackCensoredName}</p>
+                            <h3>{restaurant.businessName}</h3>
+                            <p>{restaurant.location}</p>
                             <Link to={"/userDetails/" + index} ><button>Details</button></Link>
                         </div>
                     </div>

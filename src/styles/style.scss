@@ -83,7 +83,6 @@ form {
         background: rgba(#f7fff7, 0.8);
             }
             div {
-                //background: $mintyWhite;
                 width: 100%;
                 color: grey;
             }
@@ -146,7 +145,6 @@ h5{
     button:active {
         background-color: lightgrey;
     }
-    // FIGURE OUT HOW TO KEEP IT ACTIVE
 }
 
 // Map View
@@ -175,16 +173,6 @@ h5{
         margin: 2%;
         display: flex;
     }
-
-    // button {
-    //     width: 70px;
-    //     height: 25px;
-    //     background-color: $button;
-    //     color: white;
-    //     border: none;
-    //     border-radius: 5px;
-    //     cursor: pointer;
-    // }
 
     h3 {
         margin-bottom:0;
@@ -231,7 +219,6 @@ h5{
 
 // Restaurant Details
 .restaurant-details {
-    // background-color: $offWhite;
     background-color: white;
     box-shadow: $shadow;
     margin: 2%;

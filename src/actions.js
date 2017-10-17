@@ -24,5 +24,13 @@ export function addRestaurant(restaurant){
         type: 'ADD_RESTAURANT',
         payload: restaurant,
 
+    }
 }
+
+// action for buying food
+export function buyFood(purchasedFood) {
+    return {
+        type: 'BUY_FOOD',
+        payload: purchasedFood,
+    }
 }

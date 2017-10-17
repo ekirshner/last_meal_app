@@ -3,15 +3,25 @@ import React, {Component} from 'react';
 // Import routing
 import { Link } from 'react-router-dom';
 
-// TO DO:
-    // 1) Figure out how to populate the data (from backend? from store?)
+// Connect redux and react
+import { connect } from 'react-redux';
+
 
 class Payment extends Component {
 constructor(){
     super()
 
 }
+
     render() {
+
+        
+        console.log(this.props.order)
+        const theOrder = this.props.order.map((item, index) => {
+            return (
+                <li key={ index }>{ item }</li>
+            )}
+        )
 
         return (
             <div>
@@ -20,7 +30,11 @@ constructor(){
                 <div className="payment-section">
 
                     <h2>Payment Details</h2>
-                    <p>(dynamically populate order details here)</p>
+                    <p>Order Details</p>
+                    <ul>
+                    { theOrder }
+                    </ul>
+
                     <p>Total:  (dynamically populate price)</p>
 
                     <div className="payment-form">
@@ -41,4 +55,12 @@ constructor(){
     }
 }
 
-export default Payment;
+
+// Create a state called lots that gets its data from state.restaurantList
+function state2Props(state) {
+    return {
+        order: state.order,
+    };
+}
+
+export default connect(state2Props, null) (Payment);
