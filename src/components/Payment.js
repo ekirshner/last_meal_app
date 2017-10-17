@@ -35,7 +35,7 @@ constructor(){
                     { theOrder }
                     </ul>
 
-                    <p>Total:  (dynamically populate price)</p>
+                    <p>Total:  <span>(dynamically populate price)</span></p>
 
                     <div className="payment-form">
                         <label hmtlFor="name"> Cardholder Name </label>
@@ -43,12 +43,12 @@ constructor(){
                         <label htmlFor="card"> Card Number </label>
                         <input type="text" name="card" placeholder="Valid Card Number"/>
                         <label htmlFor="date"> Expiration Date </label>
-                        <input type="number" name="date" placeholder="MM/YYYY" />
+                        <input type="text" name="date" placeholder="MM/YYYY" />
                         <label htmlFor="cvv"> CVV </label>
                         <input type="password" name="cvv" placeholder="CVC" />
+                        
+                        <Link to="/paymentConfirmation"><button>Order</button></Link>
                     </div>
-
-                    <Link to="/paymentConfirmation"><button>Order</button></Link>
                 </div>
             </div>
         )

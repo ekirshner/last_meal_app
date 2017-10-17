@@ -75,21 +75,9 @@ class UserDetails extends Component {
                 <h2>Menu Options</h2>
                 <ul>
                     {foods}
-                    {/* <li>
-                        <input type="checkbox" name="burger" value="burger" />
-                        <label htmlFor="burger"> Burger </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" name="homemade tofurkey jerky" value="homemadeTofurkeyJerky" />
-                        <label htmlFor="homemade tofurkey jerkey"> Homemade Tofurkey Jerky </label>
-                    </li> */}
                 </ul>
 
                  <Link to={"/payment"}> <button onClick={ () => this.onBuy() }>Buy</button></Link> 
-
-                {/* <Switch>
-                    <Route path={"/userDetails/:id/payment"} render={() => <Payment price={ this.state.total } />} />
-                </Switch> */}
             </div>
         );
     }
@@ -106,8 +94,6 @@ function state2Props(state) {
 
 // Dispatch the buyFood action creator
 function dispatch2Props(dispatch) {
-    // console.log('made it!')
-    
     return {
         buyFood: foods => {
         dispatch(buyFood(foods))

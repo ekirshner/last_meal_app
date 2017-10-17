@@ -11,7 +11,7 @@ class PaymentConfirmation extends Component {
             <div>
                 <input type="button" value="Back" onClick={()=> this.handleBack()} />
 
-               Conffffff those payment deets
+              <p> Thank you for your order. </p>
             </div>
         );
     }
