@@ -217,7 +217,7 @@ h5{
 }
 
 
-// Restaurant Details
+// User Restaurant Details
 .restaurant-details {
     background-color: white;
     box-shadow: $shadow;
@@ -279,4 +279,69 @@ h5{
     button {
        margin: 10%;
     }
+}
+
+
+// Restaurant Details
+
+.restaurant-details-component {
+    background-color: white;
+    box-shadow: $shadow;
+    margin: 2%;
+    padding: 2%;
+
+    label {
+        font-size: 15px;
+    }
+
+    input {
+        border: 1px solid lightgrey;
+        padding: 10px;
+    }
+
+    .add-item {
+        color: black;
+        display: flex;
+
+        img {
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        p {
+            margin-left: 0;
+            padding-left: 0;
+            position: relative;
+            right: 25px;
+        }
+    }
+
+    .add-item-dropdown {
+        display: inline-block;
+        background-color: white;
+        box-shadow: $shadow;
+        margin: 2%;
+        padding: 2%;
+        border: 1px solid $button;
+
+        input {
+            margin-right: 15px;
+            margin-left: 5px;
+        }
+
+        button {
+            margin-left: 10px;
+        }
+    }
+
+    td {
+        font-weight: lighter;
+        text-align: left;
+        padding: 25px;
+    }
+
+
+   
+
 }

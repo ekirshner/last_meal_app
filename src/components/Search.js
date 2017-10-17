@@ -49,7 +49,7 @@ class Search extends Component {
                 </nav>
 
                 <img src={ hamburgerIcon } className="filter-button" onClick={ () => this.openFilter() } />
-                {/* <button onClick={ () => this.openFilter() }>Filter</button> */}
+               
                 <div hidden={ this.state.showFilter }>
                     <Filter /> 
                 </div>

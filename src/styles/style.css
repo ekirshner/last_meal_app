@@ -179,4 +179,43 @@ header {
   .payment-form button {
     margin: 10%; }
 
+.restaurant-details-component {
+  background-color: white;
+  box-shadow: 2px 2px 10px #888888;
+  margin: 2%;
+  padding: 2%; }
+  .restaurant-details-component label {
+    font-size: 15px; }
+  .restaurant-details-component input {
+    border: 1px solid lightgrey;
+    padding: 10px; }
+  .restaurant-details-component .add-item {
+    color: black;
+    display: flex; }
+    .restaurant-details-component .add-item img {
+      width: 100px;
+      height: 50px;
+      cursor: pointer; }
+    .restaurant-details-component .add-item p {
+      margin-left: 0;
+      padding-left: 0;
+      position: relative;
+      right: 25px; }
+  .restaurant-details-component .add-item-dropdown {
+    display: inline-block;
+    background-color: white;
+    box-shadow: 2px 2px 10px #888888;
+    margin: 2%;
+    padding: 2%;
+    border: 1px solid #48A9A6; }
+    .restaurant-details-component .add-item-dropdown input {
+      margin-right: 15px;
+      margin-left: 5px; }
+    .restaurant-details-component .add-item-dropdown button {
+      margin-left: 10px; }
+  .restaurant-details-component td {
+    font-weight: lighter;
+    text-align: left;
+    padding: 25px; }
+
 /*# sourceMappingURL=style.css.map */
