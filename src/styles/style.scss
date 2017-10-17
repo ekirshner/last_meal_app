@@ -341,7 +341,23 @@ h5{
         padding: 25px;
     }
 
+   .current-menu {
+       position: absolute;
+       top: 220px;
+       right: 20px;
+       border-left: 1px solid lightgrey;
+       padding-left: 15%;
 
-   
+   }
 
+   h2, .location {
+       margin-left: 5%;
+       text-align: center;
+  }
+
+   .welcome {
+       position: absolute;
+       top: 70px;
+       right: 40px;
+   }
 }

@@ -217,5 +217,18 @@ header {
     font-weight: lighter;
     text-align: left;
     padding: 25px; }
+  .restaurant-details-component .current-menu {
+    position: absolute;
+    top: 220px;
+    right: 20px;
+    border-left: 1px solid lightgrey;
+    padding-left: 15%; }
+  .restaurant-details-component h2, .restaurant-details-component .location {
+    margin-left: 5%;
+    text-align: center; }
+  .restaurant-details-component .welcome {
+    position: absolute;
+    top: 70px;
+    right: 40px; }
 
 /*# sourceMappingURL=style.css.map */
