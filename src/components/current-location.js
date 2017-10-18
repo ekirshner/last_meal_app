@@ -105,20 +105,24 @@ class CurrentLocation extends Component {
 
                     // // set the window popup for each marker with info and add listener
                     const infoWindow = new window.google.maps.InfoWindow();
-                    marker.addListener('click', function() {
+                    marker.addListener('click', function(index) {
 
+const button = document.querySelector('button')
                         const content = `
                                 <div id="infoWindow">
                                     <div><strong><h2>${resp[i].name}</h2></strong>
                                     <strong>Rating: ${resp[i].rating}</strong><br>
                                     <p>${resp[i].location.display_address[0]}<br> ${resp[i].location.display_address[1]}<p>
-                                        <button><a href="/restaurantdetails">View Menu<a/></button>
+                                        <button><a href="/userDetails/${i}"">View Menu<a/></button>
                             </div>
                                 <div>
                                     <img height="133" width="120" src=${resp[i].image_url} alt="Restaurant">
                             </div>
                             </div>
                                 `
+                                button.addEventListener('click', function() {
+                                    this.props.history.back(-1)
+                                })
                         infoWindow.setContent(content)
                         infoWindow.open(map, this)
                     })

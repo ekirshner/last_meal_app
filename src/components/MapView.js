@@ -12,7 +12,7 @@ class Mapview extends Component {
   }
 
   render() {
-console.log(this.props.restaurants)
+
     return (
         <div>
             <div id="map"></div>
@@ -21,5 +21,6 @@ console.log(this.props.restaurants)
     );
   }
 }
+
 
 export default connect()(Mapview)
