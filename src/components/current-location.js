@@ -45,7 +45,7 @@ class CurrentLocation extends Component {
                         lng: -122.405
                     },
                     map: map,
-                    icon: '/blue_MarkerA.png',
+                    //icon: '/blue_MarkerA.png',
                     animation: window.google.maps.Animation.DROP,
                     animation: window.google.maps.Animation.BOUNCE,
 
@@ -107,15 +107,17 @@ class CurrentLocation extends Component {
                             title: resp[i].name,
                             animation: window.google.maps.Animation.DROP,
                             map: map,  // map object we created in initMap
-                            icon: '/paleblue_MarkerR.png ',
+                            //icon: '/paleblue_MarkerR.png ',
                         });
 
     // // set the window popup for each marker with info.
                         infoWindow = new window.google.maps.InfoWindow({content: `
-                                <div><strong>${resp[i].name}</strong><br>
-                                Address: ${resp[i].location.address}</div>
+                                <div><strong><h2>${resp[i].name}</h2></strong>
+                                <strong>Rating: ${resp[i].rating}</strong>
+                                <img height="75" width="75" src=${resp[i].image_url} alt="Restaurant"><br>
+                                Address: ${resp[i].location.display_address[0]}, ${resp[i].location.display_address[1]}</div>
                                 `})
-
+resp[i].location.display_address[0]
     // add event listener to marker.
                         marker.addListener('click', function() {
                             console.log('click')
