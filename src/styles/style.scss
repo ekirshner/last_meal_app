@@ -44,21 +44,7 @@ header {
         font-weight: lighter;
     }
 }
-// RestaurantSignIn
-input {
-    width: 200px;
-}
-.rest-sign-in-view {
-    background: $offWhite;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-image: url("/restaurant-background.jpg");
-    background-size: cover;
-    height: 85vh;
 
-
-}
 // RestaurantSignIn
 .rest-sign-in-view {
     background: $offWhite;
@@ -144,7 +130,9 @@ h5{
         }
 
     }
-    // Restaurant Details
+
+// Restaurant Details
+
 // Sign In
 .sign-in-view {
     background: $offWhite;
@@ -154,6 +142,8 @@ h5{
     background-image: url("/background.jpg");
     background-size: cover;
     height: 85vh;
+    align-content: flex-start;
+    //padding-top: 30px;
 
     button {
         background: $button;
@@ -168,11 +158,12 @@ h5{
         border: 1px solid black;
         border-radius: 5px;
     }
-form {
+#sign-in {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
+    margin: 125px 0px 30px
 }
     input {
         width: 75%;
@@ -185,9 +176,20 @@ form {
             div {
                 width: 100%;
                 color: grey;
+                //height: 10%;
+                display: flex;
+                align-self: flex-end;
+                justify-content: center;
+                h5{
+                    text-align: center;
+                    color: $mintyWhite;
+                    font-weight: normal;
+                    margin: 20px 0px 10px 0px;
+                }
             }
             a {
                 color: $gunmetal;
+
             }
      h2 {
          margin: 0px;
@@ -195,23 +197,16 @@ form {
     p {
            text-align: center;
             width: 85%;
-            border: 1px solid black;
             font-size: 1.5em;
             box-shadow: 5px 5px 5px black;
             background: rgba(#f7fff7, 0.8);
             padding: 5px 5px 5px 0px;
             color: $gunmetal;
             font-weight: lighter;
-            margin: 35px 0px 60px;
-            height: 20%;
+            margin-top: 40px;
         }
 
-h5{
-    text-align: center;
-    color: $mintyWhite;
-    font-weight: normal;
-    margin: 20px 0px 0px;
-}
+
         h4 {
             margin: 40px 0px 0px;
             color: $gunmetal;
