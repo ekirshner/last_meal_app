@@ -22,4 +22,5 @@ class Mapview extends Component {
   }
 }
 
+
 export default connect()(Mapview)
