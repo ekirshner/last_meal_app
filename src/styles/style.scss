@@ -45,16 +45,21 @@ header {
     }
 }
 
-// Sign In
-.sign-in-view {
+// RestaurantSignIn
+.rest-sign-in-view {
     background: $offWhite;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("/background.jpg");
-    background-size: cover;
-    height: 660px;
+background-image: url("/restaurant-background.jpg");    background-size: cover;
+    height: 85vh;
+h3 {
+    color: white;
+    font-weight: normal;
+    margin-top: 0px;
+    text-shadow: 2px 2px 2px grey;
 
+}
     button {
         background: $button;
         width: 70%;
@@ -89,7 +94,12 @@ form {
             a {
                 color: $gunmetal;
             }
+     h2 {
+         color: white;
+         margin: 0px;
+         text-shadow: 2px 2px 2px grey;
 
+     }
     p {
            text-align: center;
             width: 85%;
@@ -97,16 +107,106 @@ form {
             font-size: 1.5em;
             box-shadow: 5px 5px 5px black;
             background: rgba(#f7fff7, 0.8);
-            padding: 10px;
+            padding: 5px 5px 5px 0px;
             color: $gunmetal;
             font-weight: lighter;
-            margin: 70px 0px 130px;;
+            margin: 35px 0px 60px;
+            height: 20%;
         }
+
 h5{
     text-align: center;
     color: $mintyWhite;
     font-weight: normal;
+    margin: 20px 0px 0px;
 }
+        h4 {
+            margin: 40px 0px 0px;
+            color: $gunmetal;
+            text-align: left;
+            width: 80%;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
+
+    }
+
+// Restaurant Details
+
+// Sign In
+.sign-in-view {
+    background: $offWhite;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url("/background.jpg");
+    background-size: cover;
+    height: 85vh;
+    align-content: flex-start;
+    //padding-top: 30px;
+
+    button {
+        background: $button;
+        width: 70%;
+        height: 50px;
+        font-size: 1.5em;
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 5px 5px 5px black;
+        color: $mintyWhite;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+#sign-in {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 125px 0px 30px
+}
+    input {
+        width: 75%;
+        padding: 10px;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        box-shadow: 5px 5px 5px black;
+        background: rgba(#f7fff7, 0.8);
+            }
+            div {
+                width: 100%;
+                color: grey;
+                //height: 10%;
+                display: flex;
+                align-self: flex-end;
+                justify-content: center;
+                h5{
+                    text-align: center;
+                    color: $mintyWhite;
+                    font-weight: normal;
+                    margin: 20px 0px 10px 0px;
+                }
+            }
+            a {
+                color: $gunmetal;
+
+            }
+     h2 {
+         margin: 0px;
+     }
+    p {
+           text-align: center;
+            width: 85%;
+            font-size: 1.5em;
+            box-shadow: 5px 5px 5px black;
+            background: rgba(#f7fff7, 0.8);
+            padding: 5px 5px 5px 0px;
+            color: $gunmetal;
+            font-weight: lighter;
+            margin-top: 40px;
+        }
+
+
         h4 {
             margin: 40px 0px 0px;
             color: $gunmetal;
@@ -149,8 +249,9 @@ h5{
 
 // Map View
 #map {
-  height: 600px;
+  height: 560px;
   width: 100%;
+  margin-top: 10px;
  }
 
 // List View

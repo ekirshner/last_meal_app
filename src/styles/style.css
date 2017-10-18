@@ -24,6 +24,77 @@ header {
     padding: 1%;
     font-weight: lighter; }
 
+.rest-sign-in-view {
+  background: #F8F8F8;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("/restaurant-background.jpg");
+  background-size: cover;
+  height: 85vh; }
+  .rest-sign-in-view h3 {
+    color: white;
+    font-weight: normal;
+    margin-top: 0px;
+    text-shadow: 2px 2px 2px grey; }
+  .rest-sign-in-view button {
+    background: #48A9A6;
+    width: 70%;
+    height: 50px;
+    font-size: 1.5em;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px black;
+    color: #F7FFF7;
+    border: 1px solid black;
+    border-radius: 5px; }
+  .rest-sign-in-view form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center; }
+  .rest-sign-in-view input {
+    width: 75%;
+    padding: 10px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 5px black;
+    background: rgba(247, 255, 247, 0.8); }
+  .rest-sign-in-view div {
+    width: 100%;
+    color: grey; }
+  .rest-sign-in-view a {
+    color: #272838; }
+  .rest-sign-in-view h2 {
+    color: white;
+    margin: 0px;
+    text-shadow: 2px 2px 2px grey; }
+  .rest-sign-in-view p {
+    text-align: center;
+    width: 85%;
+    border: 1px solid black;
+    font-size: 1.5em;
+    box-shadow: 5px 5px 5px black;
+    background: rgba(247, 255, 247, 0.8);
+    padding: 5px 5px 5px 0px;
+    color: #272838;
+    font-weight: lighter;
+    margin: 35px 0px 60px;
+    height: 20%; }
+  .rest-sign-in-view h5 {
+    text-align: center;
+    color: #F7FFF7;
+    font-weight: normal;
+    margin: 20px 0px 0px; }
+  .rest-sign-in-view h4 {
+    margin: 40px 0px 0px;
+    color: #272838;
+    text-align: left;
+    width: 80%;
+    font-size: 1.2em;
+    font-weight: normal; }
+
 .sign-in-view {
   background: #F8F8F8;
   display: flex;
@@ -31,7 +102,8 @@ header {
   justify-content: center;
   background-image: url("/background.jpg");
   background-size: cover;
-  height: 660px; }
+  height: 85vh;
+  align-content: flex-start; }
   .sign-in-view button {
     background: #48A9A6;
     width: 70%;
@@ -44,11 +116,12 @@ header {
     color: #F7FFF7;
     border: 1px solid black;
     border-radius: 5px; }
-  .sign-in-view form {
+  .sign-in-view #sign-in {
     display: flex;
     flex-direction: column;
     width: 100%;
-    align-items: center; }
+    align-items: center;
+    margin: 125px 0px 30px; }
   .sign-in-view input {
     width: 75%;
     padding: 10px;
@@ -58,24 +131,29 @@ header {
     background: rgba(247, 255, 247, 0.8); }
   .sign-in-view div {
     width: 100%;
-    color: grey; }
+    color: grey;
+    display: flex;
+    align-self: flex-end;
+    justify-content: center; }
+    .sign-in-view div h5 {
+      text-align: center;
+      color: #F7FFF7;
+      font-weight: normal;
+      margin: 20px 0px 10px 0px; }
   .sign-in-view a {
     color: #272838; }
+  .sign-in-view h2 {
+    margin: 0px; }
   .sign-in-view p {
     text-align: center;
     width: 85%;
-    border: 1px solid black;
     font-size: 1.5em;
     box-shadow: 5px 5px 5px black;
     background: rgba(247, 255, 247, 0.8);
-    padding: 10px;
+    padding: 5px 5px 5px 0px;
     color: #272838;
     font-weight: lighter;
-    margin: 70px 0px 130px; }
-  .sign-in-view h5 {
-    text-align: center;
-    color: #F7FFF7;
-    font-weight: normal; }
+    margin-top: 40px; }
   .sign-in-view h4 {
     margin: 40px 0px 0px;
     color: #272838;
@@ -104,8 +182,9 @@ header {
     background-color: lightgrey; }
 
 #map {
-  height: 600px;
-  width: 100%; }
+  height: 560px;
+  width: 100%;
+  margin-top: 10px; }
 
 .list-view-results .list-view-divs {
   background-color: white;
