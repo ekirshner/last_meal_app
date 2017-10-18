@@ -16,6 +16,8 @@ class ListView extends Component {
                         </div>
                         <div>
                             <h3>{ restaurant.name }</h3>
+                            <p>{ restaurant.rating }</p>
+                            <p>{ restaurant.price }</p>
                             <p>{ restaurant.location.address1 }, { restaurant.location.city } { restaurant.location.zip_code }</p>
                             <Link to={ "/userDetails/" + index } ><button>Details</button></Link>
                         </div>

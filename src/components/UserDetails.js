@@ -29,8 +29,10 @@ class UserDetails extends Component {
 
         this.state = {
             total: 5,
-            foods: ['tofurkey jerky', 'burger'],
-            selected: [false, false],
+            // foods: ['tofurkey jerky', 'burger'],
+            // selected: [false, false],
+            foods: [],
+            selected: [],
             purchasedFood: ['fooood'],
         };
     }
@@ -53,9 +55,19 @@ class UserDetails extends Component {
         this.props.buyFood(foodToPurchase)
     }
 
-    render() {
+    // Once the page loads, import the data for the restaurant selected from search. 
+    // Map over the menu items, and set the array to this.state.food's state. 
+    // Set this.state.selected's state to an array of the same length where all the values are set to false
+    componentDidMount() {
         const index = this.props.match.params.id;
+        console.log(this.props.restaurantList[index])
+    }
+
+    render() {
+        
         const restaurant = this.props.restaurantList;
+
+    
 
         const foods = this.state.foods.map((food, index) => {
             return (

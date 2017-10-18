@@ -1,4 +1,4 @@
-$main-color: blue;
+// $main-color: blue;
 $shadow: 2px 2px 10px #888888;
 $offWhite: #F8F8F8;
 $mintyWhite: #F7FFF7;
@@ -43,6 +43,7 @@ header {
         margin: 0;
         padding: 1%;
         font-weight: lighter;
+        font-size: 32px;
     }
 }
 
@@ -52,15 +53,17 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-background-image: url("/restaurant-background.jpg");    background-size: cover;
+    background-image: url("/restaurant-background.jpg");    background-size: cover;
     height: 85vh;
-h3 {
-    color: white;
-    font-weight: normal;
-    margin-top: 0px;
-    text-shadow: 2px 2px 2px grey;
 
-}
+    h3 {
+        color: white;
+        font-weight: normal;
+        margin-top: 0px;
+        text-shadow: 2px 2px 2px grey;
+
+    }
+    
     button {
         background: $button;
         width: 70%;
@@ -74,12 +77,14 @@ h3 {
         border: 1px solid black;
         border-radius: 5px;
     }
+
 form {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
+
     input {
         width: 75%;
         padding: 10px;
@@ -99,8 +104,8 @@ form {
          color: white;
          margin: 0px;
          text-shadow: 2px 2px 2px grey;
-
      }
+
     p {
            text-align: center;
             width: 85%;
@@ -159,6 +164,7 @@ h5{
         border: 1px solid black;
         border-radius: 5px;
     }
+
 #sign-in {
     display: flex;
     flex-direction: column;
@@ -166,6 +172,7 @@ h5{
     align-items: center;
     margin: 125px 0px 30px
 }
+
     input {
         width: 75%;
         padding: 10px;
@@ -174,6 +181,7 @@ h5{
         box-shadow: 5px 5px 5px black;
         background: rgba(#f7fff7, 0.8);
             }
+
             div {
                 width: 100%;
                 color: grey;
@@ -181,6 +189,7 @@ h5{
                 display: flex;
                 align-self: flex-end;
                 justify-content: center;
+
                 h5{
                     text-align: center;
                     color: $mintyWhite;
@@ -188,6 +197,7 @@ h5{
                     margin: 20px 0px 10px 0px;
                 }
             }
+
             a {
                 color: $gunmetal;
 
@@ -195,6 +205,7 @@ h5{
      h2 {
          margin: 0px;
      }
+
     p {
            text-align: center;
             width: 85%;
@@ -228,7 +239,6 @@ h5{
 
 
     button {
-        background-color: $offWhite;
         background-color: white;
         width: 49%;
         height: 30px;

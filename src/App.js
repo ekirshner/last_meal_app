@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import './styles/style.css';
 import { Grid } from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+import './styles/style.css';
 
 // Import routing
 import { Route, Switch, withRouter } from 'react-router-dom';

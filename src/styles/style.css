@@ -23,7 +23,8 @@ header {
   header h1 {
     margin: 0;
     padding: 1%;
-    font-weight: lighter; }
+    font-weight: lighter;
+    font-size: 32px; }
 
 .rest-sign-in-view {
   background: #F8F8F8;
@@ -168,7 +169,6 @@ header {
   position: sticky;
   top: 51px; }
   .toggle-search-and-map-view button {
-    background-color: #F8F8F8;
     background-color: white;
     width: 49%;
     height: 30px;
