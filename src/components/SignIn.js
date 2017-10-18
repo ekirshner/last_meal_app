@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 
 class SignIn extends Component {
-// change 
+// change
     renderButton() {
         console.log(this.props.authenticated)
         if (this.props.authenticated === false) {
@@ -23,11 +23,11 @@ class SignIn extends Component {
                     <input type="password" placeholder="Password"/>
                     {this.renderButton()}
                     <h5><a href="">Forgot Password?</a></h5>
-                    </form>
+                </form>
 
                 <div>
                     <h5>Don't have an account? Register
-                        <a href=""> here!</a>
+                        <a href="/RestaurantSignIn"> here!</a>
                     </h5>
                 </div>
             </div>
