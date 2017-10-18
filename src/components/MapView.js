@@ -12,7 +12,7 @@ class Mapview extends Component {
   }
 
   render() {
-
+console.log(this.props.restaurants)
     return (
         <div>
             <div id="map"></div>

@@ -25,6 +25,26 @@ header {
     padding: 1%;
     font-weight: lighter; }
 
+#infoWindow {
+  display: flex; }
+  #infoWindow div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    text-shadow: 2px 2px 10px #888888; }
+    #infoWindow div h2 {
+      margin: 0px; }
+    #infoWindow div button {
+      height: auto;
+      width: auto;
+      box-shadow: 2px 2px 10px #888888; }
+    #infoWindow div a {
+      text-decoration: none;
+      color: #F7FFF7; }
+  #infoWindow img {
+    box-shadow: 2px 2px 10px #888888; }
+
 .rest-sign-in-view {
   background: #F8F8F8;
   display: flex;

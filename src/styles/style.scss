@@ -45,6 +45,37 @@ header {
         font-weight: lighter;
     }
 }
+#infoWindow {
+display: flex;
+
+//flex-direction: column;
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    text-shadow: $shadow;
+
+    h2 {
+        margin: 0px;
+    }
+    button {
+        height: auto;
+        width: auto;
+        box-shadow: $shadow
+
+    }
+    a {
+        text-decoration: none;
+        color: $mintyWhite;
+    }
+
+}
+img {
+    box-shadow: $shadow;
+
+}
+}
 
 // RestaurantSignIn
 .rest-sign-in-view {
