@@ -77,12 +77,13 @@ function state2Props(state) {
 function dispatch2Props(dispatch) {
     return {
         getRestaurants() {
-            fetch('https://warm-falls-44996.herokuapp.com/get-businesses')
+            fetch('https://warm-falls-44996.herokuapp.com/search/restaurants')
             // fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
                 .then(res => res.json())
                 .then(response => {
+                    console.log(response)
                     // dispatch(getRestaurants(response.results));
-                    dispatch(getRestaurants(response));
+                    dispatch(getRestaurants(response.businesses));
                 });
         }
     };

@@ -37,6 +37,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 2;
 
     h1 {
         margin: 0;
@@ -155,14 +156,11 @@ h5{
 
 // List View
 .list-view-results {
-    // display: flex;
-    // width: 97%;
-    // flex-wrap: wrap;
-    // justify-content: space-around;
-    // text-align: center;
 
     img {
-        // width: 200px;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
     }
 
     .list-view-divs {
@@ -269,15 +267,12 @@ h5{
     }
 
     label {
-        // color: $button;
-        // color: grey;
-        // color: $lightBlue;
         color: $grey;
         padding: 5px;
     }
 
     button {
-       margin: 10%;
+        margin: 10%;
     }
 }
 
@@ -289,6 +284,7 @@ h5{
     box-shadow: $shadow;
     margin: 2%;
     padding: 2%;
+    height: 1000px;
 
     label {
         font-size: 15px;
@@ -343,11 +339,12 @@ h5{
 
    .current-menu {
        position: absolute;
-       top: 220px;
-       right: 20px;
+       top: 200px;
+       right: 0;
        border-left: 1px solid lightgrey;
-       padding-left: 15%;
-
+       padding-left: 10%;
+       box-sizing: border-box;
+       width: 50%;
    }
 
    h2, .location {
@@ -355,9 +352,21 @@ h5{
        text-align: center;
   }
 
+  h3 {
+    //   color: palevioletred;
+    // color: purple;
+      color: teal;
+  }
+
    .welcome {
        position: absolute;
        top: 70px;
        right: 40px;
+   }
+
+   .change-section {
+       position: absolute;
+       top: 200px;
+       width: 50%;
    }
 }

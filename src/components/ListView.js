@@ -12,12 +12,12 @@ class ListView extends Component {
         const restaurants = this.props.restaurants.map((restaurant, index) => {
             return <div key={ index } className="list-view-divs"> 
                         <div>
-                            <img src={restaurant.artworkUrl100} alt="" /> 
+                            <img src={ restaurant.image_url } alt="" /> 
                         </div>
                         <div>
-                            <h3>{restaurant.businessName}</h3>
-                            <p>{restaurant.location}</p>
-                            <Link to={"/userDetails/" + index} ><button>Details</button></Link>
+                            <h3>{ restaurant.name }</h3>
+                            <p>{ restaurant.location.address1 }, { restaurant.location.city } { restaurant.location.zip_code }</p>
+                            <Link to={ "/userDetails/" + index } ><button>Details</button></Link>
                         </div>
                     </div>
         });
@@ -26,10 +26,11 @@ class ListView extends Component {
         return (
             <div>
                 <div className="list-view-results">
-                    { restaurants } 
+                     { restaurants }  
                 </div>
             </div>
         );
+
         } else {
                 return (
                     <div>Loading... </div>
