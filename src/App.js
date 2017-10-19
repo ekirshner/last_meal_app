@@ -30,17 +30,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-        < img src={ logo } />
-         <h1> Last Meal, Great Deal! </h1>
-        </header>
+          <header>
+              < img src={ logo } />
+          </header>
 
         <main>
             <Switch>
               <Route path="/search" component={ Search } />
               <Route path="/userDetails/:id" component={ UserDetails } />
               <Route path="/paymentConfirmation" component={ PaymentConfirmation } />
-              <Route path="/payment" component={ Payment } /> 
+              <Route path="/payment" component={ Payment } />
 
               <Route path="/restaurantSignIn" component={ RestaurantSignIn } />
               <Route path="/restaurantDetails" component={ RestaurantDetails } />
