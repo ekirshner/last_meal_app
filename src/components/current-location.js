@@ -4,7 +4,17 @@ import {addRestaurant} from '../actions';
 
 class CurrentLocation extends Component {
 
+constructor(){
+    super()
+    this.state={
+        restaurants: [],
+    }
+}
+
     initMap() {
+        console.log(this.state.restaurants)
+        console.log(this.props.restaurants)
+        console.log(this.props.restaurantList)
         const lat = 37.7869
         const lng = -122.4041
 
@@ -14,10 +24,11 @@ class CurrentLocation extends Component {
                 lat: lat,
                 lng: lng
             },
-            zoom: 15,
+            zoom: 14,
             tilt: 45
         });
-        this.setState({map: map});
+
+
         // Get current location of the user and set lat, lng to variables
         // navigator.geolocation.getCurrentPosition(function(position) {
         //     var pos = {
@@ -45,18 +56,18 @@ class CurrentLocation extends Component {
                 animation: window.google.maps.Animation.DROP,
                 animation: window.google.maps.Animation.BOUNCE
             })
-
+this.setState({map: map});
             // Recenter the map to the users location.
             // map.setCenter(position : {
             //     lat: 37.789,
             //     lng: -121.405
             // })
-            fetch('https://warm-falls-44996.herokuapp.com/search/restaurants')
-            // fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
-                .then(res => res.json()).then(response => {
-                console.log(response.businesses)
-                // dispatch(getRestaurants(response.results));
-                let resp = response.businesses
+            // fetch('https://warm-falls-44996.herokuapp.com/search/restaurants')
+            // // fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
+            //     .then(res => res.json()).then(response => {
+            //     console.log(response.businesses)
+            //     // dispatch(getRestaurants(response.results));
+            //     let resp = response.businesses
 
                 // make fetch to the google places api and loop thru results.
                 // const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -88,43 +99,43 @@ class CurrentLocation extends Component {
                 //        }
                 //loop thru api results.
 
-                for (let i = 0; i < resp.length; i++) {
-                    let marker
-                    let markers = []
-                    // set markers for each result from api
-                    markers.push(marker = new window.google.maps.Marker({
-                        position: { // coordinates from geocoding
-                            lat: resp[i].coordinates.latitude,
-                            lng: resp[i].coordinates.longitude
-                        },
-                        title: resp[i].name,
-                        animation: window.google.maps.Animation.DROP,
-                        map: map, // map object we created in initMap
-                        //icon: '/paleblue_MarkerR.png ',
-                    }))
+                // for (let i = 0; i < resp.length; i++) {
+                //     let marker
+                //     let markers = []
+                //     // set markers for each result from api
+                //     markers.push(marker = new window.google.maps.Marker({
+                //         position: { // coordinates from geocoding
+                //             lat: resp[i].coordinates.latitude,
+                //             lng: resp[i].coordinates.longitude
+                //         },
+                //         title: resp[i].name,
+                //         animation: window.google.maps.Animation.DROP,
+                //         map: map, // map object we created in initMap
+                //         //icon: '/paleblue_MarkerR.png ',
+                //     }))
+                //
+                //     // // set the window popup for each marker with info and add listener
+                //     const infoWindow = new window.google.maps.InfoWindow();
+                //     marker.addListener('click', function(index) {
+                //
+                //         const content = `
+                //                 <div id="infoWindow">
+                //                     <div><strong><h2>${resp[i].name}</h2></strong>
+                //                     <strong>Rating: ${resp[i].rating}</strong><br>
+                //                     <p>${resp[i].location.display_address[0]}<br> ${resp[i].location.display_address[1]}<p>
+                //                         <button><a href="/userDetails/${i}"">View Menu<a/></button>
+                //             </div>
+                //                 <div>
+                //                     <img height="133" width="120" src=${resp[i].image_url} alt="Restaurant">
+                //             </div>
+                //             </div>
+                //                 `
+                //         infoWindow.setContent(content)
+                //         infoWindow.open(map, this)
+                    //})
 
-                    // // set the window popup for each marker with info and add listener
-                    const infoWindow = new window.google.maps.InfoWindow();
-                    marker.addListener('click', function(index) {
-
-                        const content = `
-                                <div id="infoWindow">
-                                    <div><strong><h2>${resp[i].name}</h2></strong>
-                                    <strong>Rating: ${resp[i].rating}</strong><br>
-                                    <p>${resp[i].location.display_address[0]}<br> ${resp[i].location.display_address[1]}<p>
-                                        <button><a href="/userDetails/${i}"">View Menu<a/></button>
-                            </div>
-                                <div>
-                                    <img height="133" width="120" src=${resp[i].image_url} alt="Restaurant">
-                            </div>
-                            </div>
-                                `
-                        infoWindow.setContent(content)
-                        infoWindow.open(map, this)
-                    })
-
-                }
-            })
+                //}
+            //})
         //});
     };
 
@@ -132,12 +143,50 @@ class CurrentLocation extends Component {
     componentDidMount() {
         this.initMap();
     }
+renderMarkers() {
 
+            //    marker.addListener('click', function(index) {
+               //
+            //         const content = `
+            //                 <div id="infoWindow">
+            //                     <div><strong><h2>${places[i].name}</h2></strong>
+            //                     <strong>Rating: ${places[i].rating}</strong><br>
+            //                     <p>${places[i].location.display_address[0]}<br> ${places[i].location.display_address[1]}<p>
+            //                         <button><a href="/userDetails/${i}"">View Menu<a/></button>
+            //             </div>
+            //                 <div>
+            //                     <img height="133" width="120" src=${places[i].image_url} alt="Restaurant">
+            //             </div>
+            //             </div>
+            //                 `
+            //         infoWindow.setContent(content)
+            //         infoWindow.open(this.state.map, this)
+            //     })
+//}
+}
     render() {
         console.log(this.props.restaurantList)
+        const places = this.props.restaurantList;
+
+                       // Loop over all of the places in the store, adding a marker for each.
+                       for (let i = 0; i < places.length; i++) {
+
+                         new window.google.maps.Marker({
+                           position: {               // coordinates from geocoding
+                             lat: places[i].coordinates.latitude,
+                             lng: places[i].coordinates.longitude,
+                           },
+                           title: places[i].name,
+                           animation: window.google.maps.Animation.DROP,
+                           map: this.state.map,      // map object we created in initMap
+                         });
+        }
+
+
         return (
             <div className="App">
-                <div id="map">{this.marker}</div>
+                <div id="map"></div>
+
             </div>
         );
     }
