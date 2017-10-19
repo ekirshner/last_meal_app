@@ -107,7 +107,6 @@ class CurrentLocation extends Component {
                     const infoWindow = new window.google.maps.InfoWindow();
                     marker.addListener('click', function(index) {
 
-const button = document.querySelector('button')
                         const content = `
                                 <div id="infoWindow">
                                     <div><strong><h2>${resp[i].name}</h2></strong>
@@ -120,9 +119,6 @@ const button = document.querySelector('button')
                             </div>
                             </div>
                                 `
-                                button.addEventListener('click', function() {
-                                    this.props.history.back(-1)
-                                })
                         infoWindow.setContent(content)
                         infoWindow.open(map, this)
                     })
