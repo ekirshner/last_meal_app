@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App">
         <header>
         < img src={ logo } />
-         <h1> Last Meal, Great Deal! </h1>
+         {/* <h1> Last Meal, Great Deal! </h1> */}
         </header>
 
         <main>
