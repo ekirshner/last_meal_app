@@ -38,7 +38,11 @@ header {
     top: 0;
     width: 100%;
     z-index: 2;
-    height: 150px;
+    height: 100px;
+
+    img {
+        width: 120px;
+    }
 
     h1 {
         margin: 0;
@@ -47,36 +51,40 @@ header {
         font-size: 32px;
     }
 }
+
 #infoWindow {
-display: flex;
-
-//flex-direction: column;
-div {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px;
-    text-shadow: $shadow;
 
-    h2 {
-        margin: 0px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px;
+        text-shadow: $shadow;
+
+        h2 {
+            margin: 0px;
+        }
+
+        button {
+            height: auto;
+            width: auto;
+            box-shadow: $shadow
+
+        }
+
+        a {
+            text-decoration: none;
+            color: $mintyWhite;
+        }
+
     }
-    button {
-        height: auto;
-        width: auto;
-        box-shadow: $shadow
+
+    img {
+        box-shadow: $shadow;
 
     }
-    a {
-        text-decoration: none;
-        color: $mintyWhite;
-    }
-
-}
-img {
-    box-shadow: $shadow;
-
-}
 }
 
 // RestaurantSignIn
@@ -85,7 +93,8 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("/restaurant-background.jpg");    background-size: cover;
+    background-image: url("/restaurant-background.jpg");    
+    background-size: cover;
     height: 85vh;
 
     h3 {
@@ -125,13 +134,16 @@ form {
         box-shadow: 5px 5px 5px black;
         background: rgba(#f7fff7, 0.8);
             }
+
             div {
                 width: 100%;
                 color: grey;
             }
+
             a {
                 color: $gunmetal;
             }
+
      h2 {
          color: white;
          margin: 0px;

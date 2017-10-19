@@ -19,7 +19,9 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
-  height: 150px; }
+  height: 100px; }
+  header img {
+    width: 120px; }
   header h1 {
     margin: 0;
     padding: 1%;
