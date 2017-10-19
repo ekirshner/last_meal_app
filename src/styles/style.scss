@@ -300,8 +300,8 @@ h5{
 .list-view-results {
 
     img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         object-fit: cover;
     }
 
@@ -426,7 +426,6 @@ h5{
     box-shadow: $shadow;
     margin: 2%;
     padding: 2%;
-    height: 1000px;
 
     label {
         font-size: 15px;
@@ -452,6 +451,7 @@ h5{
             padding-left: 0;
             position: relative;
             right: 25px;
+            top: 15px;
         }
     }
 
@@ -466,6 +466,9 @@ h5{
         input {
             margin-right: 15px;
             margin-left: 5px;
+            margin: 0 15px 15px 10px; 
+            padding: 4px;
+            overflow-wrap: nowrap;
         }
 
         button {
@@ -480,13 +483,9 @@ h5{
     }
 
    .current-menu {
-       position: absolute;
-       top: 200px;
-       right: 0;
        border-left: 1px solid lightgrey;
-       padding-left: 10%;
+       padding: 0 10%;
        box-sizing: border-box;
-       width: 50%;
    }
 
    h2, .location {
@@ -495,20 +494,16 @@ h5{
   }
 
   h3 {
-    //   color: palevioletred;
+    //    color: palevioletred;
     // color: purple;
-      color: teal;
+    //   color: teal;
   }
 
    .welcome {
-       position: absolute;
-       top: 70px;
-       right: 40px;
+       text-align: right;
    }
 
-   .change-section {
-       position: absolute;
-       top: 200px;
-       width: 50%;
+   .menu-section {
+       margin-top: 50px;
    }
 }
