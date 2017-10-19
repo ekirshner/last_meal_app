@@ -11,17 +11,21 @@ class ListView extends Component {
         if(this.props.restaurants) {
         const restaurants = this.props.restaurants.map((restaurant, index) => {
             return <div key={ index } className="list-view-divs"> 
-                        
-                        <div>
-                            <h3>{ restaurant.name }</h3>
-                            <p></p>
-                            <p>{ restaurant.price }  { restaurant.rating }</p>
-                            <p>{ restaurant.location.address1 }, { restaurant.location.city } { restaurant.location.zip_code }</p>
-                            <Link to={ "/userDetails/" + index } ><button>Details</button></Link>
-                        </div>
-
                         <div>
                             <img src={ restaurant.image_url } alt="" /> 
+                        </div>
+                    
+
+                            <div className="container">
+                                <div className="details">
+                                    <h3>{ restaurant.name }</h3>
+                                    <p className="details-2"><span>{ restaurant.price }</span> <span>{ restaurant.rating }</span></p>
+                                    <p>{ restaurant.location.address1 }, { restaurant.location.city } { restaurant.location.zip_code }</p>
+                                </div>
+                                <div className="button">
+                                    <Link to={ "/userDetails/" + index } ><button>Details</button></Link>
+                                </div>
+                            {/* </div> */}
                         </div>
                     </div>
         });

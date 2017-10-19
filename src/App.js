@@ -23,6 +23,7 @@ import PaymentConfirmation from './components/PaymentConfirmation';
 import RestaurantSignIn from './components/RestaurantSignIn';
 import RestaurantDetails from './components/RestaurantDetails';
 import Transactions from './components/Transactions';
+import logo from './download.png';
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
+        < img src={ logo } />
          <h1> Last Meal, Great Deal! </h1>
         </header>
 
