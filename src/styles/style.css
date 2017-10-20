@@ -46,22 +46,6 @@ header {
   header a:hover {
     color: skyblue; }
 
-#infoWindow {
-  display: flex; }
-  #infoWindow div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10px; }
-    #infoWindow div h2 {
-      margin: 0px; }
-    #infoWindow div button {
-      height: auto;
-      width: auto; }
-    #infoWindow div a {
-      text-decoration: none;
-      color: #F7FFF7; }
-
 .rest-sign-in-view {
   background: #F8F8F8;
   display: flex;
@@ -285,6 +269,32 @@ header {
   height: 560px;
   width: 100%;
   margin-top: 10px; }
+
+#infoWindow {
+  display: flex;
+  font-size: 12px; }
+  #infoWindow img {
+    width: 115px;
+    height: 115px; }
+  #infoWindow div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px; }
+    #infoWindow div h2 {
+      margin: 0px;
+      font-size: 22px;
+      font-weight: lighter; }
+    #infoWindow div button {
+      height: auto;
+      width: auto; }
+    #infoWindow div a {
+      text-decoration: none;
+      color: #F7FFF7; }
+  #infoWindow .star-rating {
+    width: 12px;
+    height: auto;
+    margin-right: 1px; }
 
 .list-view-results img {
   width: 145px;

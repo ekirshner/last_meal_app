@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {addRestaurant} from '../actions';
+import star from '../Star.png';
 
 class CurrentLocation extends Component {
 
@@ -167,12 +168,12 @@ renderMarkers() {
                     const content = `
                             <div id="infoWindow">
                                 <div><strong><h2>${places[i].name}</h2></strong>
-                                <strong>Rating: ${places[i].rating}</strong><br>
+                                <strong><img class="star-rating" src=${ star }> ${places[i].rating}</strong><br>
                                 <p>${places[i].location.display_address[0]}<br> ${places[i].location.display_address[1]}<p>
                                     <button><a href="/userDetails/${i}"">View Menu<a/></button>
                         </div>
                             <div>
-                                <img height="133" width="120" src=${places[i].image_url} alt="Restaurant">
+                                <img src=${places[i].image_url} alt="Restaurant">
                         </div>
                         </div>
                             `

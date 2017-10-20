@@ -86,33 +86,6 @@ header {
 }
 
 
-#infoWindow {
-    display: flex;
-
-
-    div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 10px;
-        h2 {
-            margin: 0px;
-        }
-
-        button {
-            height: auto;
-            width: auto;
-
-        }
-
-        a {
-            text-decoration: none;
-            color: $mintyWhite;
-        }
-
-    }
-
-}
 
 
 // RestaurantSignIn
@@ -420,6 +393,49 @@ h3 {
   width: 100%;
   margin-top: 10px;
  }
+
+
+#infoWindow {
+    display: flex;
+    font-size: 12px;
+
+    img {
+        width: 115px;
+        height: 115px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 10px;
+
+        h2 {
+            margin: 0px;
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        button {
+            height: auto;
+            width: auto;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: $mintyWhite;
+        }
+    }
+     .star-rating {
+        width: 12px;
+        height: auto;
+        margin-right: 1px;
+    }
+
+}
+
+
 
 
 
