@@ -13,8 +13,10 @@ class SignIn extends Component {
     // }
     handleSubmit = () => {
          this.props.history.push("/search");
-     }
+    }
+
     render() {
+
         return (
             <div className="sign-in-view">
                 <p>If food waste was a country, it would be the third largest emitter of greenhouse gases behind US and China.</p>

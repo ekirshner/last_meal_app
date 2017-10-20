@@ -67,8 +67,6 @@ class UserDetails extends Component {
         
         const restaurant = this.props.restaurantList;
 
-    
-
         const foods = this.state.foods.map((food, index) => {
             return (
                 <li key={ index }>
@@ -79,17 +77,24 @@ class UserDetails extends Component {
         });
 
         return (
-            <div className="restaurant-details">
-                {/* <p>{ restaurant[index].artistName }</p> 
-                <img src={ restaurant[index].artworkUrl100 } alt="" />
-                <p>{ restaurant[index].trackCensoredName }</p> */}
+            <div>
+                <Link to="/search"><p>Back to Search</p></Link>
+                <div className="restaurant-details">
+                    
+                    {/* <p>{ restaurant[index].name }</p> 
+                    <p>{ restaurant[index].}
+                        <p>{ restaurant[index].price }</p>
+                        <p>{ restaurant[index].rating }</p>
+                    <img src={ restaurant[index].image_url } alt="" />
+                    <p>{ restaurant[index].display_phone }</p> */}
 
-                <h2>Menu Options</h2>
-                <ul>
-                    {foods}
-                </ul>
+                    <h2>Menu Options</h2>
+                    <ul>
+                        {foods}
+                    </ul>
 
-                 <Link to={"/payment"}> <button onClick={ () => this.onBuy() }>Buy</button></Link> 
+                    <Link to={"/payment"}> <button onClick={ () => this.onBuy() }>Buy</button></Link> 
+                </div>
             </div>
         );
     }

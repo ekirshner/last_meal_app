@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './styles/style.css';
 
 // Import routing
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
 
 // Connect redux and react
 // import { connect } from 'react-redux';
@@ -27,12 +27,20 @@ import logo from './logo.png';
 
 
 class App extends Component {
+
   render() {
+    let phidden = true;
+
+    if(<Route path='/'/>) {
+      phidden= false;
+    }
+
     return (
       <div className="App">
 
           <header>
-              < img src={ logo } />
+              <p hidden={ phidden }><Link to="/">Sign Out</Link></p>
+              <img src={ logo } />
               <h1> Last Meal, Great Deal! </h1>
           </header>
 
@@ -44,6 +52,7 @@ class App extends Component {
               <Route path="/paymentConfirmation" component={ PaymentConfirmation } />
               <Route path="/payment" component={ Payment } />
 
+  
               <Route path="/restaurantSignIn" component={ RestaurantSignIn } />
               <Route path="/restaurantDetails" component={ RestaurantDetails } />
               <Route path="/transactions" component={ Transactions } />
@@ -56,3 +65,4 @@ class App extends Component {
 }
 
 export default withRouter(App);
+

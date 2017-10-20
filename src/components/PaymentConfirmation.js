@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 
+import check from '../checkmark.png';
+
 
 class PaymentConfirmation extends Component {
 
-    handleBack(){
-        this.props.history.go(-1)
-    }
-
-    
     render() {
-        return (
-            <div>
-                <input type="button" value="Back" onClick={()=> this.handleBack()} />
 
-                <p> Thank you for your order. </p>
+        let orderNumber = Math.floor((Math.random() * 10000000) + 5000000);
+
+        return (
+
+            
+            <div className="payment-conf">
+                <img src={ check } />
+                <h3>Payment Complete</h3>
+                <p> We have sent an email with all the details of your order. </p>
+
+                <div>
+                    <p>Order Number:</p>
+                    <p> { orderNumber }</p>
+                    </div>
+
             </div>
         );
     }

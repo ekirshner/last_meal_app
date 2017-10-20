@@ -15,8 +15,9 @@ constructor(){
 
     render() {
 
-        
+        let totalSaved = Math.floor(Math.random() * (500 - 100) + 100) / 100;
         console.log(this.props.order)
+
         const theOrder = this.props.order.map((item, index) => {
             return (
                 <li key={ index }>{ item }</li>
@@ -25,7 +26,6 @@ constructor(){
 
         return (
             <div>
-
                 <Link to="/search"><p>Back to Search</p></Link>
                 <div className="payment-section">
 
@@ -36,6 +36,7 @@ constructor(){
                     </ul>
 
                     <p>Total:  <span>(dynamically populate price)</span></p>
+                    <p>You saved { totalSaved } pounds of food!</p>
 
                     <div className="payment-form">
                         <label hmtlFor="name"> Cardholder Name </label>

@@ -7,13 +7,8 @@ $grey: #6B6D6D;
 $gunmetal: #272838;
 $button: #48A9A6;
 
+
 // App
-
-// body {
-//     background-image: url('https://www.gbfans.com/images/fans/art/13427_2716058608.jpg');
-//     color: white;
-// }
-
 button {
     width: 70px;
     height: 25px;
@@ -26,6 +21,14 @@ button {
 
 body {
     background-color: $offWhite;
+    // font-family: 'Saira Extra Condensed', sans-serif;
+    // font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+
+    h3 {
+        font-size: 22px;
+    }
 }
 
 header {
@@ -39,18 +42,49 @@ header {
     width: 100%;
     z-index: 2;
     height: 100px;
+    // font-family: 'Satisfy', cursive;
 
     img {
         width: 120px;
+        position: relative;
+        left: 30px;
     }
 
     h1 {
         margin: 0;
-        padding: 1%;
         font-weight: lighter;
-        font-size: 32px;
+        // font-size: 32px;
+        font-size: 25px;
+        font-family: 'Ribeye', cursive;
     }
+
+    a, p {
+        // text-align: right;
+        color: white;
+        margin-right: 5px;
+        float: right;
+        position: relative;
+        top: 0;
+        
+    }
+
+    a:link {
+        text-decoration: none;
+    } 
+    
+    a:visited{
+        color: white;
+        
+    }
+
+    a:hover {
+        color: skyblue;
+    }
+
+
+  
 }
+
 
 #infoWindow {
     display: flex;
@@ -164,7 +198,7 @@ form {
             height: 20%;
         }
 
-h5{
+h5 {
     text-align: center;
     color: $mintyWhite;
     font-weight: normal;
@@ -351,10 +385,17 @@ h5{
         justify-content: space-between;
         flex-direction: column;
         padding: 0;
+        width: 90%;
     }
 
     .button {
         align-self: flex-end;
+    }
+
+    .star-rating {
+        width: 12px;
+        height: auto;
+        margin-right: 1px;
     }
 
 }
@@ -544,4 +585,20 @@ h5{
    .menu-section {
        margin-top: 50px;
    }
+}
+
+
+// Payment Confirmation
+.payment-conf {
+    text-align: center;
+    margin: 10%;
+
+    img {
+        width: 200px;
+        margin: 5%;
+    }
+
+    p {
+        margin: 5%;
+    }
 }
