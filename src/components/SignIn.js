@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
+import {foodFacts} from '../facts'
 
 class SignIn extends Component {
 // change
@@ -13,13 +14,18 @@ class SignIn extends Component {
     // }
     handleSubmit = () => {
          this.props.history.push("/search");
-    }
+     }
+     renderFacts() {
+    return (
+    foodFacts[Math.floor(Math.random() * 10)]
+)
+     }
 
     render() {
-
+        console.log(foodFacts)
         return (
             <div className="sign-in-view">
-                <p>If food waste was a country, it would be the third largest emitter of greenhouse gases behind US and China.</p>
+                <p>{this.renderFacts()}</p>
                 <div id="sign-in">
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
