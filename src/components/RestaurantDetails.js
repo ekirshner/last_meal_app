@@ -11,9 +11,15 @@ class RestaurantDetails extends Component {
         this.state = {
             addItemsVisible: true,
             setPickupTimeVisible: true,
+            pickup_time: "",
+            pickup2_time: "",
+            description: "",
+            num_available: "",
+            price: "",
+
         };
     }
-    
+
     // When a user clicks the add item button, display the form
     toggleVisibility () {
         this.setState ({
@@ -27,9 +33,27 @@ class RestaurantDetails extends Component {
             setPickupTimeVisible: !this.state.setPickupTimeVisible,
         });
     }
-
+handleChange(event) {
+    console.log(event.target.value)
+    this.setState({
+        pickup_time: event.target.value,
+    })
+}
+handleChange2(event) {
+    this.setState({
+        pickup2_time: event.target.value
+    })
+}
+handleClick() {
+    console.log(this.state.pickup_time, this.state.pickup2_time, this.state.description)
+}
+handleItemChange(event) {
+    this.setState({
+        description: event.target.value,
+    })
+}
     render() {
-
+console.log(this.state.time)
         return (
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, (dynamic name)!</p>
@@ -42,17 +66,23 @@ class RestaurantDetails extends Component {
                             <h3>Set Pick Up Time</h3>
                             <p>(dynamically populate pickup times)</p>
                             <div className="add-item">
-                                <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } /> 
+                                <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
                                 <p>Change Pick Up Time</p>
                             </div>
-                        
+
                             <div  hidden={ this.state.setPickupTimeVisible }>
                                 <div className="add-item-dropdown">
                                     <label>From</label>
-                                    <input type="time"/>
+                                    <input type="time"
+                                        value= {this.state.pickup_time}
+                                        onChange={(ev)=> this.handleChange(ev)}
+                                    />
                                     <label>Until</label>
-                                    <input type="time"/>
-                                    <button>Change</button>
+                                    <input type="time"
+                                        value= {this.state.pickup2_time}
+                                        onChange={(ev)=> this.handleChange2(ev)}
+                                    />
+                                    <button onClick={()=>this.handleClick()}>Change</button>
                                 </div>
                             </div>
                         </div>
@@ -60,19 +90,21 @@ class RestaurantDetails extends Component {
                         <div className="menu-section">
                             <h3>Menu</h3>
                             <div className="add-item">
-                                <img src={ plus } onClick={ () => this.toggleVisibility() } /> 
+                                <img src={ plus } onClick={ () => this.toggleVisibility() } />
                                 <p>Add Item</p>
                             </div>
-                        
+
                             <div  hidden={ this.state.addItemsVisible }>
                                 <div className="add-item-dropdown">
-                                <label>Menu Item</label>
-                                <input type="text" placeholder="Item Name" />
-                                <label>Item Price  $</label>
-                                <input type="number" min="1" max="10" placeholder="5"/>
-                                <label>Total Availabile</label>
-                                <input type="number" min="1" max="50" placeholder="5" />
-                                <button>Add</button>
+                                    <label>Menu Item</label>
+                                    <input type="text" placeholder="Item Name"
+                                        value= {this.state.description}
+                                        onChange={(ev)=>this.handleItemChange(ev)}/>
+                                    <label>Item Price  $</label>
+                                    <input type="number" min="1" max="10" placeholder="5"/>
+                                    <label>Total Availabile</label>
+                                    <input type="number" min="1" max="50" placeholder="5" />
+                                    <button>Add</button>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +130,7 @@ class RestaurantDetails extends Component {
                             </table>
                         </section>
                     </Col>
-                </Row> 
+                </Row>
             </div>
         );
     }
