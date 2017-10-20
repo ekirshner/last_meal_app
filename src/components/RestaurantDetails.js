@@ -28,6 +28,20 @@ class RestaurantDetails extends Component {
         });
     }
 
+    // When a user clicks delete, send a DELETE request to backend
+    onDeleteClick(id, url) {
+         console.log('deleted!')
+        // return fetch(url + id, {
+        //     method: 'delete'
+        // }).then(response => response.json()
+        //                                             // .then(json=> {
+                                                        // return json; <--? do we need this?
+                                                        // }
+    // )
+       
+                                                         // );
+    }
+
     render() {
 
         return (
@@ -83,18 +97,20 @@ class RestaurantDetails extends Component {
                         <section className="current-menu">
                             <h3> Current Menu Items </h3>
                             <table>
-                                <th>
+                                <tbody>
                                     <tr>
+                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
                                         <td>$5</td>
                                         <td>Sweet Potato Cassarole</td>
                                         <td>4 left</td>
                                     </tr>
                                     <tr>
+                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
                                         <td>$5</td>
                                         <td>Green Beans</td>
                                         <td>5 left</td>
                                     </tr>
-                                </th>
+                                </tbody>
                             </table>
                         </section>
                     </Col>

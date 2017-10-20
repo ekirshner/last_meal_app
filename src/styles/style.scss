@@ -600,6 +600,12 @@ h3 {
     margin: 2%;
     padding: 2%;
 
+    .delete {
+        width: 50px;
+        transform: rotate(45deg);
+        cursor: pointer;
+    }
+
     label {
         font-size: 15px;
     }
