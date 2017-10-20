@@ -15,8 +15,8 @@ constructor(){
         console.log(this.state.restaurants)
         console.log(this.props.restaurants)
         console.log(this.props.restaurantList)
-        const lat = 37.7869
-        const lng = -122.4041
+        const lat = 35.227
+        const lng = -80.8397
 
         // Set initial map
         const map = new window.google.maps.Map(document.querySelector('#map'), {
@@ -24,7 +24,7 @@ constructor(){
                 lat: lat,
                 lng: lng
             },
-            zoom: 14,
+            zoom: 15,
             tilt: 45
         });
 
@@ -48,8 +48,8 @@ constructor(){
             // Set the marker on the map for the user, add animation and set position of custom label
             new window.google.maps.Marker({
                 position: {
-                    lat: 37.789,
-                    lng: -122.405
+                    lat: 35.2279,
+                    lng: -80.8395
                 },
                 map: map,
                 //icon: '/blue_MarkerA.png',
@@ -145,48 +145,51 @@ this.setState({map: map});
         this.initMap();
     }
 renderMarkers() {
+    const places = this.props.restaurantList;
 
-            //    marker.addListener('click', function(index) {
-               //
-            //         const content = `
-            //                 <div id="infoWindow">
-            //                     <div><strong><h2>${places[i].name}</h2></strong>
-            //                     <strong>Rating: ${places[i].rating}</strong><br>
-            //                     <p>${places[i].location.display_address[0]}<br> ${places[i].location.display_address[1]}<p>
-            //                         <button><a href="/userDetails/${i}"">View Menu<a/></button>
-            //             </div>
-            //                 <div>
-            //                     <img height="133" width="120" src=${places[i].image_url} alt="Restaurant">
-            //             </div>
-            //             </div>
-            //                 `
-            //         infoWindow.setContent(content)
-            //         infoWindow.open(this.state.map, this)
-            //     })
-//}
+                   // Loop over all of the places in the store, adding a marker for each.
+                   for (let i = 0; i < places.length; i++) {
+
+                let marker=      new window.google.maps.Marker({
+                       position: {               // coordinates from geocoding
+                         lat: places[i].coordinates.latitude,
+                         lng: places[i].coordinates.longitude,
+                       },
+                       title: places[i].name,
+                       animation: window.google.maps.Animation.DROP,
+                       map: this.state.map,      // map object we created in initMap
+                     });
+                     const infoWindow = new window.google.maps.InfoWindow()
+
+
+               marker.addListener('click', function() {
+
+                    const content = `
+                            <div id="infoWindow">
+                                <div><strong><h2>${places[i].name}</h2></strong>
+                                <strong>Rating: ${places[i].rating}</strong><br>
+                                <p>${places[i].location.display_address[0]}<br> ${places[i].location.display_address[1]}<p>
+                                    <button><a href="/userDetails/${i}"">View Menu<a/></button>
+                        </div>
+                            <div>
+                                <img height="133" width="120" src=${places[i].image_url} alt="Restaurant">
+                        </div>
+                        </div>
+                            `
+                    infoWindow.setContent(content)
+                    infoWindow.open(this.map, this)
+                })
+}
 }
     render() {
         console.log(this.props.restaurantList)
-        const places = this.props.restaurantList;
 
-                       // Loop over all of the places in the store, adding a marker for each.
-                       for (let i = 0; i < places.length; i++) {
 
-                         new window.google.maps.Marker({
-                           position: {               // coordinates from geocoding
-                             lat: places[i].coordinates.latitude,
-                             lng: places[i].coordinates.longitude,
-                           },
-                           title: places[i].name,
-                           animation: window.google.maps.Animation.DROP,
-                           map: this.state.map,      // map object we created in initMap
-                         });
-        }
 
 
         return (
             <div className="App">
-                <div id="map"></div>
+                <div id="map">{this.renderMarkers()}</div>
 
             </div>
         );

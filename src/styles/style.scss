@@ -61,8 +61,6 @@ header {
         flex-direction: column;
         justify-content: center;
         margin: 10px;
-        text-shadow: $shadow;
-
         h2 {
             margin: 0px;
         }
@@ -70,7 +68,6 @@ header {
         button {
             height: auto;
             width: auto;
-            box-shadow: $shadow
 
         }
 
@@ -81,10 +78,6 @@ header {
 
     }
 
-    img {
-        box-shadow: $shadow;
-
-    }
 }
 
 // RestaurantSignIn
@@ -102,7 +95,6 @@ header {
         color: white;
         font-weight: normal;
         margin-top: 0px;
-        text-shadow: 2px 2px 2px grey;
 
     }
 
