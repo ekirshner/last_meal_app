@@ -19,6 +19,20 @@ class RestaurantDetails extends Component {
 
         };
     }
+// When a user clicks delete, send a DELETE request to backend
+    onDeleteClick(id, url) {
+         console.log('deleted!')
+        // return fetch(url + id, {
+        //     method: 'delete'
+        // }).then(response => response.json()
+        //                                             // .then(json=> {
+                                                        // return json; <--? do we need this?
+                                                        // }
+    // )
+       
+                                                         // );
+    }
+
 
     // When a user clicks the add item button, display the form
     toggleVisibility () {
@@ -33,23 +47,6 @@ class RestaurantDetails extends Component {
             setPickupTimeVisible: !this.state.setPickupTimeVisible,
         });
     }
-<<<<<<< HEAD
-
-    // When a user clicks delete, send a DELETE request to backend
-    onDeleteClick(id, url) {
-         console.log('deleted!')
-        // return fetch(url + id, {
-        //     method: 'delete'
-        // }).then(response => response.json()
-        //                                             // .then(json=> {
-                                                        // return json; <--? do we need this?
-                                                        // }
-    // )
-       
-                                                         // );
-    }
-
-=======
 handleChange(event) {
     console.log(event.target.value)
     this.setState({
@@ -69,7 +66,6 @@ handleItemChange(event) {
         description: event.target.value,
     })
 }
->>>>>>> 4d3d9beed7a3bfeef5ba48b9b58bec46887896f8
     render() {
 console.log(this.state.time)
         return (
