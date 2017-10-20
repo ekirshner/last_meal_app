@@ -54,7 +54,8 @@ constructor(){
                 map: map,
                 //icon: '/blue_MarkerA.png',
                 animation: window.google.maps.Animation.DROP,
-                animation: window.google.maps.Animation.BOUNCE
+                animation: window.google.maps.Animation.BOUNCE,
+                title: "Your Location!",
             })
 this.setState({map: map});
             // Recenter the map to the users location.
