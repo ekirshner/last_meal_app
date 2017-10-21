@@ -14,16 +14,16 @@ class ListView extends Component {
         if(this.props.restaurants) {
 
         const restaurants = this.props.restaurants.map((restaurant, index) => {
-            return <div key={ index } className="list-view-divs"> 
-                        <div>
-                            <img src={ restaurant.image_url } alt="" /> 
-                        </div>
-                    
-                        <div className="container">
-                            <div className="details">
-                                <h3>{ restaurant.name }</h3>
-                                <p className="details-2"><span>{ restaurant.price }</span> <span><img className="star-rating" src={ star }/>{ restaurant.rating }</span></p>
-                                <p>{ restaurant.location.address1 }, { restaurant.location.city } { restaurant.location.zip_code }</p>
+            return <div key={ index } className="list-view-divs">
+                <div>
+                    <img src={ restaurant.image_url } alt="" />
+                </div>
+
+                <div className="container">
+                    <div className="details">
+                        <h3>{ restaurant.name }</h3>
+                        <p className="details-2"><span>{ restaurant.price }</span> <span><img className="star-rating" src={ star }/>{ restaurant.rating }</span></p>
+                        <p>{ restaurant.display_address}</p>
                             </div>
                             <div className="button">
                                 <Link to={ "/userDetails/" + index } ><button>Details</button></Link>
@@ -36,7 +36,7 @@ class ListView extends Component {
         return (
             <div>
                 <div className="list-view-results">
-                     { restaurants }  
+                     { restaurants }
                 </div>
             </div>
         );
@@ -46,7 +46,7 @@ class ListView extends Component {
                     <div>Loading... </div>
                 );
         }
-    } 
+    }
 }
 
 export default ListView;
