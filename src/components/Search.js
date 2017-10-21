@@ -49,9 +49,9 @@ class Search extends Component {
                 </nav>
 
                 <img src={ hamburgerIcon } className="filter-button" onClick={ () => this.openFilter() } />
-               
+
                 <div hidden={ this.state.showFilter }>
-                    <Filter /> 
+                    <Filter />
                 </div>
 
                 <Switch>
@@ -77,13 +77,13 @@ function state2Props(state) {
 function dispatch2Props(dispatch) {
     return {
         getRestaurants() {
-            fetch('https://warm-falls-44996.herokuapp.com/search/restaurants')
+            fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.22924&lng=-80.83971')
             // fetch('https://itunes.apple.com/search?term=justin+bieber&limit=25')
                 .then(res => res.json())
                 .then(response => {
                     console.log(response)
                     // dispatch(getRestaurants(response.results));
-                    dispatch(getRestaurants(response.businesses));
+                    dispatch(getRestaurants(response));
                 });
         }
     };

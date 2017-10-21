@@ -153,8 +153,8 @@ renderMarkers() {
 
                 let marker=      new window.google.maps.Marker({
                        position: {               // coordinates from geocoding
-                         lat: places[i].coordinates.latitude,
-                         lng: places[i].coordinates.longitude,
+                         lat: places[i].latitude,
+                         lng: places[i].longitude,
                        },
                        title: places[i].name,
                        animation: window.google.maps.Animation.DROP,
@@ -169,7 +169,7 @@ renderMarkers() {
                             <div id="infoWindow">
                                 <div><strong><h2>${places[i].name}</h2></strong>
                                 <strong><img class="star-rating" src=${ star }> ${places[i].rating}</strong><br>
-                                <p>${places[i].location.display_address[0]}<br> ${places[i].location.display_address[1]}<p>
+                                <p>${places[i].display_address}<br><p>
                                     <button><a href="/userDetails/${i}"">View Menu<a/></button>
                         </div>
                             <div>
