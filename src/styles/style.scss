@@ -95,7 +95,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("/restaurant-background.jpg");
+    background: url("/restaurant-background.jpg");
+    background-attachment: fixed; 
     background-size: cover;
     height: 85vh;
 
