@@ -23,7 +23,7 @@ class ListView extends Component {
                     <div className="details">
                         <h3>{ restaurant.name }</h3>
                         <p className="details-2"><span>{ restaurant.price }</span> <span><img className="star-rating" src={ star }/>{ restaurant.rating }</span></p>
-                        <p>{ restaurant.display_address }</p>
+                        <p>{ restaurant.display_address}</p>
                             </div>
                             <div className="button">
                                 <Link to={ "/userDetails/" + index } ><button>Details</button></Link>

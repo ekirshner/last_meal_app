@@ -17,7 +17,7 @@ constructor(){
         console.log(this.props.restaurants)
         console.log(this.props.restaurantList)
         const lat = 35.227
-        const lng = -80.8397
+        const lng = -80.8425
 
         // Set initial map
         const map = new window.google.maps.Map(document.querySelector('#map'), {
@@ -49,8 +49,8 @@ constructor(){
             // Set the marker on the map for the user, add animation and set position of custom label
             new window.google.maps.Marker({
                 position: {
-                    lat: 35.2279,
-                    lng: -80.8395
+                    lat: 35.227,
+                    lng: -80.8425
                 },
                 map: map,
                 //icon: '/blue_MarkerA.png',

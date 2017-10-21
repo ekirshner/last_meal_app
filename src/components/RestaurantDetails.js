@@ -29,7 +29,7 @@ class RestaurantDetails extends Component {
                                                         // return json; <--? do we need this?
                                                         // }
     // )
-       
+
                                                          // );
     }
 
@@ -55,11 +55,36 @@ handleChange(event) {
 }
 handleChange2(event) {
     this.setState({
-        pickup2_time: event.target.value
+        pickup2_time: event.target.value,
     })
 }
 handleClick() {
-    console.log(this.state.pickup_time, this.state.pickup2_time, this.state.description)
+    console.log(this.state.pickup_time, this.state.pickup2_time)
+}
+handleItemClick(){
+    console.log(this.state.description, this.state.price, this.state.num_available)
+    console.log(this.state.pickup_time, this.state.pickup2_time)
+    fetch('https://warm-falls-44996.herokuapp.com/restaurants/2', {
+        method: 'POST',
+mode: 'no-cors',
+  body: JSON.stringify({
+                description: this.state.description,
+                price: parseInt(this.state.price),
+                num_available: parseInt(this.state.num_available),
+                pickup_start: parseFloat(this.state.pickup_time),
+                pickup_end: parseFloat(this.state.pickup2_time),
+            })
+})
+}
+handlePriceChange(event) {
+    this.setState({
+        price: event.target.value,
+    })
+}
+handleNumAvailable(event) {
+    this.setState({
+        num_available: event.target.value,
+    })
 }
 handleItemChange(event) {
     this.setState({
@@ -115,10 +140,14 @@ console.log(this.state.time)
                                         value= {this.state.description}
                                         onChange={(ev)=>this.handleItemChange(ev)}/>
                                     <label>Item Price  $</label>
-                                    <input type="number" min="1" max="10" placeholder="5"/>
+                                    <input type="number" min="1" max="10" placeholder="5"
+                                        value= {this.state.price}
+                                        onChange={(ev)=> this.handlePriceChange(ev)}/>
                                     <label>Total Availabile</label>
-                                    <input type="number" min="1" max="50" placeholder="5" />
-                                    <button>Add</button>
+                                    <input type="number" min="1" max="50" placeholder="5"
+                                        value={this.state.num_available}
+                                        onChange={(ev)=> this.handleNumAvailable(ev)}/>
+                                    <button onClick={(ev)=>this.handleItemClick(ev)}>Add</button>
                                 </div>
                             </div>
                         </div>
