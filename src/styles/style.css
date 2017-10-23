@@ -23,7 +23,7 @@ header {
   top: 0;
   width: 100%;
   z-index: 2;
-  height: 100px; }
+  height: 97px; }
   header img {
     width: 120px;
     position: relative;
@@ -90,8 +90,7 @@ header {
     color: #272838; }
   .rest-sign-in-view h2 {
     color: white;
-    margin: 0px;
-    text-shadow: 2px 2px 2px grey; }
+    margin: 0px; }
   .rest-sign-in-view p {
     text-align: center;
     width: 85%;
@@ -102,8 +101,7 @@ header {
     padding: 5px 5px 5px 0px;
     color: #272838;
     font-weight: lighter;
-    margin: 35px 0px 60px;
-    height: 20%; }
+    margin: 35px 0px 60px; }
   .rest-sign-in-view h5 {
     text-align: center;
     color: #F7FFF7;
@@ -145,7 +143,6 @@ header {
       width: 100%;
       color: white;
       margin: 0px;
-      text-shadow: 2px 2px 2px grey;
       height: 50px; }
     .rest-sign-in-view h3 {
       text-align: center;
@@ -187,6 +184,7 @@ header {
   justify-content: center;
   background-image: url("/background.jpg");
   background-size: cover;
+  background-attachment: fixed;
   height: 85vh;
   align-content: flex-start; }
   .sign-in-view button {
@@ -234,12 +232,13 @@ header {
     width: 85%;
     font-size: 1.5em;
     box-shadow: 5px 5px 5px black;
+    box-shadow: #272838;
     background: rgba(247, 255, 247, 0.8);
-    padding: 5px 5px 5px 0px;
+    padding: 3%;
+    vertical-align: center;
     color: #272838;
     font-weight: lighter;
-    margin-top: 40px;
-    height: 130px; }
+    margin-top: 40px; }
   .sign-in-view h4 {
     margin: 40px 0px 0px;
     color: #272838;
@@ -276,7 +275,8 @@ header {
   font-size: 12px; }
   #infoWindow img {
     width: 115px;
-    height: 115px; }
+    height: 115px;
+    object-fit: cover; }
   #infoWindow div {
     display: flex;
     flex-direction: column;
@@ -448,9 +448,17 @@ header {
   .restaurant-details-component .menu-section {
     margin-top: 50px; }
 
+@media (max-width: 767px) {
+  .current-menu {
+    border: none;
+    padding: 10% 0; } }
 .payment-conf {
-  text-align: center;
-  margin: 10%; }
+  background-color: white;
+  box-shadow: 2px 2px 10px #888888;
+  border-radius: 3px;
+  margin: 2%;
+  padding: 10% 2%;
+  text-align: center; }
   .payment-conf img {
     width: 200px;
     margin: 5%; }

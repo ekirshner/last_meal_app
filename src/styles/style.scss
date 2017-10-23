@@ -41,7 +41,7 @@ header {
     top: 0;
     width: 100%;
     z-index: 2;
-    height: 100px;
+    height: 97px;
     // font-family: 'Satisfy', cursive;
 
     img {
@@ -149,7 +149,7 @@ form {
      h2 {
          color: white;
          margin: 0px;
-         text-shadow: 2px 2px 2px grey;
+        //  text-shadow: 2px 2px 2px grey;
      }
 
     p {
@@ -160,10 +160,12 @@ form {
             box-shadow: 5px 5px 5px black;
             background: rgba(#f7fff7, 0.8);
             padding: 5px 5px 5px 0px;
+            // padding: 3%;
             color: $gunmetal;
             font-weight: lighter;
             margin: 35px 0px 60px;
-            height: 20%;
+            // height: 20%;
+
         }
 
 h5 {
@@ -219,7 +221,7 @@ h5 {
                 width: 100%;
                  color: white;
                  margin: 0px;
-                 text-shadow: 2px 2px 2px grey;
+                //  text-shadow: 2px 2px 2px grey;
                  height: 50px;
              }
 h3 {
@@ -276,6 +278,7 @@ h3 {
     justify-content: center;
     background-image: url("/background.jpg");
     background-size: cover;
+    background-attachment: fixed;
     height: 85vh;
     align-content: flex-start;
     //padding-top: 30px;
@@ -340,12 +343,17 @@ h3 {
             width: 85%;
             font-size: 1.5em;
             box-shadow: 5px 5px 5px black;
+            box-shadow: $gunmetal;
+            //  box-shadow: 2px 5px 10px black;
+            // box-shadow: $gunmetal;
             background: rgba(#f7fff7, 0.8);
-            padding: 5px 5px 5px 0px;
+            // padding: 5px 5px 5px 0px;
+            padding: 3%;
+            vertical-align: center;
             color: $gunmetal;
             font-weight: lighter;
             margin-top: 40px;
-            height: 130px;
+            // height: 130px;
         }
 
 
@@ -403,6 +411,7 @@ h3 {
     img {
         width: 115px;
         height: 115px;
+        object-fit: cover;
     }
 
     div {
@@ -688,11 +697,22 @@ h3 {
    }
 }
 
+@media (max-width: 767px) {
+    .current-menu {
+        border: none;
+        padding: 10% 0;
+        // border-top: 1px solid lightgrey;
+    }
+}
 
 // Payment Confirmation
 .payment-conf {
+    background-color: white;
+    box-shadow: $shadow;
+    border-radius: 3px;
+    margin: 2%;
+    padding: 10% 2%;
     text-align: center;
-    margin: 10%;
 
     img {
         width: 200px;

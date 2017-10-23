@@ -14,15 +14,16 @@ class SignIn extends Component {
     // }
     handleSubmit = () => {
          this.props.history.push("/search");
-     }
-     renderFacts() {
+    }
+    
+    renderFacts() {
     return (
     foodFacts[Math.floor(Math.random() * 10)]
 )
      }
 
     render() {
-        console.log(foodFacts)
+        // console.log(foodFacts)
         return (
             <div className="sign-in-view">
                 <p>{this.renderFacts()}</p>
