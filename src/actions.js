@@ -9,8 +9,7 @@ export function getRestaurants (restaurants) {
     };
 }
 
-// action for User Sign In.
-
+// action for User Sign In
 export function authenticate(isLoggedIn) {
     return {
         type: 'CHANGE_AUTH',
@@ -18,7 +17,7 @@ export function authenticate(isLoggedIn) {
     }
 }
 
-// action for restaurant markers!
+// action for restaurant markers
 export function addRestaurant(restaurant){
     return {
         type: 'ADD_RESTAURANT',

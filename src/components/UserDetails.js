@@ -11,7 +11,7 @@ import Payment from './Payment';
 import star from '../Star.png';
 
 // Import action
-import { buyFood } from '../actions';
+import { buyFood, getRestaurants } from '../actions';
 
 
 
@@ -49,11 +49,12 @@ class UserDetails extends Component {
 
     // Once the page loads, import the data for the restaurant selected from search. 
     componentDidMount() {
+    
         const index = this.props.match.params.id;
         const currentRestaurant = this.props.restaurantList[index];
-
+        
         // Set the this.state.foods to an array of the restaurant's inventory
-        this.setState({
+        this.props.restaurantList.length && this.setState({
             foods: currentRestaurant.inventory,
         }, () => 
         console.log(this.state.foods))
@@ -133,8 +134,16 @@ function state2Props(state) {
 function dispatch2Props(dispatch) {
     return {
         buyFood: foods => {
-        dispatch(buyFood(foods))
-        }
+            dispatch(buyFood(foods))
+        },
+        // getRestaurants: () => {
+        //     fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.227&lng=-80.8425')
+        //         .then(res => res.json())
+        //         .then(response => {
+        //             dispatch(getRestaurants(response));
+        //         })
+        //         .catch(err => console.error(err))  
+        // }  
     }
 }
 

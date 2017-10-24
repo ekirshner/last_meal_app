@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addRestaurant } from '../actions';
-import axios from 'axios';
+// import axios from 'axios';
 
 class RestaurantSignIn extends Component {
 constructor(){

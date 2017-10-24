@@ -43,7 +43,7 @@ class ListView extends Component {
 
         } else {
                 return (
-                    <div>Loading... </div>
+                    <div>Loading.. </div>
                 );
         }
     }

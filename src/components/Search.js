@@ -80,9 +80,9 @@ function dispatch2Props(dispatch) {
             fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.227&lng=-80.8425')
                 .then(res => res.json())
                 .then(response => {
-                    // console.log(response)
                     dispatch(getRestaurants(response));
-                });
+                })
+                .catch(err => console.error(err))    
         }
     };
 }

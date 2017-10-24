@@ -751,11 +751,15 @@ h3 {
    }
 }
 
-@media (max-width: 767px) {
-    .current-menu {
+@media all and (max-width: 767px) {
+    .restaurant-details-component .current-menu {
         border: none;
-        padding: 10% 0;
-        // border-top: 1px solid lightgrey;
+        padding: 15px 0;
+        border-top: 1px solid lightgrey;
+    }
+
+    .menu-section {
+        margin-bottom: 20px;
     }
 }
 
