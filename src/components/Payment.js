@@ -11,16 +11,36 @@ class Payment extends Component {
 constructor(){
     super()
 
+    this.state = {
+        money: 0,
+    };
+}
+
+
+componentWillMount() {
+    let priceCount = 0;
+
+    const theOrder = this.props.order.map((item, index) => {
+        priceCount += parseFloat(item.price)
+
+        return (
+            <div></div>
+        )}
+    )
+    this.setState({
+        money: priceCount,
+    });
 }
 
     render() {
 
         let totalSaved = Math.floor(Math.random() * (500 - 100) + 100) / 100;
-        console.log(this.props.order)
+        // console.log(this.props.order)
 
         const theOrder = this.props.order.map((item, index) => {
+
             return (
-                <li key={ index }>{ item }</li>
+                <li key={ index }>{ item.description }</li>
             )}
         )
 
@@ -32,20 +52,20 @@ constructor(){
                     <h2>Payment Details</h2>
                     <p>Order Details</p>
                     <ul>
-                    { theOrder }
+                        { theOrder }
                     </ul>
 
-                    <p>Total:  <span>(dynamically populate price)</span></p>
+                    <p>Total:  <span>${ this.state.money }</span></p>
                     <p>You saved { totalSaved } pounds of food!</p>
 
                     <div className="payment-form">
-                        <label hmtlFor="name"> Cardholder Name </label>
+                        <label> Cardholder Name </label>
                         <input type="text" name="name"/>
-                        <label htmlFor="card"> Card Number </label>
+                        <label> Card Number </label>
                         <input type="text" name="card" placeholder="Valid Card Number"/>
-                        <label htmlFor="date"> Expiration Date </label>
+                        <label> Expiration Date </label>
                         <input type="text" name="date" placeholder="MM/YYYY" />
-                        <label htmlFor="cvv"> CVV </label>
+                        <label> CVV </label>
                         <input type="password" name="cvv" placeholder="CVC" />
                         
                         <Link to="/paymentConfirmation"><button>Order</button></Link>

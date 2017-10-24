@@ -8,17 +8,12 @@ import { Link, Route, Switch } from 'react-router-dom';
 
 // Import components
 import Payment from './Payment';
+import star from '../Star.png';
 
 // Import action
 import { buyFood } from '../actions';
 
 
-// TO DO:
-// 1) Figure out how to send the selected menu options to either backend or store them
-// 2) Figure out how to send the price & either send or store (^^)
-// 3) IDEA: write a function that will add checkboxed item onClick to a string (or state). 
-// concat it each time you add, and then pass it through to Payment as 
-// /Payment:id where id = the state (or string)
 
 // ComponentWill UnMount = to get rid of the redux store state
 
@@ -28,12 +23,9 @@ class UserDetails extends Component {
         super(props);
 
         this.state = {
-            total: 5,
-            // foods: ['tofurkey jerky', 'burger'],
-            // selected: [false, false],
+            // total: 5,
             foods: [],
             selected: [],
-            purchasedFood: ['fooood'],
         };
     }
 
@@ -41,6 +33,7 @@ class UserDetails extends Component {
         const selected = this.state.selected.slice(); // copy the array
         selected[index] = ev.target.checked; // boolean (true if checked)
 
+        console.log('changing');
         this.setState({
             selected,
         });
@@ -55,48 +48,82 @@ class UserDetails extends Component {
         this.props.buyFood(foodToPurchase)
     }
 
+
     // Once the page loads, import the data for the restaurant selected from search. 
-    // Map over the menu items, and set the array to this.state.food's state. 
-    // Set this.state.selected's state to an array of the same length where all the values are set to false
     componentDidMount() {
         const index = this.props.match.params.id;
-        console.log(this.props.restaurantList[index])
+        const currentRestaurant = this.props.restaurantList[index];
+
+        // Set the this.state.foods to an array of the restaurant's inventory
+        this.setState({
+            foods: currentRestaurant.inventory,
+        }, () => 
+        console.log(this.state.foods))
+
+        // Set this.state.selected to an array of the same length as foods (values set to false)
+        let newArr = []
+        for(let i = 0; i <= this.state.foods.length; i++) {
+            newArr.push(false)
+        }
+
+        this.setState({
+            selected: newArr,
+        }, () => console.log(this.state.checked))
     }
 
     render() {
-        
-        const restaurant = this.props.restaurantList;
 
-        const foods = this.state.foods.map((food, index) => {
+        if(this.props.restaurantList[this.props.match.params.id] !== undefined) {
+           
+            const index = this.props.match.params.id;
+            const currentRestaurant = this.props.restaurantList[index];
+
+
+            const menu = this.state.foods.map((food, index) => {
+                console.log(this.state.foods)
+                return (
+                    <li key={ index }>
+                        <input type="checkbox" 
+                            onChange={ event => this.onToggleFood(event, index) } 
+                            checked={ this.state.selected[index] } />
+                        <label htmlFor={ food.description }> ${ food.price } - { food.description } </label>
+                    </li>
+                )
+            });
+
             return (
-                <li key={ index }>
-                    <input key={ index } type="checkbox" onChange={ event => this.onToggleFood(event, index) } checked={ this.state.selected[index] } name={ food } value={ food } />
-                    <label htmlFor={ food }> { food } </label>
-                </li>
-            )
-        });
+                <div>
+                    <Link to="/search"><p>Back to Search</p></Link>
+                    <div className="restaurant-details">
+                        <div className="restaurant-info-section">
+                            <h2>{ currentRestaurant.name }</h2> 
+                             <p className="price-and-rating"><span>{ currentRestaurant.price }</span><span>{ currentRestaurant.display_phone }</span> <span><img src={ star }/>{ currentRestaurant.rating }</span></p>
+                            <p>{ currentRestaurant.display_address }</p>
+                            {/* <p>{ currentRestaurant.display_phone }</p>  */}
+                           
+                            <img className="restaurant-pic" src={ currentRestaurant.image_url } alt=''/>
+                        </div>
 
-        return (
-            <div>
-                <Link to="/search"><p>Back to Search</p></Link>
-                <div className="restaurant-details">
-                    
-                    {/* <p>{ restaurant[index].name }</p> 
-                    <p>{ restaurant[index].}
-                        <p>{ restaurant[index].price }</p>
-                        <p>{ restaurant[index].rating }</p>
-                    <img src={ restaurant[index].image_url } alt="" />
-                    <p>{ restaurant[index].display_phone }</p> */}
+                        <div className="restaurant-menu-section">
+                            <h3>Menu Options</h3>
+                            <ul>
+                                { menu } 
+                            </ul>
+                        </div>
 
-                    <h2>Menu Options</h2>
-                    <ul>
-                        {foods}
-                    </ul>
-
-                    <Link to={"/payment"}> <button onClick={ () => this.onBuy() }>Buy</button></Link> 
+                        <p className="buy"><Link to={ "/payment" }> <button onClick={ () => this.onBuy() }>Buy</button></Link></p>
+                    </div>
                 </div>
-            </div>
-        );
+            );
+
+        } else {
+
+            return (
+                <div>
+                    Loading..
+                </div>
+            )
+        }
     }
 }
 

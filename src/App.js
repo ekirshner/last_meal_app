@@ -29,21 +29,16 @@ import logo from './logo.png';
 class App extends Component {
 
   render() {
-    let phidden = true;
-
-    if(<Route path='/'/>) {
-      phidden= false;
-    }
+    console.log(this.props.location.pathname)
 
     return (
       <div className="App">
 
           <header>
-              <p hidden={ phidden }><Link to="/">Sign Out</Link></p>
+              { this.props.location.pathname === '/' ? null : <p><Link to="/">Sign Out</Link></p>}
               <img src={ logo } />
               <h1> Last Meal, Great Deal! </h1>
           </header>
-
 
         <main>
             <Switch>

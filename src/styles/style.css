@@ -184,7 +184,6 @@ header {
   justify-content: center;
   background-image: url("/background.jpg");
   background-size: cover;
-  background-attachment: fixed;
   height: 85vh;
   align-content: flex-start; }
   .sign-in-view button {
@@ -357,8 +356,24 @@ header {
   box-shadow: 2px 2px 10px #888888;
   margin: 2%;
   padding: 2%; }
+  .restaurant-details .price-and-rating {
+    display: flex;
+    justify-content: space-around; }
+  .restaurant-details img {
+    width: 12px; }
+  .restaurant-details .restaurant-pic {
+    width: 60%; }
+  .restaurant-details .restaurant-info-section,
+  .restaurant-details .buy {
+    text-align: center; }
+  .restaurant-details .restaurant-menu-section {
+    margin-left: 20%; }
   .restaurant-details ul {
     list-style-type: none; }
+  .restaurant-details label {
+    margin-left: 10px;
+    position: relative;
+    bottom: 3px; }
 
 .payment-section {
   background-color: white;

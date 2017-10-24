@@ -278,7 +278,7 @@ h3 {
     justify-content: center;
     background-image: url("/background.jpg");
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     height: 85vh;
     align-content: flex-start;
     //padding-top: 30px;
@@ -447,8 +447,6 @@ h3 {
 
 
 
-
-
 // List View
 .list-view-results {
 
@@ -547,8 +545,36 @@ h3 {
     margin: 2%;
     padding: 2%;
 
+    .price-and-rating {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    img {
+        width: 12px;
+    }
+
+    .restaurant-pic {
+        width: 60%;
+    }
+
+    .restaurant-info-section,
+    .buy {
+        text-align: center;
+    }
+
+    .restaurant-menu-section {
+        margin-left: 20%;
+    }
+
     ul {
         list-style-type: none;
+    }
+
+    label {
+        margin-left: 10px;
+        position: relative;
+        bottom: 3px;
     }
 }
 
