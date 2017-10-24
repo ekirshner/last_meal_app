@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import plus from '../add-icon.png';
 import { Grid, Row, Col } from 'react-bootstrap';
-
+import { connect } from 'react-redux';
 
 class RestaurantDetails extends Component {
     constructor(props) {
@@ -62,17 +62,18 @@ handleClick() {
     console.log(this.state.pickup_time, this.state.pickup2_time)
 }
 handleItemClick(){
+    console.log(this.props.restaurant)
     console.log(this.state.description, this.state.price, this.state.num_available)
     console.log(this.state.pickup_time, this.state.pickup2_time)
-    fetch('https://warm-falls-44996.herokuapp.com/restaurants/2', {
+    fetch('https://warm-falls-44996.herokuapp.com/inventory/2', {
         method: 'POST',
-mode: 'no-cors',
+//mode: 'no-cors',
   body: JSON.stringify({
                 description: this.state.description,
                 price: parseInt(this.state.price),
                 num_available: parseInt(this.state.num_available),
-                pickup_start: parseFloat(this.state.pickup_time),
-                pickup_end: parseFloat(this.state.pickup2_time),
+                pickup_start: this.state.pickup_time,
+                pickup_end: this.state.pickup2_time,
             })
 })
 }
@@ -91,13 +92,46 @@ handleItemChange(event) {
         description: event.target.value,
     })
 }
+componentDidMount() {
+    //console.log(this.props.restaurant.inventory[0].price)
+    console.log(this.props.restaurant)
+    if(this.props.restaurant){
+        for(let i = 0; i < this.props.restaurant; i ++) {
+            console.log(this.props.restaurant.inventory)
+        }
+    //return (
+//     <tr>
+//         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
+//         {/* <td>{this.props.restaurant.inventory["0"].price}</td> */}
+//         <td>Sweet Potato Cassarole</td>
+//         <td>4 left</td>
+//     </tr>
+// )
+//}
+}
+}
+renderDetails() {
+
+}
+
     render() {
-console.log(this.state.time)
+console.log(this.props.restaurant)
+// if(this.props.restaurant) {
+//
+//     return (
+//     <tr>
+//         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
+//         { <td>{this.props.restaurant.inventory["0"].price}</td> }
+//         <td>Sweet Potato Cassarole</td>
+//         <td>4 left</td>
+//     </tr>
+// )
+// }
         return (
             <div className="restaurant-details-component">
-                <p className="welcome">Welcome, (dynamic name)!</p>
-                <h2>(Dynamically Populate Restaurant Name)</h2>
-                <p className="location">(dynamically populate location)</p>
+                <p className="welcome">Welcome, {this.props.restaurant.name}!</p>
+                <h2>{this.props.restaurant.name}</h2>
+                <p className="location">{this.props.restaurant.display_address}</p>
 
                 <Row className="show-grid">
                     <Col xs={6} md={6}>
@@ -159,15 +193,10 @@ console.log(this.state.time)
                             <h3> Current Menu Items </h3>
                             <table>
                                 <tbody>
+                                    { this.renderDetails() }
                                     <tr>
                                         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-                                        <td>$5</td>
-                                        <td>Sweet Potato Cassarole</td>
-                                        <td>4 left</td>
-                                    </tr>
-                                    <tr>
-                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-                                        <td>$5</td>
+                                        <td></td>
                                         <td>Green Beans</td>
                                         <td>5 left</td>
                                     </tr>
@@ -181,4 +210,9 @@ console.log(this.state.time)
     }
 }
 
-export default RestaurantDetails;
+function MapState2Props(state) {
+    return {
+    restaurant: state.restaurant,
+}
+}
+export default connect(MapState2Props, null)(RestaurantDetails);
