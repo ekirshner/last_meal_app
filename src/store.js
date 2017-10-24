@@ -10,6 +10,7 @@ function reducer (state,  action) {
             restaurantList: action.payload,
             order: state.order,
             authenticated: state.authenticated,
+            restaurant: action.payload,
         };
     }
 
@@ -18,12 +19,13 @@ function reducer (state,  action) {
             authenticated: action.payload,
             order: state.order,
             restaurantList: state.restaurantList,
+            restaurant: action.payload,
         }
     }
 
     if(action.type === 'ADD_RESTAURANT') {
         return {
-            restaurant: state.restaurant.concat([action.payload]),
+            restaurant: action.payload,
             order: state.order,
             restaurantList: state.restaurantList,
             authenticated: state.authenticated,
@@ -35,6 +37,7 @@ function reducer (state,  action) {
             order: action.payload,
             restaurantList: state.restaurantList,
             authenticated: state.authenticated,
+            restaurant: action.payload,
         }
     }
 
@@ -48,4 +51,5 @@ export const store = createStore (reducer, {
     restaurantList: [],
     authenticated: false,
     order: null,
+    restaurant: {},
 });
