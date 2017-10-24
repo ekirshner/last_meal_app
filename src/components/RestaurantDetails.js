@@ -92,41 +92,10 @@ handleItemChange(event) {
         description: event.target.value,
     })
 }
-componentDidMount() {
-    //console.log(this.props.restaurant.inventory[0].price)
-    console.log(this.props.restaurant)
-    if(this.props.restaurant){
-        for(let i = 0; i < this.props.restaurant; i ++) {
-            console.log(this.props.restaurant.inventory)
-        }
-    //return (
-//     <tr>
-//         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-//         {/* <td>{this.props.restaurant.inventory["0"].price}</td> */}
-//         <td>Sweet Potato Cassarole</td>
-//         <td>4 left</td>
-//     </tr>
-// )
-//}
-}
-}
-renderDetails() {
-
-}
 
     render() {
 console.log(this.props.restaurant)
-// if(this.props.restaurant) {
-//
-//     return (
-//     <tr>
-//         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-//         { <td>{this.props.restaurant.inventory["0"].price}</td> }
-//         <td>Sweet Potato Cassarole</td>
-//         <td>4 left</td>
-//     </tr>
-// )
-// }
+
         return (
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, {this.props.restaurant.name}!</p>
@@ -193,7 +162,12 @@ console.log(this.props.restaurant)
                             <h3> Current Menu Items </h3>
                             <table>
                                 <tbody>
-                                    { this.renderDetails() }
+                                    <tr>
+                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
+                                        <td>4.99</td>
+                                        <td>Sweet Potato Cassarole</td>
+                                        <td>4 left</td>
+                                    </tr>
                                     <tr>
                                         <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
                                         <td></td>
