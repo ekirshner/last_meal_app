@@ -23,7 +23,6 @@ class UserDetails extends Component {
         super(props);
 
         this.state = {
-            // total: 5,
             foods: [],
             selected: [],
         };
@@ -33,7 +32,6 @@ class UserDetails extends Component {
         const selected = this.state.selected.slice(); // copy the array
         selected[index] = ev.target.checked; // boolean (true if checked)
 
-        console.log('changing');
         this.setState({
             selected,
         });
@@ -78,9 +76,8 @@ class UserDetails extends Component {
             const index = this.props.match.params.id;
             const currentRestaurant = this.props.restaurantList[index];
 
-
             const menu = this.state.foods.map((food, index) => {
-                console.log(this.state.foods)
+                // console.log(this.state.foods)
                 return (
                     <li key={ index }>
                         <input type="checkbox" 
@@ -97,10 +94,8 @@ class UserDetails extends Component {
                     <div className="restaurant-details">
                         <div className="restaurant-info-section">
                             <h2>{ currentRestaurant.name }</h2> 
-                             <p className="price-and-rating"><span>{ currentRestaurant.price }</span><span>{ currentRestaurant.display_phone }</span> <span><img src={ star }/>{ currentRestaurant.rating }</span></p>
+                            <p className="price-and-rating"><span>{ currentRestaurant.price }</span><span>{ currentRestaurant.display_phone }</span> <span><img src={ star }/>{ currentRestaurant.rating }</span></p>
                             <p>{ currentRestaurant.display_address }</p>
-                            {/* <p>{ currentRestaurant.display_phone }</p>  */}
-                           
                             <img className="restaurant-pic" src={ currentRestaurant.image_url } alt=''/>
                         </div>
 
@@ -115,9 +110,7 @@ class UserDetails extends Component {
                     </div>
                 </div>
             );
-
         } else {
-
             return (
                 <div>
                     Loading..

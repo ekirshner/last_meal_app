@@ -556,6 +556,11 @@ h3 {
 
     .restaurant-pic {
         width: 60%;
+        border-bottom: .5px solid lightgrey;
+        padding-bottom: 25px;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
 
     .restaurant-info-section,
@@ -564,11 +569,17 @@ h3 {
     }
 
     .restaurant-menu-section {
-        margin-left: 20%;
+        margin-left: 25%;
+
+        h3 {
+            // margin-left: 5%;
+        }
     }
 
     ul {
         list-style-type: none;
+        padding: 10px;
+        padding: 0;
     }
 
     label {
@@ -594,12 +605,29 @@ h3 {
     }
 
     li {
-        color: $lightBlue;
+        // color: $lightBlue;
         // color: #A45A52;
+        color: grey;
     }
 
     span {
+        color: grey;
+    }
 
+    .order-details {
+        font-size: 15px;
+        font-weight: bolder;
+        // color: $lightBlue;
+    }
+
+    .total {
+        font-size: 15px;
+        font-weight: bolder;
+    }
+
+    .saved {
+        font-size: 15px;
+        color: $button;
     }
 }
 
