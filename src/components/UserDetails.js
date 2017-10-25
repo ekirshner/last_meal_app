@@ -86,15 +86,16 @@ class UserDetails extends Component {
             const currentRestaurant = this.props.restaurantList[index];
 
             const menu = this.state.foods.map((food, index) => {
-                // console.log(this.state.foods)
-                return (
-                    <li key={ index }>
-                        <input type="checkbox" 
-                            onChange={ event => this.onToggleFood(event, index) } 
-                            checked={ this.state.selected[index] } />
-                        <label htmlFor={ food.description }> ${ food.price } - { food.description } </label>
-                    </li>
-                )
+                if(food.num_available > 0) {
+                    return (
+                        <li key={ index }>
+                            <input type="checkbox" 
+                                onChange={ event => this.onToggleFood(event, index) } 
+                                checked={ this.state.selected[index] } />
+                            <label htmlFor={ food.description }> ${ food.price } - { food.description } </label>
+                        </li>
+                    )
+                }
             });
 
             return (

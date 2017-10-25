@@ -530,10 +530,6 @@ h5 {
 
     .restaurant-menu-section {
         margin-left: 25%;
-
-        h3 {
-            // margin-left: 5%;
-        }
     }
 
     ul {
@@ -714,6 +710,21 @@ h5 {
 
     .menu-section {
         margin-bottom: 20px;
+    }
+
+    .current-menu h3 {
+       border-bottom: 1px solid lightgrey;
+       padding-bottom: 30px;
+    }
+
+    .pickup-times,
+    .restaurant-details-component h3 {
+        text-align: center;
+    }
+
+    .edit {
+        border-top: 1px solid lightgrey;
+        padding-top: 30px;
     }
 }
 

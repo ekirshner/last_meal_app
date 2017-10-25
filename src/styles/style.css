@@ -462,7 +462,19 @@ header {
     border-top: 1px solid lightgrey; }
 
   .menu-section {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  .current-menu h3 {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 30px; }
+
+  .pickup-times,
+  .restaurant-details-component h3 {
+    text-align: center; }
+
+  .edit {
+    border-top: 1px solid lightgrey;
+    padding-top: 30px; } }
 @media all and (max-width: 425px) {
   .current-menu h3 {
     text-align: center; } }

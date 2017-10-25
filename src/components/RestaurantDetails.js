@@ -115,7 +115,7 @@ class RestaurantDetails extends Component {
 
     handlePriceChange(event) {
         this.setState({
-            price: event.target.value,
+            price: parseFloat(event.target.value),
         })
     }
 
@@ -169,8 +169,8 @@ class RestaurantDetails extends Component {
                 <Row className="show-grid">
                     <Col xs={12} md={6} lg={6}>
                         <div>
-                            <h3>Set Pick Up Time</h3>
-                            <p>{ tConvert(this.props.restaurant.inventory[1].pickup_start) } - { tConvert(this.props.restaurant.inventory[1].pickup_end) } </p>
+                            <h3 className="edit">Set Pick Up Time</h3>
+                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[1].pickup_start) } - { tConvert(this.props.restaurant.inventory[1].pickup_end) } </p>
                             <div className="add-item">
                                 <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
                                 <p>Change Pick Up Time</p>
