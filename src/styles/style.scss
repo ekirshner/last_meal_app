@@ -186,43 +186,11 @@ h5 {
     }
 @media (min-width: 800px) {
     .rest-sign-in-view {
-        // background: $offWhite;
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: center;
-        // background-image: url("/restaurant-background.jpg");
-        // background-size: cover;
         height: 85vh;
         
-        // input {
-        //     padding: 10px;
-        //     font-size: 1em;
-        //     margin-bottom: 10px;
-        //     box-shadow: 5px 5px 5px black;
-        //     background: rgba(#f7fff7, 0.8);
-
-        //         }
-        //         button {
-        //             //width: 30%;
-        //             font-size: 1.3em;
-        //         }
-        //         div {
-        //             width: 100%;
-        //             color: grey;
-        //         }
-
-        //         a {
-        //             color: white;
-        //             font-size: 1em;
-        //         }
-
-            h2 {
-                text-align: center;
-                width: 100%;
-            //  color: white;
-            //  margin: 0px;
-            // //  text-shadow: 2px 2px 2px grey;
-            //  height: 50px;
+        h2 {
+            text-align: center;
+            width: 100%;
         }
 
         h3 {
@@ -272,10 +240,8 @@ h5 {
     justify-content: center;
     background-image: url("/background.jpg");
     background-size: cover;
-    // background-attachment: fixed;
     height: 85vh;
     align-content: flex-start;
-    //padding-top: 30px;
 
     button {
         background: $button;
@@ -331,7 +297,6 @@ h5 {
 
     a {
         color: $gunmetal;
-
     }
 
     h2 {
@@ -349,7 +314,6 @@ h5 {
         color: $gunmetal;
         font-weight: lighter;
         margin-top: 40px;
-        // height: 130px;
     }
 
     h4 {

@@ -23,9 +23,8 @@ class PaymentConfirmation extends Component {
 
                     <div>
                         <p>Order Number:</p>
-                        <p> { orderNumber }</p>
-                        </div>
-
+                        <p>{ orderNumber }</p>
+                    </div>
                 </div>
             </div>
         );

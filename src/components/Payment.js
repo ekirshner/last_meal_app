@@ -18,24 +18,23 @@ class Payment extends Component {
 
 
     componentWillMount() {
-        let priceCount = 0;
+        let priceCount = 0.0;
 
         const theOrder = this.props.order.map((item, index) => {
-            priceCount += parseFloat(item.price)
+            priceCount += parseFloat(item.price);
 
             return (
                 <div></div>
             )}
         )
         this.setState({
-            money: priceCount,
+            money: parseFloat(priceCount).toFixed(2),
         });
     }
 
     render() {
 
-        let totalSaved = Math.floor(Math.random() * (500 - 100) + 100) / 100;
-        // console.log(this.props.order)
+        let totalSaved = (Math.floor(Math.random() * 500) / 100).toFixed(2);
 
         const theOrder = this.props.order.map((item, index) => {
 
