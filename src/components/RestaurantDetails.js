@@ -4,6 +4,8 @@ import plus from '../add-icon.png';
 import { Grid, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
+import { addRestaurant } from '../actions';
+
 class RestaurantDetails extends Component {
     constructor(props) {
         super(props)
@@ -22,16 +24,19 @@ class RestaurantDetails extends Component {
 
     // When a user clicks delete, send a DELETE request to backend
     onDeleteClick(index) {
-         console.log('deleted!')
-         const url= 'https://warm-falls-44996.herokuapp.com/inventory/'+ index
-         fetch(url , {
+        //  console.log('deleted!')
+        const url= 'https://warm-falls-44996.herokuapp.com/inventory/'+ index
+        fetch(url , {
              method: 'DELETE',
              credentials: 'include',
              headers: {
              'Content-Type': 'application/json',
             },
         })
-
+        .then(res => res.json())
+            .then(response => {
+                this.props.getRestaurant(response);
+        })
     }
 
     // When a user clicks the add item button, display the form
@@ -63,7 +68,7 @@ class RestaurantDetails extends Component {
 
     // Edit the Pickup Times
     handleClick() {
-        console.log(this.state.pickup_time, this.state.pickup2_time)
+        // console.log(this.state.pickup_time, this.state.pickup2_time)
         fetch('https://warm-falls-44996.herokuapp.com/inventory', {
             method: 'POST',
             credentials: 'include',
@@ -78,13 +83,14 @@ class RestaurantDetails extends Component {
                 price: this.props.restaurant.inventory[1].price,
             })
         })
+            .then(res => res.json())
+            .then(response => {
+                this.props.getRestaurant(response);
+        })
     }
 
     // Add Menu Item
     handleItemClick() {
-        // console.log(this.props.restaurant)
-        // console.log(this.state.description, this.state.price, this.state.num_available)
-        // console.log(this.state.pickup_time, this.state.pickup2_time)
         fetch('https://warm-falls-44996.herokuapp.com/inventory', {
             method: 'POST',
             credentials: 'include',
@@ -94,12 +100,18 @@ class RestaurantDetails extends Component {
         body: JSON.stringify ({
                 description: this.state.description,
                 num_available: parseInt(this.state.num_available),
-                pickup_start: this.state.pickup_time,
-                pickup_end: this.state.pickup2_time,
-                price: parseInt(this.state.price),
+                pickup_start: this.props.restaurant.inventory[1].pickup_start,
+                pickup_end: this.props.restaurant.inventory[1].pickup_end,
+                price: parseFloat(this.state.price),
             })
         })
+            .then(res => res.json())
+            .then(response => {
+                this.props.getRestaurant(response);
+        })
     }
+
+
 
     handlePriceChange(event) {
         this.setState({
@@ -124,8 +136,7 @@ class RestaurantDetails extends Component {
                 return <div />;
         }
 
-        const items = this.props.restaurant.inventory.map((item, index)=> {
-            // console.log(item.price)
+        const items = this.props.restaurant.inventory.map((item, index)=> { 
             if(item.num_available > 0) {
                 return(
                     <tr key={ index }>
@@ -232,5 +243,13 @@ function MapState2Props(state) {
     }
 }
 
+function Dispatch2Props(dispatch) {
+    return {
+        getRestaurant: restaurant => {
+            dispatch(addRestaurant(restaurant))
+        }
+    }
+}
 
-export default connect(MapState2Props, null)(RestaurantDetails);
+
+export default connect(MapState2Props, Dispatch2Props)(RestaurantDetails);
