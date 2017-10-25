@@ -18,7 +18,7 @@ constructor(){
     //             }
     //     return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     // }
-    handleSubmit = () => {
+    handleSubmit = (event) => {
 
         const username = this.state.email
         const password = this.state.password
@@ -39,8 +39,9 @@ constructor(){
     console.log(response)
     this.props.getRestaurant(response);
 })
-this.props.history.push("/RestaurantDetails");
 
+this.props.history.push("/RestaurantDetails");
+event.preventDefault()
 }
 // .catch(()=>{
 //         //if request is bad show error
@@ -97,7 +98,7 @@ this.props.history.push("/RestaurantDetails");
                 <h3>For Restaurant Owners</h3>
                 <p>40% of food in the US is wasted!</p>
                 <h2>Welcome Back!</h2>
-                <form id="sign-in" onSubmit={()=> this.handleSubmit()}>
+                <form id="sign-in" onSubmit={(ev)=> this.handleSubmit(ev)}>
                     <input type="email" placeholder="Email"
                         value={this.state.email}
                         onChange={(e)=> this.handleChange(e)}/>

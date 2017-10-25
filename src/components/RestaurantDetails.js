@@ -20,19 +20,18 @@ class RestaurantDetails extends Component {
         };
     }
 // When a user clicks delete, send a DELETE request to backend
-    onDeleteClick(id, url) {
+    onDeleteClick(index) {
          console.log('deleted!')
-        // return fetch(url + id, {
-        //     method: 'delete'
-        // }).then(response => response.json()
-        //                                             // .then(json=> {
-                                                        // return json; <--? do we need this?
-                                                        // }
-    // )
+         const url= 'https://warm-falls-44996.herokuapp.com/inventory/'+index
+         fetch(url , {
+             method: 'DELETE',
+             credentials: 'include',
+             headers: {
+             'Content-Type': 'application/json',
+         },
+         })
 
-                                                         // );
-    }
-
+}
 
     // When a user clicks the add item button, display the form
     toggleVisibility () {
@@ -65,17 +64,20 @@ handleItemClick(){
     console.log(this.props.restaurant)
     console.log(this.state.description, this.state.price, this.state.num_available)
     console.log(this.state.pickup_time, this.state.pickup2_time)
-    fetch('https://warm-falls-44996.herokuapp.com/inventory/1', {
+    fetch('https://warm-falls-44996.herokuapp.com/inventory', {
         method: 'POST',
         credentials: 'include',
+        headers: {
         'Content-Type': 'application/json',
+    },
 //mode: 'no-cors',
   body: JSON.stringify({
                 description: this.state.description,
-                price: parseInt(this.state.price),
                 num_available: parseInt(this.state.num_available),
                 pickup_start: this.state.pickup_time,
                 pickup_end: this.state.pickup2_time,
+                price: parseInt(this.state.price),
+
             })
 })
 }
@@ -99,18 +101,20 @@ handleItemChange(event) {
         if (!this.props.restaurant.inventory) {
                 return <div />;
         }
-        
+
         console.log(this.props.restaurant.inventory[0])
 
 const items = this.props.restaurant.inventory.map((item, index)=> {
     console.log(item.price)
+    if(item.num_available > 0) {
     return(
     <tr key={index}>
-        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-        <td>{item.price}</td>
+        <td onClick={ () => this.onDeleteClick(item.id) }><img className="delete" src={ plus }/></td>
+        <td>${item.price}</td>
         <td>{item.description}</td>
         <td>{item.num_available}</td>
     </tr>)
+}
 })
         return (
             <div className="restaurant-details-component">
