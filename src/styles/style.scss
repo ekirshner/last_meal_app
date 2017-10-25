@@ -146,10 +146,9 @@ form {
                 color: $gunmetal;
             }
 
-     h2 {
+    h2 {
          color: white;
          margin: 0px;
-        //  text-shadow: 2px 2px 2px grey;
      }
 
     p {
@@ -157,15 +156,16 @@ form {
             width: 85%;
             border: 1px solid black;
             font-size: 1.5em;
-            box-shadow: 5px 5px 5px black;
             background: rgba(#f7fff7, 0.8);
             padding: 5px 5px 5px 0px;
-            // padding: 3%;
             color: $gunmetal;
             font-weight: lighter;
             margin: 35px 0px 60px;
-            // height: 20%;
+        }
 
+        input, button, p {
+        box-shadow: 2px 2px 10px black;
+        border: none;
         }
 
 h5 {
@@ -184,89 +184,83 @@ h5 {
         }
 
     }
-    @media (min-width: 800px) {
-        .rest-sign-in-view {
-            background: $offWhite;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background-image: url("/restaurant-background.jpg");
-            background-size: cover;
-            height: 85vh;
-            input {
-                //width: 30%;
-                padding: 10px;
-                font-size: 1em;
-                margin-bottom: 10px;
-                box-shadow: 5px 5px 5px black;
-                background: rgba(#f7fff7, 0.8);
+@media (min-width: 800px) {
+    .rest-sign-in-view {
+        // background: $offWhite;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        // background-image: url("/restaurant-background.jpg");
+        // background-size: cover;
+        height: 85vh;
+        
+        // input {
+        //     padding: 10px;
+        //     font-size: 1em;
+        //     margin-bottom: 10px;
+        //     box-shadow: 5px 5px 5px black;
+        //     background: rgba(#f7fff7, 0.8);
 
-                    }
-                    button {
-                        //width: 30%;
-                        font-size: 1.3em;
-                    }
-                    div {
-                        width: 100%;
-                        color: grey;
-                    }
+        //         }
+        //         button {
+        //             //width: 30%;
+        //             font-size: 1.3em;
+        //         }
+        //         div {
+        //             width: 100%;
+        //             color: grey;
+        //         }
 
-                    a {
-                        color: white;
-                        font-size: 1em;
-                    }
+        //         a {
+        //             color: white;
+        //             font-size: 1em;
+        //         }
 
-             h2 {
-                 text-align: center;
+            h2 {
+                text-align: center;
                 width: 100%;
-                 color: white;
-                 margin: 0px;
-                //  text-shadow: 2px 2px 2px grey;
-                 height: 50px;
-             }
-h3 {
-    text-align: center;
-    width: 100%;
-    height: 30px;
-    margin-top: 10px;
-}
-            p {
-                   text-align: center;
-                    width: 45%;
-                    border: 1px solid black;
-                    font-size: 1.5em;
-                    box-shadow: 5px 5px 5px black;
-                    background: rgba(#f7fff7, 0.8);
-                    padding: 5px 5px 5px 0px;
-                    color: $gunmetal;
-                    font-weight: lighter;
-                    margin: 0px;
-                    height: 20%;
-                }
+            //  color: white;
+            //  margin: 0px;
+            // //  text-shadow: 2px 2px 2px grey;
+            //  height: 50px;
+        }
 
-        h5{
+        h3 {
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            margin-top: 10px;
+        }
+
+        p {
+            width: 45%;
+            margin: 0px;
+            height: 20%;
+        } 
+
+        h5 {
             text-align: center;
             color: $mintyWhite;
             font-weight: normal;
             margin: 20px 0px 0px;
             font-size: 1.2em;
-
         }
+
         #sign-in {
             width: 40%;
             padding: 20px;
         }
-                h4 {
-                    margin: 40px 0px 0px;
-                    color: $gunmetal;
-                    text-align: left;
-                    width: 80%;
-                    font-size: 1.2em;
-                    font-weight: normal;
-                }
-}
+
+        h4 {
+            margin: 40px 0px 0px;
+            color: $gunmetal;
+            text-align: left;
+            width: 80%;
+            font-size: 1.2em;
+            font-weight: normal;
+        }
     }
-// Restaurant Details
+}
 
 
 
@@ -297,13 +291,13 @@ h3 {
         border-radius: 5px;
     }
 
-#sign-in {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin: 125px 0px 30px
-}
+    #sign-in {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: 125px 0px 30px
+    }
 
     input {
         width: 75%;
@@ -312,61 +306,63 @@ h3 {
         margin-bottom: 10px;
         box-shadow: 5px 5px 5px black;
         background: rgba(#f7fff7, 0.8);
-            }
+        border: none;
+    }
 
-            div {
-                width: 100%;
-                color: grey;
-                //height: 10%;
-                display: flex;
-                align-self: flex-end;
-                justify-content: center;
+    input, button, p {
+        box-shadow: 2px 2px 10px black;
+        border: none;
+    }
 
-                h5{
-                    text-align: center;
-                    color: $mintyWhite;
-                    font-weight: normal;
-                    margin: 20px 0px 10px 0px;
-                }
-            }
+    div {
+        width: 100%;
+        color: grey;
+        display: flex;
+        align-self: flex-end;
+        justify-content: center;
 
-            a {
-                color: $gunmetal;
-
-            }
-     h2 {
-         margin: 0px;
-     }
-
-    p {
-           text-align: center;
-            width: 85%;
-            font-size: 1.5em;
-            box-shadow: 5px 5px 5px black;
-            box-shadow: $gunmetal;
-            //  box-shadow: 2px 5px 10px black;
-            // box-shadow: $gunmetal;
-            background: rgba(#f7fff7, 0.8);
-            // padding: 5px 5px 5px 0px;
-            padding: 3%;
-            vertical-align: center;
-            color: $gunmetal;
-            font-weight: lighter;
-            margin-top: 40px;
-            // height: 130px;
-        }
-
-
-        h4 {
-            margin: 40px 0px 0px;
-            color: $gunmetal;
-            text-align: left;
-            width: 80%;
-            font-size: 1.2em;
+        h5{
+            text-align: center;
+            color: $mintyWhite;
             font-weight: normal;
+            margin: 20px 0px 10px 0px;
         }
+    }
+
+    a {
+        color: $gunmetal;
 
     }
+
+    h2 {
+         margin: 0px;
+    }
+
+    p {
+        text-align: center;
+        width: 85%;
+        font-size: 1.5em;
+        box-shadow: $gunmetal;
+        background: rgba(#f7fff7, 0.8);
+        padding: 3%;
+        vertical-align: center;
+        color: $gunmetal;
+        font-weight: lighter;
+        margin-top: 40px;
+        // height: 130px;
+    }
+
+    h4 {
+        margin: 40px 0px 0px;
+        color: $gunmetal;
+        text-align: left;
+        width: 80%;
+        font-size: 1.2em;
+        font-weight: normal;
+    }
+}
+
+
 
 // Search
 
@@ -734,13 +730,7 @@ h3 {
    h2, .location {
        margin-left: 5%;
        text-align: center;
-  }
-
-  h3 {
-    //    color: palevioletred;
-    // color: purple;
-    //   color: teal;
-  }
+   }
 
    .welcome {
        text-align: right;
@@ -751,7 +741,7 @@ h3 {
    }
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 996px) {
     .restaurant-details-component .current-menu {
         border: none;
         padding: 15px 0;
@@ -760,6 +750,12 @@ h3 {
 
     .menu-section {
         margin-bottom: 20px;
+    }
+}
+
+@media all and (max-width: 425px) {
+     .current-menu h3 {
+        text-align: center;
     }
 }
 

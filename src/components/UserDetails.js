@@ -49,7 +49,15 @@ class UserDetails extends Component {
 
     // Once the page loads, import the data for the restaurant selected from search. 
     componentDidMount() {
-    
+        if (this.props.restaurantList.length === 0) {
+            this.props.getRestaurants()
+                .then(() => this.setup());
+        } else {
+            this.setup();
+        }
+    }
+
+    setup() {
         const index = this.props.match.params.id;
         const currentRestaurant = this.props.restaurantList[index];
         
@@ -136,14 +144,15 @@ function dispatch2Props(dispatch) {
         buyFood: foods => {
             dispatch(buyFood(foods))
         },
-        // getRestaurants: () => {
-        //     fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.227&lng=-80.8425')
-        //         .then(res => res.json())
-        //         .then(response => {
-        //             dispatch(getRestaurants(response));
-        //         })
-        //         .catch(err => console.error(err))  
-        // }  
+
+        getRestaurants: () => {
+            return fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.227&lng=-80.8425')
+                .then(res => res.json())
+                .then(response => {
+                    dispatch(getRestaurants(response));
+                })
+                .catch(err => console.error(err))  
+        }  
     }
 }
 

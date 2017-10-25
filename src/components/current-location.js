@@ -173,7 +173,7 @@ constructor() {
                                 <strong><h2>${places[i].name}</h2></strong>
                                 <strong><img class="star-rating" src=${ star }> ${places[i].rating}</strong><br>
                                 <p>${places[i].display_address}<br><p>
-                                    <button><a  href="/userDetails/${i}">View Menu<a/></button>
+                                    <button><a href="/userDetails/${i}">View Menu<a/></button>
                             </div>
                             <div>
                                 <img src=${places[i].image_url} alt="Restaurant">
