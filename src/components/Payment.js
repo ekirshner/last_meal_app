@@ -8,29 +8,29 @@ import { connect } from 'react-redux';
 
 
 class Payment extends Component {
-constructor(){
-    super()
+    constructor(){
+        super()
 
-    this.state = {
-        money: 0,
-    };
-}
+        this.state = {
+            money: 0,
+        };
+    }
 
 
-componentWillMount() {
-    let priceCount = 0;
+    componentWillMount() {
+        let priceCount = 0;
 
-    const theOrder = this.props.order.map((item, index) => {
-        priceCount += parseFloat(item.price)
+        const theOrder = this.props.order.map((item, index) => {
+            priceCount += parseFloat(item.price)
 
-        return (
-            <div></div>
-        )}
-    )
-    this.setState({
-        money: priceCount,
-    });
-}
+            return (
+                <div></div>
+            )}
+        )
+        this.setState({
+            money: priceCount,
+        });
+    }
 
     render() {
 
@@ -50,13 +50,12 @@ componentWillMount() {
                 <div className="payment-section">
 
                     <h2>Payment Details</h2>
-                    <p>Order Details</p>
+                    <p className="order-details">Order Details</p>
                     <ul>
                         { theOrder }
                     </ul>
-
-                    <p>Total:  <span>${ this.state.money }</span></p>
-                    <p>You saved { totalSaved } pounds of food!</p>
+                    <p className="total">Total:  <span>${ this.state.money }</span></p>
+                    <p className="saved">You saved { totalSaved } pounds of food!</p>
 
                     <div className="payment-form">
                         <label> Cardholder Name </label>

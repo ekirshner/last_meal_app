@@ -5,9 +5,9 @@ import star from '../Star.png';
 
 class CurrentLocation extends Component {
 
-constructor(){
+constructor() {
     super()
-    this.state={
+    this.state= {
         restaurants: [],
     }
 }
@@ -58,7 +58,8 @@ constructor(){
                 animation: window.google.maps.Animation.BOUNCE,
                 title: "Your Location!",
             })
-this.setState({map: map});
+            
+            this.setState({map: map});
             // Recenter the map to the users location.
             // map.setCenter(position : {
             //     lat: 37.789,
@@ -145,13 +146,14 @@ this.setState({map: map});
     componentDidMount() {
         this.initMap();
     }
-renderMarkers() {
-    const places = this.props.restaurantList;
+    
+    renderMarkers() {
+        const places = this.props.restaurantList;
 
-                   // Loop over all of the places in the store, adding a marker for each.
-                   for (let i = 0; i < places.length; i++) {
+                // Loop over all of the places in the store, adding a marker for each.
+                for (let i = 0; i < places.length; i++) {
 
-                let marker=      new window.google.maps.Marker({
+                let marker= new window.google.maps.Marker({
                        position: {               // coordinates from geocoding
                          lat: places[i].latitude,
                          lng: places[i].longitude,
@@ -163,35 +165,33 @@ renderMarkers() {
                      const infoWindow = new window.google.maps.InfoWindow()
 
 
-               marker.addListener('click', function() {
+                marker.addListener('click', function() {
 
                     const content = `
-                            <div id="infoWindow">
-                                <div><strong><h2>${places[i].name}</h2></strong>
+                        <div id="infoWindow">
+                            <div>
+                                <strong><h2>${places[i].name}</h2></strong>
                                 <strong><img class="star-rating" src=${ star }> ${places[i].rating}</strong><br>
                                 <p>${places[i].display_address}<br><p>
-                                    <button><a href="/userDetails/${i}"">View Menu<a/></button>
-                        </div>
+                                    <button><a href="/userDetails/${i}">View Menu<a/></button>
+                            </div>
                             <div>
                                 <img src=${places[i].image_url} alt="Restaurant">
+                            </div>
                         </div>
-                        </div>
-                            `
+                        `
                     infoWindow.setContent(content)
                     infoWindow.open(this.map, this)
                 })
-}
-}
+        }
+    }
+
     render() {
-        console.log(this.props.restaurantList)
-
-
-
+        // console.log(this.props.restaurantList)
 
         return (
             <div className="App">
                 <div id="map">{this.renderMarkers()}</div>
-
             </div>
         );
     }

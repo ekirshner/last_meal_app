@@ -8,12 +8,6 @@ import './styles/style.css';
 // Import routing
 import { Link, Route, Switch, withRouter } from 'react-router-dom';
 
-// Connect redux and react
-// import { connect } from 'react-redux';
-
-// Import the action
-// import { getLots } from './actions';
-
 // Import components
 import Search from './components/Search';
 import SignIn from './components/SignIn';

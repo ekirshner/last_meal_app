@@ -14,7 +14,7 @@ function reducer (state,  action) {
         };
     }
 
-    if (action.type === 'CHANGE_AUTH' ) {
+    if (action.type === 'CHANGE_AUTH') {
         return {
             authenticated: action.payload,
             order: state.order,

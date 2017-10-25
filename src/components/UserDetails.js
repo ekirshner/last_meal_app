@@ -11,7 +11,7 @@ import Payment from './Payment';
 import star from '../Star.png';
 
 // Import action
-import { buyFood } from '../actions';
+import { buyFood, getRestaurants } from '../actions';
 
 
 
@@ -23,7 +23,6 @@ class UserDetails extends Component {
         super(props);
 
         this.state = {
-            // total: 5,
             foods: [],
             selected: [],
         };
@@ -33,7 +32,6 @@ class UserDetails extends Component {
         const selected = this.state.selected.slice(); // copy the array
         selected[index] = ev.target.checked; // boolean (true if checked)
 
-        console.log('changing');
         this.setState({
             selected,
         });
@@ -51,11 +49,20 @@ class UserDetails extends Component {
 
     // Once the page loads, import the data for the restaurant selected from search. 
     componentDidMount() {
+        if (this.props.restaurantList.length === 0) {
+            this.props.getRestaurants()
+                .then(() => this.setup());
+        } else {
+            this.setup();
+        }
+    }
+
+    setup() {
         const index = this.props.match.params.id;
         const currentRestaurant = this.props.restaurantList[index];
-
+        
         // Set the this.state.foods to an array of the restaurant's inventory
-        this.setState({
+        this.props.restaurantList.length && this.setState({
             foods: currentRestaurant.inventory,
         }, () => 
         console.log(this.state.foods))
@@ -78,9 +85,8 @@ class UserDetails extends Component {
             const index = this.props.match.params.id;
             const currentRestaurant = this.props.restaurantList[index];
 
-
             const menu = this.state.foods.map((food, index) => {
-                console.log(this.state.foods)
+                // console.log(this.state.foods)
                 return (
                     <li key={ index }>
                         <input type="checkbox" 
@@ -97,10 +103,8 @@ class UserDetails extends Component {
                     <div className="restaurant-details">
                         <div className="restaurant-info-section">
                             <h2>{ currentRestaurant.name }</h2> 
-                             <p className="price-and-rating"><span>{ currentRestaurant.price }</span><span>{ currentRestaurant.display_phone }</span> <span><img src={ star }/>{ currentRestaurant.rating }</span></p>
+                            <p className="price-and-rating"><span>{ currentRestaurant.price }</span><span>{ currentRestaurant.display_phone }</span> <span><img src={ star }/>{ currentRestaurant.rating }</span></p>
                             <p>{ currentRestaurant.display_address }</p>
-                            {/* <p>{ currentRestaurant.display_phone }</p>  */}
-                           
                             <img className="restaurant-pic" src={ currentRestaurant.image_url } alt=''/>
                         </div>
 
@@ -115,9 +119,7 @@ class UserDetails extends Component {
                     </div>
                 </div>
             );
-
         } else {
-
             return (
                 <div>
                     Loading..
@@ -140,8 +142,17 @@ function state2Props(state) {
 function dispatch2Props(dispatch) {
     return {
         buyFood: foods => {
-        dispatch(buyFood(foods))
-        }
+            dispatch(buyFood(foods))
+        },
+
+        getRestaurants: () => {
+            return fetch('https://warm-falls-44996.herokuapp.com/restaurants?lat=35.227&lng=-80.8425')
+                .then(res => res.json())
+                .then(response => {
+                    dispatch(getRestaurants(response));
+                })
+                .catch(err => console.error(err))  
+        }  
     }
 }
 
