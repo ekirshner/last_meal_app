@@ -50,12 +50,12 @@ class RestaurantDetails extends Component {
 handleChange(event) {
     console.log(event.target.value)
     this.setState({
-        pickup_time: event.target.value,
+        pickup_time: event.target.value + ":00",
     })
 }
 handleChange2(event) {
     this.setState({
-        pickup2_time: event.target.value,
+        pickup2_time: event.target.value + ":00",
     })
 }
 handleClick() {
@@ -65,8 +65,10 @@ handleItemClick(){
     console.log(this.props.restaurant)
     console.log(this.state.description, this.state.price, this.state.num_available)
     console.log(this.state.pickup_time, this.state.pickup2_time)
-    fetch('https://warm-falls-44996.herokuapp.com/inventory/2', {
+    fetch('https://warm-falls-44996.herokuapp.com/inventory/1', {
         method: 'POST',
+        credentials: 'include',
+        'Content-Type': 'application/json',
 //mode: 'no-cors',
   body: JSON.stringify({
                 description: this.state.description,
@@ -94,8 +96,22 @@ handleItemChange(event) {
 }
 
     render() {
-console.log(this.props.restaurant)
+        if (!this.props.restaurant.inventory) {
+                return <div />;
+        }
+        
+        console.log(this.props.restaurant.inventory[0])
 
+const items = this.props.restaurant.inventory.map((item, index)=> {
+    console.log(item.price)
+    return(
+    <tr key={index}>
+        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
+        <td>{item.price}</td>
+        <td>{item.description}</td>
+        <td>{item.num_available}</td>
+    </tr>)
+})
         return (
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, {this.props.restaurant.name}!</p>
@@ -162,18 +178,7 @@ console.log(this.props.restaurant)
                             <h3> Current Menu Items </h3>
                             <table>
                                 <tbody>
-                                    <tr>
-                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-                                        <td>4.99</td>
-                                        <td>Sweet Potato Cassarole</td>
-                                        <td>4 left</td>
-                                    </tr>
-                                    <tr>
-                                        <td onClick={ () => this.onDeleteClick() }><img className="delete" src={ plus }/></td>
-                                        <td></td>
-                                        <td>Green Beans</td>
-                                        <td>5 left</td>
-                                    </tr>
+                                    {items}
                                 </tbody>
                             </table>
                         </section>

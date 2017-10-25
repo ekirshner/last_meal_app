@@ -26,9 +26,9 @@ constructor(){
     fetch('https://warm-falls-44996.herokuapp.com/restaurant-signin', {
         method: 'POST',
   headers: {
-    'Accept': 'application/json',
     'Content-Type': 'application/json',
   },
+  credentials: 'include',
   body: JSON.stringify({
       username: username,
       password: password,
