@@ -163,8 +163,18 @@ class RestaurantDetails extends Component {
         return (
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, { this.props.restaurant.name }!</p>
-                <h2>{ this.props.restaurant.name }</h2>
-                <p className="location">{ this.props.restaurant.display_address }</p>
+               
+                <div className="restaurant-header-container">
+                    <div className="restaurant-header">
+                        <h2>{ this.props.restaurant.name }</h2>
+                        <p className="location">{ this.props.restaurant.display_address }</p>
+                    </div>
+                    <div className="parallax">
+                        <img className="rest-pic" id="rest-pic1" src={ this.props.restaurant.image_url } />
+                        <img className="rest-pic" id="rest-pic2" src={ this.props.restaurant.image_url } />
+                        <img className="rest-pic" id="rest-pic3" src={ this.props.restaurant.image_url } />
+                    </div>
+                </div>
 
                 <Row className="show-grid">
                     <Col xs={12} md={6} lg={6}>

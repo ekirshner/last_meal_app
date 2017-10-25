@@ -21,8 +21,6 @@ button {
 
 body {
     background-color: $offWhite;
-    // font-family: 'Saira Extra Condensed', sans-serif;
-    // font-family: 'Open Sans', sans-serif;
     font-family: 'Raleway', sans-serif;
     font-size: 12px;
 
@@ -36,18 +34,22 @@ header {
     font-size: 15px;
     text-align: center;
     color: white;
-    // height: 50px;
     position: sticky;
     top: 0;
     width: 100%;
     z-index: 2;
     height: 97px;
-    // font-family: 'Satisfy', cursive;
 
-    img {
+    .image-regular {
         width: 120px;
         position: relative;
         left: 30px;
+    }
+    
+    .image-signin {
+        width: 120px;
+        position: relative;
+        right: 5px;
     }
 
     h1 {
@@ -620,6 +622,29 @@ h5 {
     margin: 2%;
     padding: 2%;
 
+    // .restaurant-header-container {
+    //     display: flex;
+    //     flex-direction: row-reverse;
+    //     width: 95%;
+    // }
+
+    // .restaurant-header-container div {
+    //     width: 50%;
+    // }
+
+    .rest-pic {
+        width: 33%;
+        height: 200px;
+        object-fit: cover;
+        object-position: 75% 25%;
+        box-shadow: $shadow;
+    }
+
+    .parallax {
+        text-align: center;
+        padding: 30px;
+    }
+
     .delete {
         width: 50px;
         transform: rotate(45deg);
@@ -731,6 +756,14 @@ h5 {
 @media all and (max-width: 425px) {
      .current-menu h3 {
         text-align: center;
+    }
+
+    #rest-pic2, #rest-pic3 {
+        display: none;
+    }
+
+    #rest-pic1 {
+        width: 100%;
     }
 }
 

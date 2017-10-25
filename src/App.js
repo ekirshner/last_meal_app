@@ -25,12 +25,18 @@ class App extends Component {
   render() {
     console.log(this.props.location.pathname)
 
+    let imageClassName = "image-regular"
+
+    if(this.props.location.pathname === '/' || this.props.location.pathname === '/RestaurantSignIn') {
+      imageClassName = "image-signin"
+    }
+
     return (
       <div className="App">
 
           <header>
-              { this.props.location.pathname === '/' ? null : <p><Link to="/">Sign Out</Link></p>}
-              <img src={ logo } />
+              { this.props.location.pathname === '/' || this.props.location.pathname === '/RestaurantSignIn' ? null : <p><Link to="/">Sign Out</Link></p>}
+              <img className={ imageClassName } src={ logo } />
               <h1> Last Meal, Great Deal! </h1>
           </header>
 
