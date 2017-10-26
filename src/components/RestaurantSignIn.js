@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addRestaurant } from '../actions';
+// import {foodFacts} from '../facts'
 // import axios from 'axios';
+import FoodFacts from './foodFacts';
 
 class RestaurantSignIn extends Component {
-constructor(){
-    super()
-    this.state = {
-        email: "",
-        password: "",
+    constructor(props) {
+        super(props)
+        
+        this.state = {
+            email: "",
+            password: "",
+        }
     }
-}
     // renderButton() {
     //     console.log(this.props.authenticated)
     //     if (this.props.authenticated === false) {
@@ -18,31 +21,32 @@ constructor(){
     //             }
     //     return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     // }
+
     handleSubmit = (event) => {
 
         const username = this.state.email
         const password = this.state.password
 
-    fetch('https://warm-falls-44996.herokuapp.com/restaurant-signin', {
-        method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  credentials: 'include',
-  body: JSON.stringify({
-      username: username,
-      password: password,
-})
-})
-.then(res=> res.json())
-.then(response=> {
-    console.log(response)
-    this.props.getRestaurant(response);
-})
+        fetch('https://warm-falls-44996.herokuapp.com/restaurant-signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                })
+            })
+            .then(res=> res.json())
+            .then(response=> {
+                console.log(response)
+                this.props.getRestaurant(response);
+            })
 
-this.props.history.push("/RestaurantDetails");
-event.preventDefault()
-}
+        this.props.history.push("/RestaurantDetails");
+        event.preventDefault()
+    }
 // .catch(()=>{
 //         //if request is bad show error
 //         //show an error to user
@@ -50,19 +54,25 @@ event.preventDefault()
 //
 //     })
 
-     handleChange(event) {
-         this.setState({
+    handleChange(event) {
+        this.setState({
              email: event.target.value,
-         })
-     }
+        })
+    }
 
-     handlePasswordChange(event) {
-         this.setState({
+    handlePasswordChange(event) {
+        this.setState({
              password: event.target.value,
-         })
-     }
+        })
+    }
 
-     handleClick() {
+    // renderFacts() {
+    //     return (
+    //         foodFacts[Math.floor(Math.random() * 9)]
+    //     )
+    // }
+
+    handleClick() {
 
 //         const username = this.state.email
 //         const password = this.state.password
@@ -88,26 +98,27 @@ event.preventDefault()
 //         console.log('badLogin')
 //     })
      }
+
+
     render() {
-        console.log(this.state.email)
-        console.log(this.state.password)
 
         return (
 
             <div className="rest-sign-in-view">
                 <h3>For Restaurant Owners</h3>
-                <p>40% of food in the US is wasted!</p>
+                {/* <p>{ this.renderFacts() }</p> */}
+                <p><FoodFacts /></p>
                 <h2>Welcome Back!</h2>
-                <form id="sign-in" onSubmit={(ev)=> this.handleSubmit(ev)}>
+
+                <form id="sign-in" onSubmit={ (ev)=> this.handleSubmit(ev) }>
                     <input type="email" placeholder="Email"
-                        value={this.state.email}
-                        onChange={(e)=> this.handleChange(e)}/>
+                        value={ this.state.email }
+                        onChange={ (e)=> this.handleChange(e) }/>
                     <input type="password" placeholder="Password"
                         value={this.state.password}
-                        onChange={(e)=>this.handlePasswordChange(e)}/>
-                    <button onClick={() => this.handleClick()} type="submit">Sign In</button>
+                        onChange={ (e)=>this.handlePasswordChange(e) }/>
+                    <button onClick={ () => this.handleClick() } type="submit">Sign In</button>
                     <h5><a href="">Forgot Password?</a></h5>
-
                 </form>
 
                 <div>
@@ -120,15 +131,18 @@ event.preventDefault()
     }
 }
 
+
 function MapState2Props(state) {
     return {restaurant: state.restaurant}
 }
 
+
 function dispatch2Props(dispatch) {
     return {
         getRestaurant: restaurant => {
-                     dispatch(addRestaurant(restaurant))
-                 }
+            dispatch(addRestaurant(restaurant))
         }
     }
+}
+
 export default connect(MapState2Props, dispatch2Props)(RestaurantSignIn)

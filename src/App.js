@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
+// import { Grid } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -23,7 +23,7 @@ import logo from './logo.png';
 class App extends Component {
 
   render() {
-    console.log(this.props.location.pathname)
+    // console.log(this.props.location.pathname)
 
     let imageClassName = "image-regular"
 

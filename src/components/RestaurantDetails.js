@@ -69,18 +69,18 @@ class RestaurantDetails extends Component {
     // Edit the Pickup Times
     handleClick() {
         // console.log(this.state.pickup_time, this.state.pickup2_time)
-        fetch('https://warm-falls-44996.herokuapp.com/inventory', {
+        fetch('https://warm-falls-44996.herokuapp.com/inventory/0', {
             method: 'POST',
             credentials: 'include',
             headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify ({
-                description: this.props.restaurant.inventory[1].description,
-                num_available: this.props.restaurant.inventory[1].num_available,
+                description: this.props.restaurant.inventory[0].description,
+                num_available: parseInt(this.props.restaurant.inventory[0].num_available),
                 pickup_start: this.state.pickup_time,
                 pickup_end: this.state.pickup2_time,
-                price: this.props.restaurant.inventory[1].price,
+                price: parseFloat(this.props.restaurant.inventory[0].price),
             })
         })
             .then(res => res.json())
@@ -100,8 +100,8 @@ class RestaurantDetails extends Component {
         body: JSON.stringify ({
                 description: this.state.description,
                 num_available: parseInt(this.state.num_available),
-                pickup_start: this.props.restaurant.inventory[1].pickup_start,
-                pickup_end: this.props.restaurant.inventory[1].pickup_end,
+                pickup_start: this.props.restaurant.inventory[0].pickup_start,
+                pickup_end: this.props.restaurant.inventory[0].pickup_end,
                 price: parseFloat(this.state.price),
             })
         })
@@ -180,7 +180,7 @@ class RestaurantDetails extends Component {
                     <Col xs={12} md={6} lg={6}>
                         <div>
                             <h3 className="edit">Set Pick Up Time</h3>
-                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[1].pickup_start) } - { tConvert(this.props.restaurant.inventory[1].pickup_end) } </p>
+                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[0].pickup_start) } - { tConvert(this.props.restaurant.inventory[0].pickup_end) } </p>
                             <div className="add-item">
                                 <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
                                 <p>Change Pick Up Time</p>
@@ -192,11 +192,13 @@ class RestaurantDetails extends Component {
                                     <input type="time"
                                         value= { this.state.pickup_time }
                                         onChange={ (ev)=> this.handleChange(ev) }
+                                        required="required"
                                     />
                                     <label>Until</label>
                                     <input type="time"
                                         value= { this.state.pickup2_time }
                                         onChange={ (ev)=> this.handleChange2(ev) }
+                                        required
                                     />
                                     <button onClick={ ()=>this.handleClick() }>Change</button>
                                 </div>
@@ -215,15 +217,15 @@ class RestaurantDetails extends Component {
                                     <label>Menu Item</label>
                                     <input type="text" placeholder="Item Name"
                                         value= { this.state.description }
-                                        onChange={ (ev)=>this.handleItemChange(ev) }/>
+                                        onChange={ (ev)=>this.handleItemChange(ev) } required/>
                                     <label>Item Price  $</label>
                                     <input type="number" min="1" max="10" placeholder="5"
                                         value= { this.state.price }
-                                        onChange={ (ev)=> this.handlePriceChange(ev) }/>
+                                        onChange={ (ev)=> this.handlePriceChange(ev) } required/>
                                     <label>Total Availabile</label>
                                     <input type="number" min="1" max="50" placeholder="5"
                                         value={ this.state.num_available }
-                                        onChange={ (ev)=> this.handleNumAvailable(ev) }/>
+                                        onChange={ (ev)=> this.handleNumAvailable(ev) } required/>
                                     <button onClick={ (ev)=>this.handleItemClick(ev) }>Add</button>
                                 </div>
                             </div>

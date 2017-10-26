@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
-import {foodFacts} from '../facts'
+// import {foodFacts} from '../facts'
+import FoodFacts from './foodFacts';
 
 class SignIn extends Component {
 // change
@@ -12,25 +13,26 @@ class SignIn extends Component {
     //             }
     //     return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
     // }
+
     handleSubmit = () => {
          this.props.history.push("/search");
     }
     
-    renderFacts() {
-    return (
-    foodFacts[Math.floor(Math.random() * 10)]
-)
-     }
+    // renderFacts() {
+    //     return (
+    //         foodFacts[Math.floor(Math.random() * 9)]
+    //     )
+    // }
 
     render() {
-        // console.log(foodFacts)
         return (
             <div className="sign-in-view">
-                <p>{this.renderFacts()}</p>
+                {/* <p>{ this.renderFacts() }</p> */}
+                 <p><FoodFacts /></p>
                 <div id="sign-in">
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
-                    <button onClick={() => this.handleSubmit()} type="submit">Sign In</button>
+                    <button onClick={ () => this.handleSubmit() } type="submit">Sign In</button>
                     <h5><a href="">Forgot Password?</a></h5>
                 </div>
 
@@ -43,6 +45,7 @@ class SignIn extends Component {
         );
     }
 }
+
 
 function MapState2Props(state) {
     return {authenticated: state.authenticated}
