@@ -68,6 +68,10 @@ class RestaurantDetails extends Component {
 
     // Edit the Pickup Times
     handleClick() {
+        if (this.state.pickup_time.length === 0 || this.state.pickup2_time.length === 0) {
+            return;
+        }
+
         // console.log(this.state.pickup_time, this.state.pickup2_time)
         fetch('https://warm-falls-44996.herokuapp.com/inventory/0', {
             method: 'POST',
@@ -91,6 +95,10 @@ class RestaurantDetails extends Component {
 
     // Add Menu Item
     handleItemClick() {
+        if (this.state.description.length === 0 || this.state.num_available.length === 0 || this.state.price.length === 0) {
+            return;
+        }
+
         fetch('https://warm-falls-44996.herokuapp.com/inventory', {
             method: 'POST',
             credentials: 'include',
@@ -164,22 +172,17 @@ class RestaurantDetails extends Component {
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, { this.props.restaurant.name }!</p>
                
-                <div className="restaurant-header-container">
+                <div className="parallax">
                     <div className="restaurant-header">
                         <h2>{ this.props.restaurant.name }</h2>
                         <p className="location">{ this.props.restaurant.display_address }</p>
                     </div>
-                    <div className="parallax">
-                        <img className="rest-pic" id="rest-pic1" src={ this.props.restaurant.image_url } />
-                        <img className="rest-pic" id="rest-pic2" src={ this.props.restaurant.image_url } />
-                        <img className="rest-pic" id="rest-pic3" src={ this.props.restaurant.image_url } />
-                    </div>
-                </div>
+                </div> 
 
                 <Row className="show-grid">
                     <Col xs={12} md={6} lg={6}>
                         <div>
-                            <h3 className="edit">Set Pick Up Time</h3>
+                            <h3 id="edit">Set Pick Up Time</h3>
                             <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[0].pickup_start) } - { tConvert(this.props.restaurant.inventory[0].pickup_end) } </p>
                             <div className="add-item">
                                 <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
@@ -231,7 +234,6 @@ class RestaurantDetails extends Component {
                             </div>
                         </div>
                     </Col>
-
 
                     <Col xs={12} md={6} lg={6}>
                         <section className="current-menu">

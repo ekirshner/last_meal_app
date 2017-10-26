@@ -17,29 +17,17 @@ class SignIn extends Component {
     handleSubmit = () => {
          this.props.history.push("/search");
     }
-    
-    // renderFacts() {
-    //     return (
-    //         foodFacts[Math.floor(Math.random() * 9)]
-    //     )
-    // }
+
 
     render() {
         return (
             <div className="sign-in-view">
-                {/* <p>{ this.renderFacts() }</p> */}
                  <p><FoodFacts /></p>
                 <div id="sign-in">
                     <input type="email" placeholder="Email"/>
                     <input type="password" placeholder="Password"/>
                     <button onClick={ () => this.handleSubmit() } type="submit">Sign In</button>
                     <h5><a href="">Forgot Password?</a></h5>
-                </div>
-
-                <div className="signiin-footer">
-                    <h5>Don't have an account? Register
-                        <a href="/RestaurantSignIn"> here!</a>
-                    </h5>
                 </div>
             </div>
         );

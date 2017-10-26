@@ -66,11 +66,6 @@ class RestaurantSignIn extends Component {
         })
     }
 
-    // renderFacts() {
-    //     return (
-    //         foodFacts[Math.floor(Math.random() * 9)]
-    //     )
-    // }
 
     handleClick() {
 
@@ -105,10 +100,10 @@ class RestaurantSignIn extends Component {
         return (
 
             <div className="rest-sign-in-view">
-                <h3>For Restaurant Owners</h3>
-                {/* <p>{ this.renderFacts() }</p> */}
+                <div>
+                {/* <h3>For Restaurant Owners</h3> */}
                 <p><FoodFacts /></p>
-                <h2>Welcome Back!</h2>
+                </div>
 
                 <form id="sign-in" onSubmit={ (ev)=> this.handleSubmit(ev) }>
                     <input type="email" placeholder="Email"

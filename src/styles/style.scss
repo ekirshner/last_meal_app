@@ -46,22 +46,25 @@ header {
         left: 30px;
     }
     
-    .image-signin {
+    .image-signin, .initial-signin {
         width: 120px;
         position: relative;
         right: 5px;
     }
 
+    .initial-signin {
+        position: relative;
+        left: 61px;
+    }
+
     h1 {
         margin: 0;
         font-weight: lighter;
-        // font-size: 32px;
         font-size: 25px;
         font-family: 'Ribeye', cursive;
     }
 
     a, p {
-        // text-align: right;
         color: white;
         margin-right: 5px;
         float: right;
@@ -82,6 +85,21 @@ header {
     a:hover {
         color: skyblue;
     }
+
+    span {
+        color: skyblue;
+    }
+}
+
+@media all and (max-width: 500px) {
+   header {
+        height: 120px;
+        
+        span {
+        width: 100%;
+        display: block;
+        }
+    }
 }
 
 
@@ -91,20 +109,13 @@ header {
 .rest-sign-in-view {
     background: $offWhite;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: url("/restaurant-background.jpg");
+    flex-direction: column;
+    background: url('https://everydayinterviewtips.com/wp-content/uploads/2014/10/66082123-whitestorm-table-setting-restaurant.jpg');
     background-attachment: fixed; 
     background-size: cover;
-    height: 85vh;
-
-    h3 {
-        color: white;
-        font-weight: normal;
-        margin-top: 0px;
-        // color: $lightBlue;
-        font-family: 'Ribeye', cursive;
-    }
+    text-align: center;
+    padding-top: 40px;
+    height: 100vh;
 
     button {
         background: $button;
@@ -125,6 +136,7 @@ header {
         flex-direction: column;
         width: 100%;
         align-items: center;
+        margin: 50px 0;
     }
 
     input {
@@ -132,17 +144,29 @@ header {
         padding: 10px;
         font-size: 1.5em;
         margin-bottom: 10px;
-        box-shadow: 5px 5px 5px black;
-        background: rgba(#f7fff7, 0.8);
     }
 
+    input:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px white inset; 
+        -webkit-text-fill-color: #333;
+        opacity: .8;
+    } 
+
     div {
-        width: 100%;
         color: black;
     }
 
     a {
-        color: $gunmetal;
+        color: $button;
+           color: $lightBlue;
+        // font-size: 14px;
+        // cursor: pointer;
+    }
+
+    a:hover {
+        font-size: 16px;
+        text-decoration: none;
+     
     }
 
     h2 {
@@ -155,12 +179,14 @@ header {
         width: 85%;
         border: 1px solid black;
         font-size: 1.5em;
-        background: rgba(#f7fff7, 0.8);
+        background: rgba(white, 0.8);
         padding: 5px;
         color: $gunmetal;
         font-weight: lighter;
-        margin: 35px 0px 60px;
+        margin: auto;
     }
+
+
 
     input, button, p {
         box-shadow: 2px 2px 10px black;
@@ -182,53 +208,27 @@ header {
         font-size: 1.2em;
         font-weight: normal;
     }
+
+    div h5 {
+        margin-bottom: 50px;
+    }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 700px) {
     .rest-sign-in-view {
-        height: 85vh;
-        
-        h2 {
-            text-align: center;
-            width: 100%;
-        }
 
-        h3 {
-            text-align: center;
-            width: 100%;
-            height: 30px;
-            margin-top: 10px;
-        }
-
-        p  {
+        input {
             width: 45%;
-            // margin: 0px;
-            // height: 20%;
-            padding: 5px;
-        } 
-
-        h5 {
-            text-align: center;
-            color: $mintyWhite;
-            font-weight: normal;
-            margin: 20px 0px 0px;
-            font-size: 1.2em;
         }
 
-        #sign-in {
+        button {
             width: 40%;
-            padding: 20px;
         }
 
-        h4 {
-            margin: 40px 0px 0px;
-            color: $gunmetal;
-            text-align: left;
-            width: 80%;
-            font-size: 1.2em;
-            font-weight: normal;
+        p {
+            width: 55%;
         }
-    }
+    }   
 }
 
 
@@ -239,10 +239,10 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-image: url("/background.jpg");
+    background: url('https://previews.123rf.com/images/belchonock/belchonock1410/belchonock141004566/32591249-Summer-frame-with-fresh-organic-vegetables-and-fruits-on-wooden-background-Stock-Photo.jpg');
     background-size: cover;
-    height: 85vh;
     align-content: flex-start;
+    height: 100vh;
 
     button {
         background: $button;
@@ -263,7 +263,7 @@ header {
         flex-direction: column;
         width: 100%;
         align-items: center;
-        margin: 125px 0px 30px
+        margin: 25px 0px 30px
     }
 
     input {
@@ -277,22 +277,28 @@ header {
     }
 
     input, button, p {
-        box-shadow: 2px 2px 10px black;
+        box-shadow: 2px 2px 10px $gunmetal;
         border: none;
+    }
+
+    input:-webkit-autofill {
+        -webkit-box-shadow:0 0 0 50px white inset; 
+        -webkit-text-fill-color: #333;
+        opacity: .8;
     }
 
     div {
         width: 100%;
-        color: grey;
         display: flex;
         align-self: flex-end;
         justify-content: center;
 
-        h5{
+        h5 { 
             text-align: center;
             color: $mintyWhite;
             font-weight: normal;
             margin: 20px 0px 10px 0px;
+            // margin-bottom: 200px;
         }
     }
 
@@ -327,10 +333,26 @@ header {
     }
 }
 
+@media (min-width: 700px) {
+    .sign-in-view {
+
+        input {
+            width: 45%;
+        }
+
+        button {
+            width: 40%;
+        }
+
+        p {
+            width: 55%;
+        }
+    }   
+}
+
 
 
 // Search
-
 .toggle-search-and-map-view {
     text-align: center;
     position: sticky;
@@ -356,6 +378,7 @@ header {
         background-color: lightgrey;
     }
 }
+
 
 // Map View
 #map {
@@ -437,7 +460,6 @@ header {
     }
 
     .details {
-        // text-align: center;
         margin-left: 25px;
         width: 90%;
 
@@ -463,11 +485,6 @@ header {
 
 }
 
-@media (min-width: 500px) {
-    body {
-        // background-color: red;
-    }
-}
 
 // Filter/Sort
 .filter-sort-component {
@@ -562,8 +579,6 @@ header {
     }
 
     li {
-        // color: $lightBlue;
-        // color: #A45A52;
         color: grey;
     }
 
@@ -574,7 +589,6 @@ header {
     .order-details {
         font-size: 15px;
         font-weight: bolder;
-        // color: $lightBlue;
     }
 
     .total {
@@ -614,22 +628,11 @@ header {
 
 
 // Restaurant Details
-
 .restaurant-details-component {
     background-color: white;
     box-shadow: $shadow;
     margin: 2%;
     padding: 2%;
-
-    // .restaurant-header-container {
-    //     display: flex;
-    //     flex-direction: row-reverse;
-    //     width: 95%;
-    // }
-
-    // .restaurant-header-container div {
-    //     width: 50%;
-    // }
 
     .rest-pic {
         width: 33%;
@@ -642,6 +645,8 @@ header {
     .parallax {
         text-align: center;
         padding: 30px;
+        background-image: url('https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg');
+        background-attachment: fixed;
     }
 
     .delete {
@@ -725,7 +730,7 @@ header {
    }
 }
 
-@media all and (max-width: 996px) {
+@media all and (max-width: 993px) {
     .restaurant-details-component .current-menu {
         border: none;
         padding: 15px 0;
@@ -737,8 +742,12 @@ header {
     }
 
     .current-menu h3 {
-       border-bottom: 1px solid lightgrey;
-       padding-bottom: 30px;
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 30px;
+        text-align: center;
+        padding: 30px;
+        background-image: url('https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg');
+        background-attachment: fixed;
     }
 
     .pickup-times,
@@ -746,15 +755,20 @@ header {
         text-align: center;
     }
 
-    .edit {
+    #edit {
         border-top: 1px solid lightgrey;
         padding-top: 30px;
     }
 }
 
 @media all and (max-width: 425px) {
-     .current-menu h3 {
+    .current-menu h3 {
         text-align: center;
+        text-align: center;
+        padding: 30px;
+        background-image: url('https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg');
+        // width: 200px;
+        // background-attachment: fixed;
     }
 
     #rest-pic2, #rest-pic3 {

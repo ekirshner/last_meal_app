@@ -27,8 +27,10 @@ class App extends Component {
 
     let imageClassName = "image-regular"
 
-    if(this.props.location.pathname === '/' || this.props.location.pathname === '/RestaurantSignIn') {
+    if(this.props.location.pathname === '/RestaurantSignIn') {
       imageClassName = "image-signin"
+    } else if (this.props.location.pathname === '/') {
+      imageClassName = "initial-signin"
     }
 
     return (
@@ -36,8 +38,9 @@ class App extends Component {
 
           <header>
               { this.props.location.pathname === '/' || this.props.location.pathname === '/RestaurantSignIn' ? null : <p><Link to="/">Sign Out</Link></p>}
+              { this.props.location.pathname === '/' ? <Link to="/RestaurantSignIn">Restaurant Sign In</Link> : null }
               <img className={ imageClassName } src={ logo } />
-              <h1> Last Meal, Great Deal! </h1>
+              <h1> Last Meal, Great Deal! { this.props.location.pathname === '/RestaurantSignIn' ? <span>For Restaurants</span> : null }</h1>
           </header>
 
         <main>
