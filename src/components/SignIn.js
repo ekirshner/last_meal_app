@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions';
-// import {foodFacts} from '../facts'
+import FoodFacts  from './foodFacts'
 
 class SignIn extends Component {
 // change
