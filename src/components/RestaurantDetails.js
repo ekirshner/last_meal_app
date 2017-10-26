@@ -52,7 +52,7 @@ class RestaurantDetails extends Component {
             setPickupTimeVisible: !this.state.setPickupTimeVisible,
         });
     }
-        
+
     handleChange(event) {
         // console.log(event.target.value)
         this.setState({
@@ -73,7 +73,7 @@ class RestaurantDetails extends Component {
         }
 
         // console.log(this.state.pickup_time, this.state.pickup2_time)
-        fetch('https://warm-falls-44996.herokuapp.com/inventory/0', {
+        fetch('https://warm-falls-44996.herokuapp.com/inventory/34', {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -144,7 +144,7 @@ class RestaurantDetails extends Component {
                 return <div />;
         }
 
-        const items = this.props.restaurant.inventory.map((item, index)=> { 
+        const items = this.props.restaurant.inventory.map((item, index)=> {
             if(item.num_available > 0) {
                 return(
                     <tr key={ index }>
@@ -171,7 +171,6 @@ class RestaurantDetails extends Component {
         return (
             <div className="restaurant-details-component">
                 <p className="welcome">Welcome, { this.props.restaurant.name }!</p>
-               
                 <div className="parallax">
                     <div className="restaurant-header">
                         <h2>{ this.props.restaurant.name }</h2>

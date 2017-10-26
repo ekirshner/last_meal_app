@@ -57,8 +57,9 @@ constructor() {
                 animation: window.google.maps.Animation.DROP,
                 animation: window.google.maps.Animation.BOUNCE,
                 title: "Your Location!",
+                icon: "https://maps.gstatic.com/mapfiles/ms2/micons/man.png"
             })
-            
+
             this.setState({map: map});
             // Recenter the map to the users location.
             // map.setCenter(position : {
@@ -146,7 +147,7 @@ constructor() {
     componentDidMount() {
         this.initMap();
     }
-    
+
     renderMarkers() {
         const places = this.props.restaurantList;
 
@@ -160,7 +161,9 @@ constructor() {
                        },
                        title: places[i].name,
                        animation: window.google.maps.Animation.DROP,
-                       map: this.state.map,      // map object we created in initMap
+                       map: this.state.map,
+                       icon: "https://maps.gstatic.com/mapfiles/ms2/micons/ltblue-dot.png",
+          // map object we created in initMap
                      });
                      const infoWindow = new window.google.maps.InfoWindow()
 
