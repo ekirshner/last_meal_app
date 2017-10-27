@@ -552,6 +552,16 @@ header {
 
     .restaurant-menu-section {
         margin-left: 25%;
+
+        h3 {
+            display: inline-block;
+        }
+
+        p {
+            float: right;
+            margin-top: 5px;
+            margin-right: 20px;
+        }
     }
 
     ul {
@@ -565,6 +575,7 @@ header {
         position: relative;
         bottom: 3px;
     }
+
 }
 
 
@@ -603,6 +614,16 @@ header {
     .saved {
         font-size: 15px;
         color: $button;
+    }
+
+    .back-button {
+        cursor: pointer;
+        text-align: left;
+        // color: $lightBlue;
+    }
+
+    .back-button:hover {
+        text-decoration: underline;
     }
 }
 
@@ -800,5 +821,41 @@ header {
 
     p {
         margin: 5%;
+    }
+}
+
+// New Restaurant Registration
+.registration-component {
+    background-color: white;
+    box-shadow: $shadow;
+    margin: 2%;
+    padding: 2%;
+    text-align: center;
+
+    .searchbar {
+        display: flex;
+        justify-content: center;
+        
+        .input {
+            margin: 25px;
+        }
+
+        span {
+            margin-right: 25px;
+        }
+
+        p {
+            margin: 25px;
+            // margin-left: 25px;
+        }
+    }
+
+    .registration-form {
+        margin-top: 50px;
+
+        input {
+            width: 200px;
+            margin: 5px;
+        }
     }
 }

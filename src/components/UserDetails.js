@@ -46,6 +46,16 @@ class UserDetails extends Component {
         this.props.buyFood(foodToPurchase)
     }
 
+    // Convert military time to standard time
+    tConvert(timeString) {
+        let hourEnd = timeString.indexOf(":");
+        let H = +timeString.substr(0, hourEnd);
+        let h = H % 12 || 12;
+        let ampm = (H < 12 || H === 24) ? "AM" : "PM";
+        timeString = h + timeString.substr(hourEnd, 3) + ampm;
+
+        return timeString;
+    }
 
     // Once the page loads, import the data for the restaurant selected from search. 
     componentDidMount() {
@@ -77,6 +87,8 @@ class UserDetails extends Component {
             selected: newArr,
         }, () => console.log(this.state.checked))
     }
+
+  
 
     render() {
 
@@ -110,7 +122,8 @@ class UserDetails extends Component {
                         </div>
 
                         <div className="restaurant-menu-section">
-                            <h3>Menu Options</h3>
+                            <h3>Menu Options</h3> 
+                            <p>Pick Up Time <span>{ this.tConvert(currentRestaurant.inventory[0].pickup_start) } - { this.tConvert(currentRestaurant.inventory[0].pickup_end) }</span></p>
                             <ul>
                                 { menu } 
                             </ul>

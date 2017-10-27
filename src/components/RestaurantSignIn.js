@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { addRestaurant } from '../actions';
-// import {foodFacts} from '../facts'
-// import axios from 'axios';
 import FoodFacts from './foodFacts';
+
+// Connect redux and react
+import { connect } from 'react-redux';
+
+// Import routing
+import { Link } from 'react-router-dom';
+
 
 class RestaurantSignIn extends Component {
     constructor(props) {
@@ -14,13 +18,6 @@ class RestaurantSignIn extends Component {
             password: "",
         }
     }
-    // renderButton() {
-    //     console.log(this.props.authenticated)
-    //     if (this.props.authenticated === false) {
-    //         return <button onClick={() => this.props.authenticate(true)} type="submit">Sign In</button>
-    //             }
-    //     return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
-    // }
 
     handleSubmit = (event) => {
 
@@ -47,12 +44,6 @@ class RestaurantSignIn extends Component {
         this.props.history.push("/RestaurantDetails");
         event.preventDefault()
     }
-// .catch(()=>{
-//         //if request is bad show error
-//         //show an error to user
-//         console.log('badLogin')
-//
-//     })
 
     handleChange(event) {
         this.setState({
@@ -67,42 +58,12 @@ class RestaurantSignIn extends Component {
     }
 
 
-    handleClick() {
-
-//         const username = this.state.email
-//         const password = this.state.password
-//
-//     fetch('https://warm-falls-44996.herokuapp.com/restaurant-signin', {
-//         method: 'POST',
-//   headers: {
-//     'Accept': 'application/json',
-//     'Content-Type': 'application/json',
-//   },
-//   body: JSON.stringify({
-//       username: username,
-//       password: password,
-// })
-// })
-// .then(res=> res.json())
-// .then(response=> {
-//     console.log(response)
-// })
-// .catch(()=>{
-//         //if request is bad show error
-//         //show an error to user
-//         console.log('badLogin')
-//     })
-     }
-
-
     render() {
 
         return (
-
             <div className="rest-sign-in-view">
                 <div>
-                {/* <h3>For Restaurant Owners</h3> */}
-                <p><FoodFacts /></p>
+                    <p><FoodFacts /></p>
                 </div>
 
                 <form id="sign-in" onSubmit={ (ev)=> this.handleSubmit(ev) }>
@@ -112,13 +73,13 @@ class RestaurantSignIn extends Component {
                     <input type="password" placeholder="Password"
                         value={this.state.password}
                         onChange={ (e)=>this.handlePasswordChange(e) }/>
-                    <button onClick={ () => this.handleClick() } type="submit">Sign In</button>
+                    <button type="submit">Sign In</button>
                     <h5><a href="">Forgot Password?</a></h5>
                 </form>
 
                 <div>
                     <h5>Don't have an account? Register your restaurant
-                        <a href=""> here!</a>
+                        <Link to="/Registration"> here!</Link>
                     </h5>
                 </div>
             </div>

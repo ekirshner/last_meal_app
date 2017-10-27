@@ -17,13 +17,13 @@ import PaymentConfirmation from './components/PaymentConfirmation';
 import RestaurantSignIn from './components/RestaurantSignIn';
 import RestaurantDetails from './components/RestaurantDetails';
 import Transactions from './components/Transactions';
+import Registration from './components/RestaurantRegistration';
 import logo from './logo.png';
 
 
 class App extends Component {
 
   render() {
-    // console.log(this.props.location.pathname)
 
     let imageClassName = "image-regular"
 
@@ -31,7 +31,7 @@ class App extends Component {
       imageClassName = "image-signin"
     } else if (this.props.location.pathname === '/') {
       imageClassName = "initial-signin"
-    }
+    } 
 
     return (
       <div className="App">
@@ -40,7 +40,7 @@ class App extends Component {
               { this.props.location.pathname === '/' || this.props.location.pathname === '/RestaurantSignIn' ? null : <p><Link to="/">Sign Out</Link></p>}
               { this.props.location.pathname === '/' ? <Link to="/RestaurantSignIn">Restaurant Sign In</Link> : null }
               <img className={ imageClassName } src={ logo } />
-              <h1> Last Meal, Great Deal! { this.props.location.pathname === '/RestaurantSignIn' ? <span>For Restaurants</span> : null }</h1>
+              <h1> Last Meal, Great Deal! { this.props.location.pathname === '/RestaurantSignIn' || this.props.location.pathname === '/Registration' || this.props.location.pathname === '/RestaurantDetails' ? <span>For Restaurants</span> : null }</h1>
           </header>
 
         <main>
@@ -54,6 +54,7 @@ class App extends Component {
               <Route path="/restaurantSignIn" component={ RestaurantSignIn } />
               <Route path="/restaurantDetails" component={ RestaurantDetails } />
               <Route path="/transactions" component={ Transactions } />
+              <Route path="/registration" component={ Registration } />
               <Route path="/" component={ SignIn } />
             </Switch>
           </main>

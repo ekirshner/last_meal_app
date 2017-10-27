@@ -354,6 +354,12 @@ header {
     text-align: center; }
   .restaurant-details .restaurant-menu-section {
     margin-left: 25%; }
+    .restaurant-details .restaurant-menu-section h3 {
+      display: inline-block; }
+    .restaurant-details .restaurant-menu-section p {
+      float: right;
+      margin-top: 5px;
+      margin-right: 20px; }
   .restaurant-details ul {
     list-style-type: none;
     padding: 10px;
@@ -386,6 +392,11 @@ header {
   .payment-section .saved {
     font-size: 15px;
     color: #48A9A6; }
+  .payment-section .back-button {
+    cursor: pointer;
+    text-align: left; }
+  .payment-section .back-button:hover {
+    text-decoration: underline; }
 
 .payment-form {
   display: flex;
@@ -521,5 +532,26 @@ header {
     margin: 5%; }
   .payment-conf p {
     margin: 5%; }
+
+.registration-component {
+  background-color: white;
+  box-shadow: 2px 2px 10px #888888;
+  margin: 2%;
+  padding: 2%;
+  text-align: center; }
+  .registration-component .searchbar {
+    display: flex;
+    justify-content: center; }
+    .registration-component .searchbar .input {
+      margin: 25px; }
+    .registration-component .searchbar span {
+      margin-right: 25px; }
+    .registration-component .searchbar p {
+      margin: 25px; }
+  .registration-component .registration-form {
+    margin-top: 50px; }
+    .registration-component .registration-form input {
+      width: 200px;
+      margin: 5px; }
 
 /*# sourceMappingURL=style.css.map */

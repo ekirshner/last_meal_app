@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 
+
 class Payment extends Component {
     constructor(){
         super()
@@ -32,6 +33,12 @@ class Payment extends Component {
         });
     }
 
+    // Back Button
+    handleBack () {
+        this.props.history.go(-1)
+    }
+
+
     render() {
 
         let totalSaved = (Math.floor(Math.random() * 500) / 100).toFixed(2);
@@ -43,11 +50,12 @@ class Payment extends Component {
             )}
         )
 
+
         return (
             <div>
                 <Link to="/search"><p>Back to Search</p></Link>
                 <div className="payment-section">
-
+                    <p className="back-button" onClick={ () => this.handleBack() }> Back </p>
                     <h2>Payment Details</h2>
                     <p className="order-details">Order Details</p>
                     <ul>
