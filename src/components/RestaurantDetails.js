@@ -73,7 +73,7 @@ class RestaurantDetails extends Component {
         }
 
         // console.log(this.state.pickup_time, this.state.pickup2_time)
-        fetch('https://warm-falls-44996.herokuapp.com/inventory/34', {
+        fetch('https://warm-falls-44996.herokuapp.com/inventory/15', {
             method: 'POST',
             credentials: 'include',
             headers: {
@@ -182,7 +182,7 @@ class RestaurantDetails extends Component {
                     <Col xs={12} md={6} lg={6}>
                         <div>
                             <h3 id="edit">Set Pick Up Time</h3>
-                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[0].pickup_start) } - { tConvert(this.props.restaurant.inventory[0].pickup_end) } </p>
+                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[16].pickup_start) } - { tConvert(this.props.restaurant.inventory[16].pickup_end) } </p>
                             <div className="add-item">
                                 <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
                                 <p>Change Pick Up Time</p>
