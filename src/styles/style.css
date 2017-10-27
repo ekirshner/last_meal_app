@@ -417,7 +417,7 @@ header {
   .restaurant-details-component .parallax {
     text-align: center;
     padding: 30px;
-    background-image: url("https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg");
+    background-image: url("restaurant-background.jpg");
     background-attachment: fixed; }
   .restaurant-details-component .delete {
     width: 50px;
