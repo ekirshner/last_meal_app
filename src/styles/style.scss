@@ -20,6 +20,11 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    // opacity: .85;
+    background-color: #4eb7b4;
+}
+
 body {
     background-color: $offWhite;
     font-family: 'Raleway', sans-serif;
@@ -119,7 +124,6 @@ header {
     height: 100vh;
 
     button {
-        background: $button;
         width: 70%;
         height: 50px;
         font-size: 1.5em;
@@ -246,7 +250,6 @@ header {
     height: 100vh;
 
     button {
-        background: $button;
         width: 70%;
         height: 50px;
         font-size: 1.5em;
@@ -747,7 +750,7 @@ header {
         padding-bottom: 30px;
         text-align: center;
         padding: 30px;
-        background-image: url('https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg');
+        background-image: url('restaurant-background.jpg');
         background-attachment: fixed;
     }
 
@@ -767,7 +770,7 @@ header {
         text-align: center;
         text-align: center;
         padding: 30px;
-        background-image: url('https://files.slack.com/files-tmb/T0KH5PHEJ-F7PQGEYL8-8866f4b98a/food2_1024.jpg');
+        background-image: url('restaurant-background.jpg');
         // width: 200px;
         // background-attachment: fixed;
     }
