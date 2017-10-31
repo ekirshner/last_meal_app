@@ -16,7 +16,6 @@ import Payment from './components/Payment';
 import PaymentConfirmation from './components/PaymentConfirmation';
 import RestaurantSignIn from './components/RestaurantSignIn';
 import RestaurantDetails from './components/RestaurantDetails';
-import Transactions from './components/Transactions';
 import Registration from './components/RestaurantRegistration';
 import logo from './logo.png';
 
@@ -53,7 +52,6 @@ class App extends Component {
   
               <Route path="/restaurantSignIn" component={ RestaurantSignIn } />
               <Route path="/restaurantDetails" component={ RestaurantDetails } />
-              <Route path="/transactions" component={ Transactions } />
               <Route path="/registration" component={ Registration } />
               <Route path="/" component={ SignIn } />
             </Switch>

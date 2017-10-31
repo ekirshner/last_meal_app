@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+// Import routing
+import { Link } from 'react-router-dom';
+
+
 class Registration extends Component {
     constructor(props) {
         super(props)
@@ -42,7 +46,6 @@ class Registration extends Component {
 
     // Submission
     handleSubmit() {
-        // what happens?
     }
 
 
@@ -64,7 +67,7 @@ class Registration extends Component {
                     <input type="password" placeholder="Create A Password" value={ this.state.password }
                         onChange={ (event) => this.handlePasswordChange(event) }/>
                     <input type="password" placeholder="Confirm Password" />
-                    <button onClick={ () => this.handleSubmit() }>Register</button>
+                    <Link to="/restaurantSignIn"><button onClick={ () => this.handleSubmit() }>Register</button></Link>
                 </div>
             </div>
         );

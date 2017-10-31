@@ -1,5 +1,5 @@
 
-// $main-color: blue;
+// Variables
 $shadow: 2px 2px 10px #888888;
 $offWhite: #F8F8F8;
 $mintyWhite: #F7FFF7;
@@ -21,7 +21,6 @@ button {
 }
 
 button:hover {
-    // opacity: .85;
     background-color: #4eb7b4;
 }
 
@@ -111,7 +110,6 @@ header {
 
 
 // RestaurantSignIn
-
 .rest-sign-in-view {
     background: $offWhite;
     display: flex;
@@ -164,8 +162,6 @@ header {
     a {
         color: $button;
            color: $lightBlue;
-        // font-size: 14px;
-        // cursor: pointer;
     }
 
     a:hover {
@@ -302,7 +298,6 @@ header {
             color: $mintyWhite;
             font-weight: normal;
             margin: 20px 0px 10px 0px;
-            // margin-bottom: 200px;
         }
     }
 
@@ -558,7 +553,7 @@ header {
         }
 
         p {
-            float: right;
+            text-align: right;
             margin-top: 5px;
             margin-right: 20px;
         }
@@ -577,6 +572,7 @@ header {
     }
 
 }
+
 
 
 // Payment
@@ -619,7 +615,6 @@ header {
     .back-button {
         cursor: pointer;
         text-align: left;
-        // color: $lightBlue;
     }
 
     .back-button:hover {
@@ -792,8 +787,6 @@ header {
         text-align: center;
         padding: 30px;
         background-image: url('restaurant-background.jpg');
-        // width: 200px;
-        // background-attachment: fixed;
     }
 
     #rest-pic2, #rest-pic3 {
@@ -846,7 +839,6 @@ header {
 
         p {
             margin: 25px;
-            // margin-left: 25px;
         }
     }
 

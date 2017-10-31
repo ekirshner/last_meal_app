@@ -37,7 +37,6 @@ class RestaurantSignIn extends Component {
             })
             .then(res=> res.json())
             .then(response=> {
-                console.log(response)
                 this.props.getRestaurant(response);
             })
 

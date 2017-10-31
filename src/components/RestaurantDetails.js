@@ -24,7 +24,7 @@ class RestaurantDetails extends Component {
 
     // When a user clicks delete, send a DELETE request to backend
     onDeleteClick(index) {
-        //  console.log('deleted!')
+
         const url= 'https://warm-falls-44996.herokuapp.com/inventory/'+ index
         fetch(url , {
              method: 'DELETE',
@@ -53,13 +53,14 @@ class RestaurantDetails extends Component {
         });
     }
 
+    // Change state of the pickup start time
     handleChange(event) {
-        // console.log(event.target.value)
         this.setState({
             pickup_time: event.target.value + ":00",
         })
     }
 
+    // Change state of pickup end time
     handleChange2(event) {
         this.setState({
             pickup2_time: event.target.value + ":00",
@@ -72,7 +73,6 @@ class RestaurantDetails extends Component {
             return;
         }
 
-        // console.log(this.state.pickup_time, this.state.pickup2_time)
         fetch('https://warm-falls-44996.herokuapp.com/inventory/1', {
             method: 'POST',
             credentials: 'include',
@@ -90,6 +90,10 @@ class RestaurantDetails extends Component {
             .then(res => res.json())
             .then(response => {
                 this.props.getRestaurant(response);
+        })
+        this.setState ({
+            pickup_time: "",
+            pickup2_time: "",
         })
     }
 
@@ -115,7 +119,12 @@ class RestaurantDetails extends Component {
         })
             .then(res => res.json())
             .then(response => {
-                this.props.getRestaurant(response);
+                this.props.getRestaurant(response)
+        })
+        this.setState ({
+            description: "",
+            num_available: "",
+            price: "",
         })
     }
 
@@ -182,7 +191,7 @@ class RestaurantDetails extends Component {
                     <Col xs={12} md={6} lg={6}>
                         <div>
                             <h3 id="edit">Set Pick Up Time</h3>
-                            <p className="pickup-times">{ tConvert(this.props.restaurant.inventory[0].pickup_start) } - { tConvert(this.props.restaurant.inventory[0].pickup_end) } </p>
+                            <p className="pickup-times">Current Pick Up Time: { tConvert(this.props.restaurant.inventory[0].pickup_start) } - { tConvert(this.props.restaurant.inventory[0].pickup_end) } </p>
                             <div className="add-item">
                                 <img src={ plus } onClick={ () => this.toggleVisibilityPickup() } />
                                 <p>Change Pick Up Time</p>
@@ -249,6 +258,7 @@ class RestaurantDetails extends Component {
         );
     }
 }
+
 
 function MapState2Props(state) {
     return {

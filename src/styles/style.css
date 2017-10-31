@@ -357,7 +357,7 @@ header {
     .restaurant-details .restaurant-menu-section h3 {
       display: inline-block; }
     .restaurant-details .restaurant-menu-section p {
-      float: right;
+      text-align: right;
       margin-top: 5px;
       margin-right: 20px; }
   .restaurant-details ul {

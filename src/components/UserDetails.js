@@ -15,9 +15,6 @@ import { buyFood, getRestaurants } from '../actions';
 
 
 
-// ComponentWill UnMount = to get rid of the redux store state
-
-
 class UserDetails extends Component {
     constructor(props) {
         super(props);
@@ -74,8 +71,7 @@ class UserDetails extends Component {
         // Set the this.state.foods to an array of the restaurant's inventory
         this.props.restaurantList.length && this.setState({
             foods: currentRestaurant.inventory,
-        }, () => 
-        console.log(this.state.foods))
+        })
 
         // Set this.state.selected to an array of the same length as foods (values set to false)
         let newArr = []
@@ -85,7 +81,7 @@ class UserDetails extends Component {
 
         this.setState({
             selected: newArr,
-        }, () => console.log(this.state.checked))
+        })
     }
 
   
@@ -122,8 +118,8 @@ class UserDetails extends Component {
                         </div>
 
                         <div className="restaurant-menu-section">
+                            <p className="pickup">Pick Up Time <span>{ this.tConvert(currentRestaurant.inventory[0].pickup_start) } - { this.tConvert(currentRestaurant.inventory[0].pickup_end) }</span></p>
                             <h3>Menu Options</h3> 
-                            <p>Pick Up Time <span>{ this.tConvert(currentRestaurant.inventory[0].pickup_start) } - { this.tConvert(currentRestaurant.inventory[0].pickup_end) }</span></p>
                             <ul>
                                 { menu } 
                             </ul>

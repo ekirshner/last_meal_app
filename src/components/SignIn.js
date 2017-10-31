@@ -4,21 +4,13 @@ import * as actions from '../actions';
 import FoodFacts  from './foodFacts'
 
 class SignIn extends Component {
-// change
-    // renderButton() {
-    //     console.log(this.props.authenticated)
-    //     if (this.props.authenticated === false) {
-    //         return <button onClick={() => this.props.authenticate(true)} type="submit">Sign In</button>
-    //             }
-    //     return <button onClick={() => this.props.authenticate(false)} type="submit">Sign Out</button>
-    // }
+
     handleSubmit = () => {
          this.props.history.push("/search");
     }
 
 
     render() {
-        // console.log(foodFacts)
         return (
             <div className="sign-in-view">
                  <p><FoodFacts /></p>

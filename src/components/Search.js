@@ -9,8 +9,6 @@ import { getRestaurants } from '../actions';
 // Import Components
 import ListView from './ListView';
 import MapView from './MapView';
-import Filter from './Filter';
-import hamburgerIcon from '../hamburgerIcon.png'
 
 // Import routing
 import { Link, Route, Switch, Redirect } from 'react-router-dom';
@@ -33,11 +31,6 @@ class Search extends Component {
         this.props.getRestaurants()
     }
 
-    openFilter() {
-        this.setState ({
-            showFilter: !this.state.showFilter,
-        });
-    }
 
     render() {
 
@@ -47,12 +40,6 @@ class Search extends Component {
                     <Link to="/search/ListView"><button>List View</button></Link>
                     <Link to="/search/MapView"><button>Map View</button></Link>
                 </nav>
-
-                <img src={ hamburgerIcon } className="filter-button" onClick={ () => this.openFilter() } />
-
-                <div hidden={ this.state.showFilter }>
-                    <Filter />
-                </div>
 
                 <Switch>
                     <Route path="/search/listView" render={() => <ListView restaurants={this.props.restaurantList} /> } />
